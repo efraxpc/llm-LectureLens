@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# bootstrap.sh — instala e roda o projeto inteiro do zero, com um único comando.
+# bootstrap.sh — prepara o ambiente do projeto do zero, com um único comando.
 #
 # Uso:
-#   ./bootstrap.sh                  # instala tudo e executa os 5 notebooks em ordem
-#   SOLO_PREPARAR=1 ./bootstrap.sh  # só prepara o ambiente (venv, kernel, .env), sem rodar
-#   FORCE_C01=1 ./bootstrap.sh      # força reexecutar o C01 mesmo com data/processed pronto
+#   ./bootstrap.sh   # cria o venv, instala tudo, registra o kernel, prepara o .env
+#                    # e mostra os comandos para executar cada notebook (NÃO os executa).
 #
 # Pré-requisito: arquivo .env na raiz com chaves PRÓPRIAS (ver INSTALLATION.md):
 #   GEMINI_API_KEY e HUGGINGFACE_KEY
@@ -56,23 +55,23 @@ banner
 
 # ── 1. Ambiente virtual e dependências ─────────────────────────────────────────
 if [ ! -x "$VENV/bin/python" ]; then
-  echo "[1/5] Criando ambiente virtual em $VENV ..."
+  echo "[1/4] Criando ambiente virtual em $VENV ..."
   "$PYTHON" -m venv "$VENV"
 else
-  echo "[1/5] Ambiente virtual $VENV já existe — reutilizando."
+  echo "[1/4] Ambiente virtual $VENV já existe — reutilizando."
 fi
 echo "      Instalando dependências de requirements.txt (pode demorar na 1ª vez) ..."
 "$VENV/bin/pip" install --quiet --upgrade pip
 "$VENV/bin/pip" install --quiet -r requirements.txt
 
 # ── 2. Kernel do Jupyter ───────────────────────────────────────────────────────
-echo "[2/5] Registrando o kernel do Jupyter ($KERNEL) ..."
+echo "[2/4] Registrando o kernel do Jupyter ($KERNEL) ..."
 "$VENV/bin/python" -m ipykernel install --user --name="$KERNEL" \
   --display-name "Python (llm_project)" >/dev/null
 
 # ── 3. Arquivo .env com as chaves (devem ser SUAS — ver INSTALLATION.md) ──────
 # Cria o .env sozinho e pede as chaves que faltarem, para bastar UM comando.
-echo "[3/5] Preparando o arquivo .env ..."
+echo "[3/4] Preparando o arquivo .env ..."
 if [ ! -f .env ]; then
   echo "      .env não existe — criando a partir de .env.example."
   cp .env.example .env
@@ -127,40 +126,46 @@ for CHAVE in GEMINI_API_KEY HUGGINGFACE_KEY; do
 done
 printf '   %s✓%s .env OK — GEMINI_API_KEY e HUGGINGFACE_KEY presentes.\n' "$VE" "$R"
 
-if [ "${SOLO_PREPARAR:-0}" = "1" ]; then
-  echo "[4/5] SOLO_PREPARAR=1 — ambiente pronto, notebooks NÃO executados."
-  echo "[5/5] Para rodar tudo: ./bootstrap.sh"
-  exit 0
-fi
+# ── 4. Ambiente pronto — como executar os notebooks ───────────────────────────
+echo "[4/4] Ambiente pronto. Os notebooks NÃO foram executados."
 
-# ── 4. Aviso de custo e tempo ──────────────────────────────────────────────────
-echo "[4/5] Atenção — a primeira execução completa:"
-echo "      • baixa ~2,4 GB de modelos locais de tradução (C01);"
-echo "      • gasta ~US\$ 2,0–2,5 na API do Gemini (8 traduções com o Pro em C01"
-echo "        + centavos em C02–C05), cobrados na conta da SUA chave;"
-echo "      • leva ~20–40 min, dependendo de GPU e conexão."
+printf '\n'
+printf '   %s┏━ Como executar os notebooks %s━━━━━━━━━━━━━━━━━━━━━━━━━━━━%s\n' "$CY" "$CY" "$R"
+printf '   %s┃%s\n' "$CY" "$R"
+printf '   %s┃%s  %sⓘ  Ao executar, a primeira corrida completa:%s\n' "$CY" "$R" "$AM" "$R"
+printf '   %s┃%s     • baixa ~2,4 GB de modelos locais de tradução (C01);\n' "$CY" "$R"
+printf '   %s┃%s     • gasta ~US$ 2,0–2,5 na API do Gemini (8 traduções com o\n' "$CY" "$R"
+printf '   %s┃%s       Pro em C01 + centavos em C02–C05), na conta da SUA chave;\n' "$CY" "$R"
+printf '   %s┃%s     • leva ~20–40 min, dependendo de GPU e conexão.\n' "$CY" "$R"
+printf '   %s┃%s\n' "$CY" "$R"
 
-# ── 5. Execução dos notebooks em ordem de dependência ─────────────────────────
-echo "[5/5] Executando os notebooks ..."
-executar() {
-  echo "      ▶ $1"
-  "$VENV/bin/jupyter" nbconvert --to notebook --execute --inplace \
-    --ExecutePreprocessor.kernel_name="$KERNEL" \
-    --ExecutePreprocessor.timeout=3600 "$1"
-}
+# ── Opção A · Jupyter Lab ──
+printf '   %s┃%s  %sA · Jupyter Lab %s(interface no navegador)%s\n' "$CY" "$R" "$B" "$D" "$R"
+printf '   %s┃%s     %s%s/bin/jupyter lab%s\n' "$CY" "$R" "$VE" "$VENV" "$R"
+printf '   %s┃%s     %s→ abra cada .ipynb e escolha o kernel "Python (llm_project)"%s\n' "$CY" "$R" "$GR" "$R"
+printf '   %s┃%s\n' "$CY" "$R"
 
-N_PROCESSADOS=$(ls data/processed/*_portugues.txt 2>/dev/null | wc -l)
-if [ "${FORCE_C01:-0}" != "1" ] && [ "$N_PROCESSADOS" -ge 8 ]; then
-  echo "      ▷ ${NOTEBOOKS[0]} PULADO — data/processed já tem $N_PROCESSADOS aulas"
-  echo "        processadas (use FORCE_C01=1 para reexecutar e pagar as traduções)."
-else
-  executar "${NOTEBOOKS[0]}"
-fi
-for NB in "${NOTEBOOKS[@]:1}"; do
-  executar "$NB"
+# ── Opção B · Editor (VS Code, Cursor, PyCharm…) ──
+printf '   %s┃%s  %sB · Editor de texto %s(VS Code, Cursor, PyCharm…)%s\n' "$CY" "$R" "$B" "$D" "$R"
+printf '   %s┃%s     %scode .%s   %s# abre o projeto (ou abra o .ipynb no seu editor)%s\n' "$CY" "$R" "$VE" "$R" "$D" "$R"
+printf '   %s┃%s     %s→ instale as extensões Python + Jupyter, se faltarem%s\n' "$CY" "$R" "$GR" "$R"
+printf '   %s┃%s     %s→ abra o .ipynb e clique em "Select Kernel" (canto sup. dir.)%s\n' "$CY" "$R" "$GR" "$R"
+printf '   %s┃%s     %s→ escolha o interpretador .venv  (Python (llm_project))%s\n' "$CY" "$R" "$GR" "$R"
+printf '   %s┃%s     %s→ rode as células com Shift+Enter%s\n' "$CY" "$R" "$GR" "$R"
+printf '   %s┃%s\n' "$CY" "$R"
+
+# ── Opção C · Linha de comando, um notebook por vez ──
+printf '   %s┃%s  %sC · Linha de comando, um por vez %s(ordem de dependência)%s\n' "$CY" "$R" "$B" "$D" "$R"
+printf '   %s┃%s     %sⓘ  rode o C01 primeiro — ele gera data/processed/;%s\n' "$CY" "$R" "$D" "$R"
+printf '   %s┃%s     %s   se já houver 8 aulas processadas, pode pular o C01.%s\n' "$CY" "$R" "$D" "$R"
+n=0
+for NB in "${NOTEBOOKS[@]}"; do
+  n=$((n + 1))
+  printf '   %s┃%s     %s%d)%s %s%s/bin/jupyter nbconvert --to notebook --execute --inplace \\%s\n' \
+         "$CY" "$R" "$AM" "$n" "$R" "$VE" "$VENV" "$R"
+  printf '   %s┃%s          %s--ExecutePreprocessor.kernel_name=%s \\%s\n' "$CY" "$R" "$VE" "$KERNEL" "$R"
+  printf '   %s┃%s          %s--ExecutePreprocessor.timeout=3600 %s%s\n' "$CY" "$R" "$VE" "$NB" "$R"
 done
-
-echo "══════════════════════════════════════════════════════════"
-echo " Pronto: os 5 notebooks foram executados com sucesso."
-echo " Abra-os com: $VENV/bin/jupyter lab"
-echo "══════════════════════════════════════════════════════════"
+printf '   %s┃%s\n' "$CY" "$R"
+printf '   %s┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━%s\n' "$CY" "$R"
+printf '\n'

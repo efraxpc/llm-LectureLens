@@ -20,7 +20,7 @@ com prompts ao modelo em inglês.
 ├── c03_embeddings_semanticos_e_recuperacao_de_informacao.ipynb  # C03 — Embeddings e recuperação
 ├── c04_inferencia_local_remota_ou_privada.ipynb           # C04 — Inferência local, remota ou privada
 ├── c05_pipeline_RAG.ipynb                                 # C05 — Pipeline RAG
-├── bootstrap.sh                                           # Instala e roda tudo com 1 comando
+├── bootstrap.sh                                           # Prepara o ambiente e mostra como executar os notebooks
 ├── INSTALLATION.md                                        # Guia de instalação completo
 ├── .env.example                                           # Modelo do .env (copiar e preencher)
 ├── environment.yml                                        # Ambiente conda (recomendado no Mac)
@@ -115,7 +115,7 @@ Requisito essencial: quem for rodar o projeto precisa possuir **chaves próprias
 
 ```bash
 git clone git@github.com:efraxpc/llm-LectureLens.git && cd llm-LectureLens
-./bootstrap.sh            # cria o .env e pede as SUAS chaves na 1ª execução
+./bootstrap.sh            # cria o .env, pede as SUAS chaves e mostra como executar os notebooks
 ```
 
 ## Dados
@@ -168,21 +168,6 @@ python-dotenv>=1.0.0
 numpy>=1.26.0 · pandas>=2.2.0
 jupyter>=1.1.0 · ipykernel>=6.29.0
 ```
-
-## Notas e problemas conhecidos
-
-- **Determinismo é melhor esforço na API**: os notebooks usam `temperature=0` e `seed=42`,
-  mas, segundo a documentação do Google, a reprodutibilidade exata não é garantida entre
-  execuções (diferente de um modelo local). As perguntas de teste servem como teste de
-  regressão do provedor.
-- **`thinking` desligado no Flash**: em C03–C05 usa-se `thinking_budget=0` (ou baixo), porque
-  o *thinking* oculto consumia parte imprevisível do `max_output_tokens` e cortava saídas
-  curtas — lição registrada no C03.
-- **Dependência de dados**: rode **C01** antes de C02/C03, e **C03** (até a indexação) antes
-  de C05, pois `data/processed/` não é versionado.
-- **Deprecação de modelo**: o modelo de embeddings `text-embedding-004` foi descontinuado
-  durante o projeto e substituído por `gemini-embedding-001`; trocar o modelo de embeddings
-  exige reindexar (custo de centavos nesta escala).
 
 ## Autor
 

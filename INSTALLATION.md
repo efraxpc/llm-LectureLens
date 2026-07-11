@@ -1,8 +1,9 @@
 # Instalação — LectureLens
 
 Guia completo para rodar o projeto do zero, numa máquina onde ele nunca foi executado.
-O caminho rápido é **um único comando** (`./bootstrap.sh`); o passo a passo manual e a
-variante para Mac estão mais abaixo.
+O caminho rápido é **um único comando** (`./bootstrap.sh`) que prepara todo o ambiente e
+**mostra os comandos** para executar os notebooks (sem executá-los); o passo a passo manual
+e a variante para Mac estão mais abaixo.
 
 ## ⚠️ Chaves de API — obrigatórias e próprias
 
@@ -55,15 +56,13 @@ O `bootstrap.sh` faz, em ordem:
 2. **Registra o kernel** do Jupyter `Python (llm_project)`;
 3. **Prepara o `.env`**: cria-o a partir do modelo se faltar e pede no terminal cada
    chave ausente ou vazia (`GEMINI_API_KEY`, `HUGGINGFACE_KEY`), gravando-as no `.env`;
-4. **Avisa** antes de executar: ~2,4 GB de download + ~20–40 min na primeira corrida;
-5. **Executa os 5 notebooks em ordem de dependência** (C01 → C02 → C03 → C04 → C05) com
-   `jupyter nbconvert --execute`, forçando o kernel registrado.
+4. **Mostra os comandos** para executar cada notebook — em Jupyter Lab, num editor tipo
+   VS Code, ou pela linha de comando — na ordem de dependência (C01 → C02 → C03 → C04 →
+   C05). **O script não executa os notebooks**, então nenhuma API é chamada e nada é baixado
+   até você rodar um notebook por conta própria.
 
-Para só preparar o ambiente **sem executar nada** (nenhum gasto de API):
-
-```bash
-SOLO_PREPARAR=1 ./bootstrap.sh
-```
+Ao executar os notebooks pela primeira vez, conte com ~2,4 GB de download de modelos locais
+(C01) + ~20–40 min de corrida, e o gasto de API do Gemini cobrado na conta da SUA chave.
 
 ## Instalação manual (passo a passo)
 
