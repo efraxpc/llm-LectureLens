@@ -22,9 +22,37 @@ NOTEBOOKS=(
   c05_pipeline_RAG.ipynb
 )
 
-echo "══════════════════════════════════════════════════════════"
-echo " LectureLens — bootstrap"
-echo "══════════════════════════════════════════════════════════"
+# ── Cores (só em terminal interativo; respeita NO_COLOR) ───────────────────────
+if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
+  B=$'\033[1m'; D=$'\033[2m'; R=$'\033[0m'
+  VE=$'\033[38;5;46m'; AM=$'\033[38;5;226m'; AZ=$'\033[38;5;27m'
+  RO=$'\033[38;5;196m'; CY=$'\033[38;5;51m'; GR=$'\033[38;5;250m'; WH=$'\033[38;5;255m'
+else
+  B=""; D=""; R=""; VE=""; AM=""; AZ=""; RO=""; CY=""; GR=""; WH=""
+fi
+
+# ── Banner: logo INFNET + bandeiras do Brasil e da Venezuela ───────────────────
+banner() {
+  printf '\n'
+  printf '   %s██╗███╗   ██╗███████╗███╗   ██╗███████╗████████╗%s\n' "$CY" "$R"
+  printf '   %s██║████╗  ██║██╔════╝████╗  ██║██╔════╝╚══██╔══╝%s\n' "$CY" "$R"
+  printf '   %s██║██╔██╗ ██║█████╗  ██╔██╗ ██║█████╗     ██║%s\n'    "$CY" "$R"
+  printf '   %s██║██║╚██╗██║██╔══╝  ██║╚██╗██║██╔══╝     ██║%s\n'    "$CY" "$R"
+  printf '   %s██║██║ ╚████║██║     ██║ ╚████║███████╗   ██║%s\n'    "$CY" "$R"
+  printf '   %s╚═╝╚═╝  ╚═══╝╚═╝     ╚═╝  ╚═══╝╚══════╝   ╚═╝%s\n'    "$CY" "$R"
+  printf '\n'
+  printf '   %s%sLectureLens%s %s· Sistemas Cognitivos com LLMs · INFNET%s\n' "$B" "$CY" "$R" "$D" "$R"
+  printf '\n'
+  printf '     %sBrasil%s             %sVenezuela%s\n' "$GR" "$R" "$GR" "$R"
+  printf '     %s███████%s             %s███████%s\n' "$VE" "$R" "$AM" "$R"
+  printf '     %s██%s%s███%s%s██%s             %s███████%s\n' "$VE" "$R" "$AM" "$R" "$VE" "$R" "$AM" "$R"
+  printf '     %s██%s%s█%s%s█%s%s█%s%s██%s             %s██%s%s✦✦✦%s%s██%s\n' \
+         "$VE" "$R" "$AM" "$R" "$AZ" "$R" "$AM" "$R" "$VE" "$R" "$AZ" "$R" "$WH" "$R" "$AZ" "$R"
+  printf '     %s██%s%s███%s%s██%s             %s███████%s\n' "$VE" "$R" "$AM" "$R" "$VE" "$R" "$RO" "$R"
+  printf '     %s███████%s             %s███████%s\n' "$VE" "$R" "$RO" "$R"
+  printf '\n'
+}
+banner
 
 # ── 1. Ambiente virtual e dependências ─────────────────────────────────────────
 if [ ! -x "$VENV/bin/python" ]; then
@@ -50,44 +78,54 @@ if [ ! -f .env ]; then
   cp .env.example .env
 fi
 
-# Rótulo amigável de cada chave: o que colar e onde obter (mostrado no console).
-rotulo_chave() {  # $1 = nome da variável
-  case "$1" in
-    GEMINI_API_KEY)   echo "a chave do Google AI Studio (https://aistudio.google.com/apikey)" ;;
-    HUGGINGFACE_KEY)  echo "o token do Hugging Face (https://huggingface.co/settings/tokens)" ;;
-    *)                echo "a chave $1" ;;
-  esac
-}
+# Provedor e URL de cada chave (mostrados no console ao pedi-la).
+provedor_chave() { case "$1" in
+    GEMINI_API_KEY)  echo "Google AI Studio" ;;
+    HUGGINGFACE_KEY) echo "Hugging Face" ;;
+    *)               echo "$1" ;;
+  esac; }
+url_chave() { case "$1" in
+    GEMINI_API_KEY)  echo "https://aistudio.google.com/apikey" ;;
+    HUGGINGFACE_KEY) echo "https://huggingface.co/settings/tokens" ;;
+    *)               echo "" ;;
+  esac; }
 
 definir_chave() {  # $1 = nome da chave; grava/atualiza a linha no .env
   local nome="$1" valor tmp
   read -rs valor
   echo ""
   if [ -z "$valor" ]; then
-    echo "ERRO: ${nome} não pode ficar vazia — instruções em INSTALLATION.md."
+    printf '   %s✗%s %s não pode ficar vazia — ver INSTALLATION.md.\n' "$RO" "$R" "$nome"
     exit 1
   fi
   tmp="$(mktemp)"
   grep -v "^${nome}=" .env > "$tmp" || true
   printf '%s=%s\n' "$nome" "$valor" >> "$tmp"
   mv "$tmp" .env
+  printf '   %s✓%s %s salva no .env.\n' "$VE" "$R" "$nome"
 }
 
+n_chave=0
 for CHAVE in GEMINI_API_KEY HUGGINGFACE_KEY; do
+  n_chave=$((n_chave + 1))
   if ! grep -Eq "^${CHAVE}=.+" .env; then
     if [ -t 0 ]; then
-      echo "      Cole $(rotulo_chave "$CHAVE")"
-      echo "      e aperte Enter (a colagem não será exibida):"
+      printf '\n'
+      printf '   %s┃%s %sChave %d de 2%s  %s·%s  %s%s%s\n' \
+             "$CY" "$R" "$B" "$n_chave" "$R" "$D" "$R" "$B" "$CHAVE" "$R"
+      printf '   %s┃%s  cole a SUA chave do %s%s%s\n' \
+             "$CY" "$R" "$B" "$(provedor_chave "$CHAVE")" "$R"
+      printf '   %s┃%s  %s%s%s\n' "$CY" "$R" "$D" "$(url_chave "$CHAVE")" "$R"
+      printf '   %s▸%s  cole aqui e aperte Enter %s(não será exibida)%s: ' "$AM" "$R" "$D" "$R"
       definir_chave "$CHAVE"
     else
-      echo ""
-      echo "ERRO: ${CHAVE} ausente ou vazia no .env, e não há terminal interativo"
-      echo "para pedi-la. Preencha o .env à mão — instruções em INSTALLATION.md."
+      printf '\n   %s✗%s %s ausente ou vazia no .env, e não há terminal interativo.\n' "$RO" "$R" "$CHAVE"
+      printf '   Preencha o .env à mão — instruções em INSTALLATION.md.\n'
       exit 1
     fi
   fi
 done
-echo "      .env OK (GEMINI_API_KEY e HUGGINGFACE_KEY presentes)."
+printf '   %s✓%s .env OK — GEMINI_API_KEY e HUGGINGFACE_KEY presentes.\n' "$VE" "$R"
 
 if [ "${SOLO_PREPARAR:-0}" = "1" ]; then
   echo "[4/5] SOLO_PREPARAR=1 — ambiente pronto, notebooks NÃO executados."
