@@ -139,19 +139,19 @@ printf '   %s┃%s       Pro em C01 + centavos em C02–C05), na conta da SUA ch
 printf '   %s┃%s     • leva ~20–40 min, dependendo de GPU e conexão.\n' "$CY" "$R"
 printf '   %s┃%s\n' "$CY" "$R"
 
-# ── Opção A · Jupyter Lab ──
-printf '   %s┃%s  %sA · Jupyter Lab %s(interface no navegador)%s\n' "$CY" "$R" "$B" "$D" "$R"
-printf '   %s┃%s     %s%s/bin/jupyter lab%s\n' "$CY" "$R" "$VE" "$VENV" "$R"
-printf '   %s┃%s     %s→ abra cada .ipynb e escolha o kernel "Python (llm_project)"%s\n' "$CY" "$R" "$GR" "$R"
-printf '   %s┃%s\n' "$CY" "$R"
-
-# ── Opção B · Editor (VS Code, Cursor, PyCharm…) ──
-printf '   %s┃%s  %sB · Editor de texto %s(VS Code, Cursor, PyCharm…)%s\n' "$CY" "$R" "$B" "$D" "$R"
+# ── Opção A · Editor (VS Code, Cursor, PyCharm…) ──
+printf '   %s┃%s  %sA · Editor de texto %s(VS Code, Cursor, PyCharm…)%s\n' "$CY" "$R" "$B" "$D" "$R"
 printf '   %s┃%s     %scode .%s   %s# abre o projeto (ou abra o .ipynb no seu editor)%s\n' "$CY" "$R" "$VE" "$R" "$D" "$R"
 printf '   %s┃%s     %s→ instale as extensões Python + Jupyter, se faltarem%s\n' "$CY" "$R" "$GR" "$R"
 printf '   %s┃%s     %s→ abra o .ipynb e clique em "Select Kernel" (canto sup. dir.)%s\n' "$CY" "$R" "$GR" "$R"
 printf '   %s┃%s     %s→ escolha o interpretador .venv  (Python (llm_project))%s\n' "$CY" "$R" "$GR" "$R"
 printf '   %s┃%s     %s→ rode as células com Shift+Enter%s\n' "$CY" "$R" "$GR" "$R"
+printf '   %s┃%s\n' "$CY" "$R"
+
+# ── Opção B · Jupyter Lab ──
+printf '   %s┃%s  %sB · Jupyter Lab %s(interface no navegador)%s\n' "$CY" "$R" "$B" "$D" "$R"
+printf '   %s┃%s     %s%s/bin/jupyter lab%s\n' "$CY" "$R" "$VE" "$VENV" "$R"
+printf '   %s┃%s     %s→ abra cada .ipynb e escolha o kernel "Python (llm_project)"%s\n' "$CY" "$R" "$GR" "$R"
 printf '   %s┃%s\n' "$CY" "$R"
 
 # ── Opção C · Linha de comando, um notebook por vez ──
