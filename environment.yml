@@ -1,0 +1,39 @@
+# Ambiente conda para rodar o projeto — recomendado no Mac (Apple Silicon / chip M).
+# Tudo que é compilado/nativo vem do conda-forge, com build osx-arm64 confiável
+# (faiss, pytorch, sentencepiece); só as bibliotecas de API puras vêm do pip.
+#
+#   conda env create -f environment.yml
+#   conda activate llm_project
+#
+name: llm_project
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+
+  # Inferência local e stack Hugging Face (C01) — build nativo arm64 via conda-forge
+  - pytorch>=2.4          # roda em MPS (GPU Apple Silicon) sem configuração extra
+  - transformers>=4.45
+  - sentence-transformers>=3.0
+  - accelerate>=0.26
+  - sentencepiece>=0.2
+
+  # Busca vetorial (C03/C05) e utilitários numéricos
+  - faiss-cpu>=1.8
+  - numpy>=1.26
+  - pandas>=2.2
+  - scikit-learn>=1.5
+  - matplotlib>=3.9
+
+  # Notebooks
+  - jupyter>=1.1
+  - ipykernel>=6.29
+
+  # Bibliotecas de API (puras em Python) — via pip
+  - pip
+  - pip:
+      - google-genai>=1.0.0
+      - anthropic>=0.40.0
+      - openai>=1.50.0
+      - ollama>=0.3.0
+      - python-dotenv>=1.0.0

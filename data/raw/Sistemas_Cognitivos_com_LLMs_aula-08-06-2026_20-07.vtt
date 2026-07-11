@@ -1,0 +1,3178 @@
+WEBVTT
+
+1
+00:00:18.950 --> 00:00:20.819
+Fernando Guimarães Ferreira: Boa noite, pessoal. Tudo bem.
+
+2
+00:00:21.750 --> 00:00:22.860
+fabricio.gouveia: Eu não influencia.
+
+3
+00:00:23.520 --> 00:00:24.350
+Fernando Guimarães Ferreira: Como estamos?
+
+4
+00:00:24.350 --> 00:00:25.050
+renato.paula: Boa noite.
+
+5
+00:00:25.050 --> 00:00:26.210
+Andrei Luiz Pereira: Boa noite.
+
+6
+00:00:26.550 --> 00:00:27.870
+renata.abreu: Boa noite.
+
+7
+00:00:28.920 --> 00:00:38.449
+Fernando Guimarães Ferreira: Bem, é uma dúvida pessoal que vocês queiram
+
+8
+00:00:38.990 --> 00:00:41.269
+Fernando Guimarães Ferreira: tirar antes da gente iniciar a aula.
+
+9
+00:00:51.210 --> 00:00:52.420
+renato.paula: No momento. Não.
+
+10
+00:00:53.140 --> 00:00:54.739
+Fernando Guimarães Ferreira: Não, beleza.
+
+11
+00:00:55.870 --> 00:01:02.510
+Fernando Guimarães Ferreira: Vamos deixar o que aí hoje.
+
+12
+00:01:02.790 --> 00:01:06.860
+Fernando Guimarães Ferreira: Nossa ideia. Aliás, essa semana, nossa ideia
+
+13
+00:01:07.140 --> 00:01:11.200
+Fernando Guimarães Ferreira: deixa eu só abrir aqui um Collab e compartilhar a tela com vocês.
+
+14
+00:01:16.490 --> 00:01:21.199
+Fernando Guimarães Ferreira: A gente. Na semana passada, a gente falou do Rugin, fez.
+
+15
+00:01:21.860 --> 00:01:29.790
+Fernando Guimarães Ferreira: Tivemos alguns exemplos, vários exemplos utilizando a biblioteca.
+
+16
+00:01:30.130 --> 00:01:34.740
+Fernando Guimarães Ferreira: Hoje, a gente se afasta um pouquinho do rock in, face para
+
+17
+00:01:34.870 --> 00:01:42.250
+Fernando Guimarães Ferreira: falar de como que a gente interage com modelos de geração de texto, principalmente
+
+18
+00:01:42.690 --> 00:01:53.219
+Fernando Guimarães Ferreira: relacionando técnicas de prompted new, de como que a gente utilize alguma técnica
+
+19
+00:01:53.340 --> 00:02:02.020
+Fernando Guimarães Ferreira: para poder guiar a criação de textos C llms são feitas para criar texto,
+
+20
+00:02:02.060 --> 00:02:14.840
+Fernando Guimarães Ferreira: e elas se baseiem em contextos, e elas têm noção, de atenção, ou seja, sabe aonde prestar atenção onde é importante, qual a estrutura? São treinadas para isso.
+
+21
+00:02:14.980 --> 00:02:27.309
+Fernando Guimarães Ferreira: Então, qual é a melhor maneira de a gente interagir e fazer pedidos de tal maneira que elas mantenham o contexto e consigam refinar esses pontos
+
+22
+00:02:27.560 --> 00:02:40.920
+Fernando Guimarães Ferreira: para interagir. A gente vai usar dois modelos ou duas famílias de modelos Geminai e Openai.
+
+23
+00:02:41.560 --> 00:02:50.839
+Fernando Guimarães Ferreira: Enfim, através de Apis. Óbvio que tudo que eu fizer aqui com Api é replicável no chat.
+
+24
+00:02:51.080 --> 00:02:52.400
+Fernando Guimarães Ferreira: Pode falar, Efraim.
+
+25
+00:02:54.330 --> 00:02:55.789
+Efrain Colmenares: Professor. Boa noite.
+
+26
+00:02:55.930 --> 00:02:56.810
+Fernando Guimarães Ferreira: Boa noite.
+
+27
+00:02:56.810 --> 00:03:03.010
+Efrain Colmenares: Eu queria perguntar, por exemplo, na prática, como a gente
+
+28
+00:03:03.860 --> 00:03:14.239
+Efrain Colmenares: pondera faz esse start off, por exemplo, para saber quando utilizar um modelo fundacional grande como Openai, terminar, etc.
+
+29
+00:03:14.350 --> 00:03:21.649
+Efrain Colmenares: E quando utilizar um um modelo menor de Rogue One, fez.
+
+30
+00:03:22.760 --> 00:03:30.739
+Fernando Guimarães Ferreira: Então acho que o primeiro ponto que tem várias
+
+31
+00:03:30.850 --> 00:03:41.849
+Fernando Guimarães Ferreira: variáveis aqui, que a gente pode conversar. Mas acho que o primeiro ponto é o custo, não o custo. Qual custo que você está disposto
+
+32
+00:03:42.640 --> 00:03:59.429
+Fernando Guimarães Ferreira: a rodar e quais tarefas específicas que você quer fazer? Os modelos, digamos assim, mais gerais llms gemini openai grok.
+
+33
+00:03:59.670 --> 00:04:05.809
+Fernando Guimarães Ferreira: Elas estão investindo cada vez mais na questão de agentes e tudo mais,
+
+34
+00:04:06.200 --> 00:04:13.970
+Fernando Guimarães Ferreira: mas elas não necessariamente são as melhores, mais treinadas e mais rápidas para responder todos os contextos.
+
+35
+00:04:14.240 --> 00:04:30.870
+Fernando Guimarães Ferreira: Então, por exemplo, se você quer fazer um protótipo relacionado a alguma coisa. Quer ver se dá certo. Alguma técnica de propinity? Alguma coisa rápida? Talvez você ali tenha acesso à interface e já consegue fazer de uma maneira rápida.
+
+36
+00:04:31.300 --> 00:04:42.389
+Fernando Guimarães Ferreira: Mas a partir do momento que você faz um trade off, né? Pô, eu vou precisar repetir essa tarefa um monte de vezes. A cobrança dessas grandes, né? É cara
+
+37
+00:04:42.410 --> 00:05:01.540
+Fernando Guimarães Ferreira: ou não alocar recursos para poder fazer mesmo modelo pequeno, mas levantar esse modelo pequeno na nuvem. Isso está sendo mais caro que a chamada Cgpi. Então, na realidade são testes que você vai fazer de performance, pô qual o modelo que está me dando o melhor resultado?
+
+38
+00:05:01.540 --> 00:05:16.150
+Fernando Guimarães Ferreira: Qual o trade off aí a gente não chegou a fazer exemplo de classificação. Essa semana a gente vai fazer, mas vale a pena testar. Tipo, qual modelo está dando a resposta mais correta? Qual modelo não dá a resposta correta nesse sentido
+
+39
+00:05:16.260 --> 00:05:29.749
+Fernando Guimarães Ferreira: e no final, tipo o custo que leva, quanto que está saindo a bilhetagem no final. Se os resultados são parecidos, qual que vai ter um melhor custo benefício para uma execução
+
+40
+00:05:29.810 --> 00:05:41.570
+Fernando Guimarães Ferreira: em produção. A gente aqui, sempre conversando muito na prototipação. Mas quando a gente vai para a produção, as coisas normalmente têm
+
+41
+00:05:42.400 --> 00:05:53.329
+Fernando Guimarães Ferreira: para bem e para mal, custos diferentes, e isso é preciso ser levado em consideração. Não tem uma bala de prata assim do tipo sempre use. Nesse caso, alguma coisa.
+
+42
+00:05:53.450 --> 00:06:07.580
+Fernando Guimarães Ferreira: Ah, por exemplo, uma atividade que eu faço rotineiramente é pedir para descrever imagens. Dada uma imagem, descrever essa imagem, e isso via epi api
+
+43
+00:06:07.580 --> 00:06:18.429
+Fernando Guimarães Ferreira: nas grandes llms é muito, muito caro. Então eu prefiro rodar um modelo especializado nisso. Muito bom. Que tem no ruginface e roda o local na minha máquina
+
+44
+00:06:18.640 --> 00:06:22.250
+Fernando Guimarães Ferreira: ou aloco algum recurso em um servidor remoto.
+
+45
+00:06:22.510 --> 00:06:38.249
+Fernando Guimarães Ferreira: Mas aí não é que é de graça. Você tem que pagar esse recurso. Você tem esse processamento para ser pago. Você tem que botar na ponta do lápis e ver se faz sentido a minha escala. Todo mês. Eu tenho esse processamento para pelo menos dez mil imagens.
+
+46
+00:06:38.420 --> 00:06:46.680
+Fernando Guimarães Ferreira: É inviável fazer via Oppenheim sairia, sei lá, vinte dólares. Trinta dólares. Toda vez que eu rodasse,
+
+47
+00:06:47.940 --> 00:06:56.450
+Fernando Guimarães Ferreira: não sai esse preço. Se eu rodo isso toda semana, isso uma das atividades, quer dizer, para mim seria inviável,
+
+48
+00:06:56.450 --> 00:07:08.980
+Fernando Guimarães Ferreira: mas às vezes não é inviável outra conta, tipo fazer um classificador. A gente está analisando através de cloud, fazer bateladas para classificar relevância.
+
+49
+00:07:09.290 --> 00:07:27.160
+Fernando Guimarães Ferreira: Quatro mil mensagens. Deu um preço de sete dólares. O problema é que o meu banco de dados tem duzentos mil mensagens todo mês. Então não vai ser viável fazer com close aí. Quais são as estratégias? Quais os modelos aí são os testes que precisam ser feitos.
+
+50
+00:07:29.070 --> 00:07:29.770
+Efrain Colmenares: Beleza.
+
+51
+00:07:30.620 --> 00:07:35.500
+Fernando Guimarães Ferreira: Não tem uma bala de prata? Não tenho uma resposta para te falar. Nesse cenário. É o melhor.
+
+52
+00:07:35.560 --> 00:07:50.570
+Fernando Guimarães Ferreira: É sempre um trade off entre o quanto que também não é porque o modelo é menor, porque ele é pior, obviamente para geração de textos. Mas se você tiver um modelo menor que foi tunado, ajeitado
+
+53
+00:07:50.570 --> 00:07:56.789
+Fernando Guimarães Ferreira: para fazer uma tarefa específica, muito próxima da tarefa que você tem,
+
+54
+00:07:56.790 --> 00:08:10.309
+Fernando Guimarães Ferreira: se você tiver um bom acompanhamento disso, talvez dê um resultado melhor com tempo de resposta melhor. Ah, qual o tempo de resposta que você precisa. Se você precisa de alguma coisa mais perto de quase real,
+
+55
+00:08:10.310 --> 00:08:21.240
+Fernando Guimarães Ferreira: tipo depender de um serviço de Api? Talvez não. Com certeza não vai ser o melhor resultado. Então você quer rodar aí nisso? Tudo que eu estou falando. Se você realmente precisa de quase real,
+
+56
+00:08:21.240 --> 00:08:30.580
+Fernando Guimarães Ferreira: talvez você precise usar um modelo muito pequeno para poder botar, sei lá, embarcado num hardware, sei lá,
+
+57
+00:08:30.690 --> 00:08:44.339
+Fernando Guimarães Ferreira: de baixo custo computacional. Aí já muda tudo de figura. Enfim, são todas as variáveis que você precisa. E talvez você não queira usar llm heról. Você queira usar uma chinelanger de rápida resposta,
+
+58
+00:08:45.040 --> 00:09:03.569
+Fernando Guimarães Ferreira: cara. Tudo depende do contexto que você está falando. Quais são os requisitos? Quais são os tempos? Qual é o budget? Isso é um trabalho de engenharia. Realmente você conseguir definir para todas as
+
+59
+00:09:04.390 --> 00:09:14.980
+Fernando Guimarães Ferreira: todas as limitações que você tem, quais são os pontos positivos e negativos, e aí em cima disso, fazer uma decisão embasada.
+
+60
+00:09:16.630 --> 00:09:17.440
+Efrain Colmenares: Beleza.
+
+61
+00:09:18.240 --> 00:09:21.410
+Fernando Guimarães Ferreira: Mas aí precisa conhecer essas características todas.
+
+62
+00:09:23.380 --> 00:09:28.009
+Fernando Guimarães Ferreira: Isso aqui que o Kevin falou iria fazer o máximo com o máximo dinheiro que você tem
+
+63
+00:09:28.440 --> 00:09:35.450
+Fernando Guimarães Ferreira: ou não, né? Tipo, o ideal é fazer o melhor possível, né? E aí talvez um
+
+64
+00:09:35.980 --> 00:09:51.629
+Fernando Guimarães Ferreira: o trade off. Não vale a pena gastar tanto dinheiro para uma melhoria operacional imperceptível. Ah, pô. Estou melhorando aqui o meu resultado em um, mas estou levando para isso fazer três segundos a mais. Às vezes não vale a pena
+
+65
+00:09:51.970 --> 00:09:59.299
+Fernando Guimarães Ferreira: pô tô gastando mais dinheiro, mas tô gastando muito menos dinheiro. Mas eu levo dez segundos para dar uma resposta.
+
+66
+00:09:59.470 --> 00:10:04.079
+Fernando Guimarães Ferreira: Às vezes você perde um negócio por causa desse tempo de resposta. O cliente acha que está ruim,
+
+67
+00:10:04.160 --> 00:10:21.959
+Fernando Guimarães Ferreira: não é condizente com a operação. Então são muitas variáveis. Na realidade, o que você precisa realmente é fazer uma boa leitura dos requisitos e fazer testes dentro desses requisitos, para entender qual o melhor cenário possível. Não tem uma bala de prata.
+
+68
+00:10:23.440 --> 00:10:29.219
+Efrain Colmenares: Professor. Então eu entendo que nesse processo, na verdade, a gente primeiro tem que.
+
+69
+00:10:30.050 --> 00:10:37.900
+Efrain Colmenares: Tem que evaluar a arquitetura, certo? Que a gente vai utilizar. Depois vai ser meio que pux
+
+70
+00:10:38.600 --> 00:10:41.169
+Efrain Colmenares: aí eles escolheram um.
+
+71
+00:10:41.170 --> 00:10:56.559
+Fernando Guimarães Ferreira: É a ordem dos fatores? Não sei. Às vezes você fazer uma Pock para testar um conceito em cima desse conceito, você fazer uma escala e ver se para aquela escala, faz sentido. O que você está pensando,
+
+72
+00:10:57.220 --> 00:10:58.089
+Fernando Guimarães Ferreira: não é?
+
+73
+00:10:58.720 --> 00:11:07.129
+Fernando Guimarães Ferreira: E se o problema que você tem, vai carecer aquele resultado ou se não tem resultados mais simples.
+
+74
+00:11:07.290 --> 00:11:17.940
+Fernando Guimarães Ferreira: Não vou esquecer, faz. Eu defendi meu doutorado faz oito anos. Só um exemplo, professor muito bom professor, que eu tenho um grande apreço da Ufrj. Estava na minha banca
+
+75
+00:11:18.340 --> 00:11:27.489
+Fernando Guimarães Ferreira: e não foi nada a ver com o texto. A minha tese foi em classificação de petróleos,
+
+76
+00:11:28.400 --> 00:11:35.169
+Fernando Guimarães Ferreira: e eu tinha sessenta e quatro amostras na época. Deep Learning era tipo: e aí
+
+77
+00:11:35.700 --> 00:11:50.949
+Fernando Guimarães Ferreira: o algoritmo que todo mundo falava que precisava ter, porque Deep Learning era a melhor coisa do mundo. Enfim, a gente ainda não tinha chegado na Llme. Foi um ano ou foi no ano do lançamento dos Transformers? Mas não tinha esse burburinho todo.
+
+78
+00:11:51.690 --> 00:11:56.429
+Fernando Guimarães Ferreira: Ele levantou a mão e falou assim: pô Fernando, por que você não considerou
+
+79
+00:11:56.550 --> 00:12:10.459
+Fernando Guimarães Ferreira: utilizar um algoritmo de deep learning para responder nessa questão que você está falando? Só que eu tinha sessenta petróleos com sessenta petróleos. Eu não treino um Deep learning. Então, para o meu contexto, não fazia sentido nenhum. Um algoritmo tão grande, tão robusto
+
+80
+00:12:10.550 --> 00:12:17.390
+Fernando Guimarães Ferreira: para fazer uma classificação. Eu tinha que usar algoritmos condizentes com o tamanho da minha base.
+
+81
+00:12:17.490 --> 00:12:25.709
+Fernando Guimarães Ferreira: Então, basicamente, é essa resposta que eu posso te dar. Cada problema tem requisitos, tem soluções.
+
+82
+00:12:25.760 --> 00:12:38.389
+Fernando Guimarães Ferreira: É óbvio que para fazer prototipação nunca foi tão fácil. A gente tem modelos muito potentes. Você faz um protótipo muito rápido. Você tem classificadores para qualquer
+
+83
+00:12:38.440 --> 00:12:46.140
+Fernando Guimarães Ferreira: contexto acessíveis interface hoje, a gente vai mexer em dois modelos muito grandes.
+
+84
+00:12:46.250 --> 00:12:52.060
+Fernando Guimarães Ferreira: E isso torna tudo muito tátil, muito próximo.
+
+85
+00:12:52.080 --> 00:13:10.470
+Fernando Guimarães Ferreira: Mas quando você começa a botar em escala, as coisas não estão cada vez mais caras. Os modelos estão ainda no modelo de mudança. Como a gente falou, ainda não existe um modelo de negócio bem escalado. Dia desses copilot acabou de fechar mais modelos que estavam sendo usados para o desenvolvimento.
+
+86
+00:13:10.550 --> 00:13:18.560
+Fernando Guimarães Ferreira: Quer dizer, a gente tem um trade off que precisa ser avaliado para poder dar essa resposta completa.
+
+87
+00:13:20.010 --> 00:13:23.099
+Efrain Colmenares: Outra pergunta que eu tinha é: quando
+
+88
+00:13:23.200 --> 00:13:32.229
+Efrain Colmenares: quando fazer Fine Tuning, entendendo que, por exemplo, no rock in face tem muitos modelos que realmente parecem ser bons, entendeu?
+
+89
+00:13:32.420 --> 00:13:40.790
+Efrain Colmenares: Então, assim como são tão bons. Mas em que momento eu posso falar? Ah, eu tenho que fazer um fine tuning no caso.
+
+90
+00:13:41.310 --> 00:13:46.150
+Efrain Colmenares: E se a gente faria isso localmente? Ou como seria.
+
+91
+00:13:46.820 --> 00:13:47.820
+Fernando Guimarães Ferreira: Tá? A.
+
+92
+00:13:47.930 --> 00:13:56.319
+Fernando Guimarães Ferreira: A resposta completa novamente, é bem baseada na. No.
+
+93
+00:13:56.970 --> 00:13:58.910
+Fernando Guimarães Ferreira: Nos resultados que você obtém.
+
+94
+00:13:59.040 --> 00:14:14.410
+Fernando Guimarães Ferreira: Fine Tune. Faz muito sentido se você entende que existe um modelo que é muito bom para um determinado contexto, mas ao aplicar ao seu contexto, os resultados não são tão positivos. Exemplo: eu tenho aqui o Burt,
+
+95
+00:14:14.410 --> 00:14:30.289
+Fernando Guimarães Ferreira: que é um modelo pequeno, embarcável. Ele tem trezentos megas. Você consegue usar o Burt, rápido. Não é tão grande. Você pode usar local. Quer dizer, tem uma série de vantagens.
+
+96
+00:14:30.530 --> 00:14:36.659
+Fernando Guimarães Ferreira: Você quer usar ele para um contexto, por exemplo, de clusterização de textos e tudo mais.
+
+97
+00:14:36.690 --> 00:14:49.570
+Fernando Guimarães Ferreira: Mas ao aplicar na sua base específica de receitas médicas, ele não funciona bem. Por quê? Porque quando ele foi treinado, o vocabulário de receitas médicas não era tão extenso.
+
+98
+00:14:49.580 --> 00:15:07.890
+Fernando Guimarães Ferreira: Aí tu fala. Pô, ele funciona em tantos contextos. Será que se eu tirar o que é? O Fine Tuning Fine Tuning tem várias camadas, né? Ele treinou vários parâmetros. Esse treinamento dos parâmetros numa rede como essa. Significa que ele sabe organizar os dados para
+
+99
+00:15:07.890 --> 00:15:14.419
+Fernando Guimarães Ferreira: classificar bem, para achar a próxima palavra, ele sabe mexer nos dados. Ou seja, ele entende o idioma.
+
+100
+00:15:14.420 --> 00:15:38.570
+Fernando Guimarães Ferreira: Só que para aquela minha amostra, ele não aprendeu estruturas. Você fala assim? Pô, eu posso treinar uma desde o zero. Mas eu precisaria de uma base muito grande. Não? O que eu vou fazer? Eu vou aproveitar todo esse aprendizado que ele teve de idiomas e vou tirar. Só a última camada e fazer um ajuste fino. Como se eu tivesse um rádio de sintonizado
+
+101
+00:15:38.710 --> 00:15:49.509
+Fernando Guimarães Ferreira: e conseguisse capturar a sintonia certa para o meu problema. Então você tem uma base que não está tão bem representada no treinamento.
+
+102
+00:15:49.590 --> 00:16:05.329
+Fernando Guimarães Ferreira: Vai ser boa para fazer, talvez um ajuste fino que isso. Que é o Fine Tuning. Um ajuste fino para que passe a ter uma performance melhor
+
+103
+00:16:05.440 --> 00:16:14.989
+Fernando Guimarães Ferreira: como fazer o Fine Tuning. Aí depende da ferramenta que você está usando modelos locais. Você vai fazer o Fine Tuning local para produzir um novo modelo.
+
+104
+00:16:15.030 --> 00:16:23.800
+Fernando Guimarães Ferreira: Mas as Apis como por exemplo, o chat Gpt, têm ferramental para você fornecer exemplos a um custo
+
+105
+00:16:23.800 --> 00:16:36.209
+Fernando Guimarães Ferreira: e aí gerar um modelo especializado ou mais ajustado para a sua base. Nesse sentido de Fine Tuning, cinco mil dados não é ruim, porque
+
+106
+00:16:36.660 --> 00:16:41.440
+Fernando Guimarães Ferreira: você consegue imaginar que você tem muito
+
+107
+00:16:41.570 --> 00:16:51.149
+Fernando Guimarães Ferreira: dado já treinado na rede. Você só está ajustando a última camada. Então são poucos parâmetros na realidade que você está mexendo na
+
+108
+00:16:51.280 --> 00:16:52.620
+Fernando Guimarães Ferreira: na rede, né?
+
+109
+00:16:53.280 --> 00:17:00.170
+Fernando Guimarães Ferreira: Então não necessariamente cinco mil arquivos. É pouco, não,
+
+110
+00:17:00.260 --> 00:17:19.859
+Fernando Guimarães Ferreira: às vezes é mais do que o suficiente, às vezes menos do que isso é bem suficiente. A ideia é que o aprendizado maciço do idioma da linguagem já tenha sido feito pelo modelo grande. A única coisa que você está fazendo é ajustando um pouco o direcionamento para um problema menor. Então é isso que eu, fannington, quando fazer
+
+111
+00:17:20.420 --> 00:17:32.530
+Fernando Guimarães Ferreira: de novo, essa pode ser o. Pode ser o contexto. Se você está num pô, eu preciso de um sistema para medicina.
+
+112
+00:17:32.580 --> 00:17:50.939
+Fernando Guimarães Ferreira: Aí você tá fazendo um classificador. Eu estou dando medicina, mas poderia ser direito. Poderia ser twitter, né? Que são assim, tipo linguagens bem diferentes, coisas assim. E você pensa, Pô, eu preciso. Tô tendo aqui um classificador, e meu classificador está dando oitenta e cinco de acurácea.
+
+113
+00:17:51.520 --> 00:18:06.429
+Fernando Guimarães Ferreira: Eu precisava de noventa. Será que melhorar o modelo não melhora? Eu só tenho cinco mil dados. Eu não vou treinar do zero. Não tem como treinar do zero, pô? Vamos fazer o Farington de um modelo aqui, já pré treinado e vamos ver se melhora.
+
+114
+00:18:06.650 --> 00:18:15.400
+Fernando Guimarães Ferreira: A resposta nunca é. Certeza que vai melhorar. Vamos ver se melhora. Vamos avaliar se houve melhora significativa para esse ponto.
+
+115
+00:18:19.870 --> 00:18:20.909
+Fernando Guimarães Ferreira: Fez sentido.
+
+116
+00:18:21.480 --> 00:18:22.530
+Efrain Colmenares: Beleza. Bruno.
+
+117
+00:18:23.710 --> 00:18:43.630
+Fernando Guimarães Ferreira: Espero que não tenha sido frustrante as respostas, porque tudo depende na realidade, né? A gente não tem uma, porque se for, Ah, não sempre faça fine tuning quando tivesse essas circunstâncias. Não tem essa regra, né porque senão a gente só teria modelos pequenos para todo mundo fazer Fine tuning
+
+118
+00:18:43.960 --> 00:18:54.909
+Fernando Guimarães Ferreira: esse ponto ao mesmo tempo que vamos só usar a Pis. Essas empresas gostariam, porque o modelo de negócio depende de vender Token para todo mundo. Mas isso não necessariamente é a resposta.
+
+119
+00:18:54.910 --> 00:19:06.089
+Fernando Guimarães Ferreira: Cem das vezes. Um Fine Tuning bem feito. Você já consegue resolver numa escala muito maior, uma velocidade maior.
+
+120
+00:19:06.340 --> 00:19:17.389
+Fernando Guimarães Ferreira: Qual é o benefício de usar modelos menores? O benefício é financeiro, você não precisar de uma placa de vídeo de última geração para fazer alguma coisa, por exemplo, isso é um benefício bem grande, na realidade.
+
+121
+00:19:19.380 --> 00:19:22.719
+Fernando Guimarães Ferreira: Então aí é o trade off.
+
+122
+00:19:23.120 --> 00:19:26.150
+Fernando Guimarães Ferreira: Vamos, trade off, tá.
+
+123
+00:19:26.150 --> 00:19:26.860
+Efrain Colmenares: Beleza.
+
+124
+00:19:32.720 --> 00:19:33.530
+Fernando Guimarães Ferreira: Bom dia.
+
+125
+00:19:34.090 --> 00:19:42.569
+Fernando Guimarães Ferreira: É quando a gente fala de modelos de llms e tudo mais.
+
+126
+00:19:42.840 --> 00:19:50.419
+Fernando Guimarães Ferreira: A gente fala de modelos que têm viés que têm limitações. Quais são as limitações que vocês conseguem imaginar? Para llms
+
+127
+00:19:51.250 --> 00:19:55.810
+Fernando Guimarães Ferreira: de coisas que a gente já falou aqui, de coisas que são, né? É
+
+128
+00:19:56.650 --> 00:19:58.949
+Fernando Guimarães Ferreira: que podem ser pensadas por vocês.
+
+129
+00:20:02.070 --> 00:20:02.939
+Andrey Dario Barbosa: Custo de pressão branco.
+
+130
+00:20:03.800 --> 00:20:07.590
+Efrain Colmenares: Quantidade de parâmetros no pré treinamento.
+
+131
+00:20:08.230 --> 00:20:14.939
+Fernando Guimarães Ferreira: Não vamos mudar um pouco a mentalidade dessa conversa.
+
+132
+00:20:15.200 --> 00:20:19.229
+Fernando Guimarães Ferreira: Quando a gente tem um modelo que está pronto,
+
+133
+00:20:19.730 --> 00:20:30.359
+Fernando Guimarães Ferreira: ele já está na operação. A gente está usando esse modelo. Qual o tipo de problemas que o modelo pode ter na interação com a gente.
+
+134
+00:20:31.250 --> 00:20:32.060
+kevin.rodrigues: Às vezes. Ele não foi.
+
+135
+00:20:32.060 --> 00:20:32.830
+Andrei Luiz Pereira: É uma alucinação.
+
+136
+00:20:32.830 --> 00:20:33.960
+kevin.rodrigues: A gente está pedindo.
+
+137
+00:20:34.200 --> 00:20:35.540
+Efrain Colmenares: A Croácia.
+
+138
+00:20:35.910 --> 00:20:52.060
+Fernando Guimarães Ferreira: Ele pode alucinar ou isso. A gente faz um pedido para ele e ele alucina. Ele dá uma resposta errada, dando certeza. Você tem certeza? Eu tenho certeza disso. Vários e vários exemplos na internet disso.
+
+139
+00:20:52.060 --> 00:21:01.009
+Fernando Guimarães Ferreira: O Jorge botou aqui viés o dado. Pode ter sido treinado por um viés específico. E você não ter consciência desse viés.
+
+140
+00:21:01.040 --> 00:21:07.579
+Fernando Guimarães Ferreira: O Lauro botou aqui. Limitação, de contexto. Eu vou falar com vocês. Desatualização do modelo,
+
+141
+00:21:07.650 --> 00:21:17.519
+Fernando Guimarães Ferreira: chegar para o modelo e perguntar, por exemplo, os modelos que a gente tem disponível. Eles não foram treinados ontem eles foram treinados,
+
+142
+00:21:17.680 --> 00:21:29.510
+Fernando Guimarães Ferreira: sei lá, dois mil e vinte e cinco, que era a escalação do primeiro jogo possível do Ancelotti para o jogo de sábado. Um modelo não sabe responder isso.
+
+143
+00:21:30.490 --> 00:21:44.809
+Fernando Guimarães Ferreira: O modelo não foi treinado com jogadores que o Ancelotti tem na Copa do Mundo para responder potencialmente, ele não vai botar o Neymar na copa. Por exemplo, se perguntar para o modelo, porque a probabilidade talvez não indique isso.
+
+144
+00:21:45.250 --> 00:21:54.420
+Fernando Guimarães Ferreira: A gente tem limitações que são limitações referentes
+
+145
+00:21:54.600 --> 00:22:00.970
+Fernando Guimarães Ferreira: a como o modelo interpreta aquilo que a gente está escrevendo com ele e como que as respostas são dadas
+
+146
+00:22:01.350 --> 00:22:14.060
+Fernando Guimarães Ferreira: rapidamente se aprendeu e se viu que a gente consegue guiar o modelo a dar respostas melhores
+
+147
+00:22:14.430 --> 00:22:18.579
+Fernando Guimarães Ferreira: a fazer com que ele responda,
+
+148
+00:22:18.580 --> 00:22:35.729
+Fernando Guimarães Ferreira: evitando alucinação, ampliando o contexto, melhorando a estratégia de como obter resposta, fazer com que o modelo ajuste suas probabilidades internas,
+
+149
+00:22:35.730 --> 00:22:46.659
+Fernando Guimarães Ferreira: baseado nos mecanismos de atenção e tudo mais, de tal maneira que a resposta seja que a gente consiga contornar eventuais problemas
+
+150
+00:22:46.740 --> 00:23:03.720
+Fernando Guimarães Ferreira: e daí que nasce a engenharia de Prompt, a engenharia de Prompt, nada mais é do que técnicas estruturadas para melhorar a comunicação da linguagem natural, a nossa linguagem com o que o computador, o que o modelo foi treinado,
+
+151
+00:23:03.720 --> 00:23:20.130
+Fernando Guimarães Ferreira: tentar ajustar o modelo às técnicas que ele foi, e deixar, no final das contas, a saída mais previsível, mais correta, mais acurada. Essa é a necessidade e a
+
+152
+00:23:20.460 --> 00:23:23.870
+Fernando Guimarães Ferreira: um ponto em relação a promotting de nível,
+
+153
+00:23:25.390 --> 00:23:43.629
+Fernando Guimarães Ferreira: essa parte da disciplina e do contexto geral, principalmente quando a gente fala com alunos que não são da área técnica, às vezes, cada vez mais perdem a intensidade da importância, porque os alunos estão acostumados
+
+154
+00:23:43.740 --> 00:23:47.420
+Fernando Guimarães Ferreira: a utilizar as ferramentas
+
+155
+00:23:47.540 --> 00:24:04.230
+Fernando Guimarães Ferreira: que tem por trás modelos e não os modelos diretamente. O que eu quero dizer com isso? Quando você vai fazer um prompt no chat Gpt? Escreve alguma coisa me fale a história da humanidade e ele dá uma resposta linda em tópicos e tudo mais.
+
+156
+00:24:04.230 --> 00:24:07.769
+Fernando Guimarães Ferreira: Um aluno perde um pouco a noção
+
+157
+00:24:08.190 --> 00:24:14.540
+Fernando Guimarães Ferreira: por que fazer engenharia de Prompt. Se uma simples frase já resolve o problema dele.
+
+158
+00:24:14.640 --> 00:24:27.439
+Fernando Guimarães Ferreira: A questão é que, principalmente as interfaces, as soluções dessas ferramentas. Elas usam por trás uma série de técnicas de engenharia de Prompt para melhorar a entrada
+
+159
+00:24:27.830 --> 00:24:29.619
+Fernando Guimarães Ferreira: normal dos usuários.
+
+160
+00:24:29.770 --> 00:24:43.700
+Fernando Guimarães Ferreira: E aqui o que a gente está aí? Sim, falando com uma turma de engenharia de A. Normalmente, a interação de vocês vai ser através de Prompt, diretamente aos modelos
+
+161
+00:24:43.700 --> 00:24:57.059
+Fernando Guimarães Ferreira: sem memória, sem ferramentas necessariamente embutidas na solução. Obviamente, vocês podem configurar de tal maneira que melhore essas respostas já embarque em algumas dessas coisas, principalmente
+
+162
+00:24:57.060 --> 00:25:04.590
+Fernando Guimarães Ferreira: quando a gente bota um rag. Qual é o objetivo do Rag? O Rag é ter contextos,
+
+163
+00:25:04.620 --> 00:25:12.540
+Fernando Guimarães Ferreira: ter inputs que atualizem o modelo sem precisar fazer um retrônio.
+
+164
+00:25:12.590 --> 00:25:29.339
+Fernando Guimarães Ferreira: Como que é essa atualização? Através de documentos que tragam informações que o modelo não viu na sua fase de treino. É para isso que o Rag existe. Se eu boto um rag, para quem não está habituado, ainda é um banco de dados
+
+165
+00:25:29.380 --> 00:25:45.609
+Fernando Guimarães Ferreira: vetorial. Basicamente, a gente vai ver isso num curso, mas é um banco de dados vetorial com documentos onde a Llm vai buscar e vai olhar essas informações para ajustar melhor sua voz. A sua resposta.
+
+166
+00:25:46.380 --> 00:26:01.409
+Fernando Guimarães Ferreira: Então, tipo, se você tem esse recurso. Você, naturalmente, está melhorando o seu prompt, o seu resultado esperado, porque você já está botando ali o universo contextual que você gostaria que a resposta tivesse.
+
+167
+00:26:01.410 --> 00:26:08.969
+Fernando Guimarães Ferreira: Mas, naturalmente, isso não é o padrão. A gente pode ter respostas melhores. A gente pode ter pontos melhores
+
+168
+00:26:08.990 --> 00:26:25.929
+Fernando Guimarães Ferreira: se tivermos uma comunicação direta com o modelo de uma maneira mais estruturada, então o Promotting De Niro é uma estruturação do que a gente está pedindo para poder extrair de uma maneira mais previsível, respostas melhores.
+
+169
+00:26:26.880 --> 00:26:29.080
+Fernando Guimarães Ferreira: Pode falar. Kevin tinha levantado a mão.
+
+170
+00:26:31.890 --> 00:26:36.439
+kevin.rodrigues: É que eu ia perguntar se reggae consome
+
+171
+00:26:36.570 --> 00:26:40.959
+kevin.rodrigues: contexto da mesma forma que os promotes normais.
+
+172
+00:26:41.400 --> 00:26:46.619
+kevin.rodrigues: Só que eu pensei que o Wreck tá vitorizado. Ele tá em forma de embeding já, né?
+
+173
+00:26:47.180 --> 00:26:56.880
+Fernando Guimarães Ferreira: Ele está vitorizado aí na aula de rádio. A gente vai falar melhor sobre isso, mas o que vai acontecer é que
+
+174
+00:26:57.690 --> 00:27:17.159
+Fernando Guimarães Ferreira: vai ter uma busca semântica onde os principais textos vão ser ordenados. E aí a gente até vai dizer quantos textos enfim, a gente quer dar para a resposta. E aquilo é passado junto do Prompt ao modelo, como uma forma de contexto para ajustar a resposta,
+
+175
+00:27:18.080 --> 00:27:18.920
+Fernando Guimarães Ferreira: entendeu?
+
+176
+00:27:24.150 --> 00:27:39.990
+Fernando Guimarães Ferreira: Então, assim, se eu faço uma busca. Ah, se eu tenho texto sobre a e eu falo sobre. Quero engenharia de Prompt, ele vai na base vitorizada. Vê quais são os textos que estão os trechos de texto que estão mais próximos à engenharia de Prompt
+
+177
+00:27:40.150 --> 00:27:58.690
+Fernando Guimarães Ferreira: faz uma busca relacionada a isso. Ver como a gente aprendeu. Já a gente aprendeu busca semântica, já que a posição dos textos tem um significado semântico. Retorna àqueles textos que vêm mais próximos dessa busca. E isso vira um contexto
+
+178
+00:27:58.720 --> 00:28:17.289
+Fernando Guimarães Ferreira: para a resposta mais correta. Então, Ah, eu quero agora eu tenho um raio de documentos contratuais da minha empresa. Ele vai lá. Quero agora todos os contratos relacionados à limpeza de cascos de navio? Porque eu tenho uma empresa aqui de manutenção de embarcações.
+
+179
+00:28:17.290 --> 00:28:21.529
+Fernando Guimarães Ferreira: Aí ele vai pô. O que é? Onde está esse ponto numa. No.
+
+180
+00:28:21.830 --> 00:28:37.419
+Fernando Guimarães Ferreira: Onde está esse ponto? No espaço vetorial? Quais são os textos mais próximos desse ponto? Retorna tudo transforma isso tudo num contexto e a partir daquilo, vira uma resposta melhor. Então, assim, engenharia de Prompt
+
+181
+00:28:37.950 --> 00:28:57.340
+Fernando Guimarães Ferreira: é usado, mas não é o fim do Rag. Pelo contrário, o Rag é uma etapa para tentar melhorar, por exemplo, a desatualização do modelo. O modelo não precisa ser treinado, desde que ele saiba representar aqueles conteúdos que estão numa base vetorial,
+
+182
+00:28:57.680 --> 00:29:07.020
+Fernando Guimarães Ferreira: ou que a Base Vitorial esteja condizente com os documentos que a gente está armazenando nela, tá?
+
+183
+00:29:07.330 --> 00:29:08.370
+Fernando Guimarães Ferreira: Fez sentido.
+
+184
+00:29:10.750 --> 00:29:15.230
+Fernando Guimarães Ferreira: Perguntas éragia semana que vem.
+
+185
+00:29:16.250 --> 00:29:29.200
+Fernando Guimarães Ferreira: Bom, engenharia de Prompt envolve a criação de entradas para llms os prompts que comunicam efetivamente a tarefa da Lm, levando em conta as saídas precisas e úteis.
+
+186
+00:29:29.360 --> 00:29:31.739
+Fernando Guimarães Ferreira: Então, se a gente tem uma Llm,
+
+187
+00:29:31.890 --> 00:29:37.270
+Fernando Guimarães Ferreira: nosso prompt, é a maneira de a gente transformar saídas
+
+188
+00:29:37.490 --> 00:29:49.720
+Fernando Guimarães Ferreira: mais precisas, mais úteis. E eu acrescentaria aqui, de uma maneira mais previsível, por que previsibilidade é importante para a Llm, porque a gente quer botar as llms como motores
+
+189
+00:29:49.920 --> 00:30:03.889
+Fernando Guimarães Ferreira: internos para sistemas. Se a gente quer que elas sejam, por exemplo, agentes que decidam o que fazer. Esse agente tem que saber como fazer o protocolo de comunicação
+
+190
+00:30:03.890 --> 00:30:22.060
+Fernando Guimarães Ferreira: com outro, sistema para poder ter troca de informação. Então eu não posso que às vezes a llm gere corretamente um dado em Jason. E na próxima rodada, ela gere o mesmo dado em Csv. Eu tenho que poder controlar isso de alguma maneira. Eu não posso. Que uma hora ela responda de uma maneira e da outra.
+
+191
+00:30:22.080 --> 00:30:35.289
+Fernando Guimarães Ferreira: Ora, ela responda com as mesmas informações. Uma informação completamente contrária, mais estocástica que ela seja. A Llm de novo.
+
+192
+00:30:35.560 --> 00:30:41.310
+Fernando Guimarães Ferreira: A gente está aqui falando de modelos estocásticos, curiosidade, o que é estocástico? Vocês sabem, né?
+
+193
+00:30:44.170 --> 00:30:45.289
+matheus.fontes: Sei não, professor.
+
+194
+00:30:45.510 --> 00:30:46.370
+Andrey Dario Barbosa: Também não sei.
+
+195
+00:30:47.320 --> 00:30:49.719
+Fernando Guimarães Ferreira: Estocástico é probabilístico.
+
+196
+00:30:50.890 --> 00:31:04.799
+Fernando Guimarães Ferreira: Toda vez que eu falar, um processo estocástico é um processo que ele não é determinístico, o que é determinístico. Um mais um é determinístico. Toda vez que eu somar um mais um, eu tenho o mesmo resultado
+
+197
+00:31:05.230 --> 00:31:23.830
+Fernando Guimarães Ferreira: num processo estoc. A gente tem uma probabilidade de sair nos resultados. A gente tem, na realidade, uma distribuição de probabilidades. Os resultados vão ficar em torno de algumas probabilidades. Quer dizer que se eu rodar duas vezes o mesmo processo, a probabilidade de eu ter respostas diferentes
+
+198
+00:31:24.070 --> 00:31:29.369
+Fernando Guimarães Ferreira: é dada. Existe uma probabilidade de ter um resultado diferente.
+
+199
+00:31:29.990 --> 00:31:37.009
+Fernando Guimarães Ferreira: Em dois mil e vinte e um, saiu um artigo que falava que o
+
+200
+00:31:37.210 --> 00:31:44.170
+Fernando Guimarães Ferreira: porque as llms são papagaios estocásticos, ou seja, são papagaios que repetem o que aprenderam com uma probabilidade
+
+201
+00:31:44.580 --> 00:32:03.540
+Fernando Guimarães Ferreira: e a maneira que a gente tem, uma das maneiras que a gente tem de controlar. Essa probabilidade de eventos é a gente dar melhores entradas para controlar a saída que eles têm. Então isso é um processo estocástico. Um processo estocástico é um processo probabilístico.
+
+202
+00:32:03.730 --> 00:32:13.120
+Fernando Guimarães Ferreira: Significa que se eu rodar o mesmo processo duas vezes, eu não tenho a mesma saída. Eu tenho a probabilidade de ter a mesma saída.
+
+203
+00:32:13.320 --> 00:32:14.200
+Fernando Guimarães Ferreira: Tá bom,
+
+204
+00:32:14.530 --> 00:32:29.660
+Fernando Guimarães Ferreira: então isso é ótimo, porque a gente tem um modelo que se adapta, que consegue dar resposta para o que ele não aprendeu. Mas, ao mesmo tempo, eu ganho uma imprevisibilidade do resultado.
+
+205
+00:32:29.660 --> 00:32:34.990
+Fernando Guimarães Ferreira: Então, como que a gente controla essa imprevisibilidade? Pode falar, Lauro.
+
+206
+00:32:36.510 --> 00:32:41.899
+lauroauro.barbosa: Professor. Boa noite. Tem um parâmetro chamado temperatura.
+
+207
+00:32:42.080 --> 00:32:45.489
+lauroauro.barbosa: Ele faz o controle dessa probabilidade? Sim,
+
+208
+00:32:46.730 --> 00:32:52.280
+lauroauro.barbosa: então a resposta vem, por exemplo, na execução um para dois.
+
+209
+00:32:52.610 --> 00:33:01.550
+lauroauro.barbosa: Esse parâmetro de temperatura é meio que um controle também a temperatura.
+
+210
+00:33:01.550 --> 00:33:19.029
+Fernando Guimarães Ferreira: Desculpa, eu estou escutando minha voz de novo, mas a temperatura é um parâmetro que controla a criatividade do modelo. Então, sim, se eu estivesse aumentando, por que temperatura? É como se eu estivesse aumentando
+
+211
+00:33:19.130 --> 00:33:24.440
+Fernando Guimarães Ferreira: a gama de resultados possíveis que aquele modelo está tendo, por exemplo,
+
+212
+00:33:24.440 --> 00:33:41.439
+Fernando Guimarães Ferreira: se eu estou limitando o contexto, eu tenho um raio maior para o contexto ficar mais criativo nesse sentido. Se eu tenho textos. Se eu estou gerando texto. Se eu diminuo a temperatura, eu vou tentar gerar com mais precisão. Se eu aumento a temperatura, se quer ser mais criativo.
+
+213
+00:33:41.440 --> 00:33:45.749
+Fernando Guimarães Ferreira: Mas alguns modelos como o Gpt cinco.cinco, por exemplo, não têm mais esse parâmetro.
+
+214
+00:33:46.420 --> 00:34:04.930
+Fernando Guimarães Ferreira: Eles tentam, no próprio Prompt, que você consiga definir se você quer mais ou menos criatividade, então é um grau a menos. Mas os modelos menores e classicamente falando, a temperatura serve
+
+215
+00:34:04.930 --> 00:34:21.689
+Fernando Guimarães Ferreira: para dar uma variação. Uma variabilidade maior nas respostas. Sim, mas mesmo você botar temperatura zero não te garante exatamente a mesma resposta, lembrem se, se vier uma palavra diferente não é a mesma resposta.
+
+216
+00:34:23.429 --> 00:34:31.190
+Fernando Guimarães Ferreira: Então não é uma certeza do mesmo resultado.
+
+217
+00:34:31.219 --> 00:34:44.600
+Fernando Guimarães Ferreira: É uma certeza de menos variação, mas não é necessariamente o mesmo resultado. Um modelo que tem temperatura zero não é um modelo determinist, ainda assim, é feito e regido por probabilidades.
+
+218
+00:34:45.420 --> 00:34:50.370
+Fernando Guimarães Ferreira: Tá bom, mas é válido. É uma pergunta válida.
+
+219
+00:34:50.820 --> 00:35:03.140
+Fernando Guimarães Ferreira: Então a engenharia de Prompt é compreensão. A habilidade que exige compreensão das nuances, da linguagem, do domínio específico em questão e das capacidades e limitações da Llm em uso.
+
+220
+00:35:03.310 --> 00:35:10.569
+Fernando Guimarães Ferreira: Aí eu explico um pouco o alinhamento. O Prompt é uma.
+
+221
+00:35:10.570 --> 00:35:24.059
+Fernando Guimarães Ferreira: Os Prompts melhores dependem muito dessa fase de alinhamento, porque é onde quem está treinando apresenta prompts. E quais são as respostas esperadas para aquele prompt
+
+222
+00:35:24.320 --> 00:35:40.760
+Fernando Guimarães Ferreira: aqui um exemplo: o alinhamento, lembrem se, a última fase de treinamento. A gente tem a primeira frase, que é a compreensão do idioma. E o alinhamento é quando a gente conserta o modelo para respostas mais corretas. Então eu já dei esse exemplo a vocês. Aqui o Gpt3 quando foi lançado.
+
+223
+00:35:40.820 --> 00:35:48.790
+Fernando Guimarães Ferreira: Se você perguntava se a Terra era plana, ele respondia que sim. A Terra era plana. Aí foi feito um alinhamento e aí dizia que a Terra não era plano,
+
+224
+00:35:48.860 --> 00:35:49.620
+Fernando Guimarães Ferreira: tá?
+
+225
+00:35:50.110 --> 00:35:56.349
+Fernando Guimarães Ferreira: O prompt. A fase de elemento é especialmente importante para o prompt, porque apresentam se prompts
+
+226
+00:35:56.600 --> 00:36:04.580
+Fernando Guimarães Ferreira: para o modelo e em cima desses prompts tem respostas, e aí você apresenta as respostas esperadas.
+
+227
+00:36:05.150 --> 00:36:18.219
+Fernando Guimarães Ferreira: Todo mundo já deve ter usado alguma interface chat, Gpt. Alguma coisa que depois da resposta vem um sinalzinho de pior ou melhor, ali. Vocês estão ajudando o treinamento do alinhamento.
+
+228
+00:36:18.220 --> 00:36:28.340
+Fernando Guimarães Ferreira: Toda vez que você responde que você pediu alguma coisa, e a resposta foi negativa. Você não gostou da resposta ali. Ele aprende que para aquele teu pedido, a resposta não foi positiva.
+
+229
+00:36:28.920 --> 00:36:38.769
+Fernando Guimarães Ferreira: Por exemplo, então esse treinamento é exatamente com o feedback ativo dos usuários. Quanto mais os usuários estiverem usando, melhor.
+
+230
+00:36:40.270 --> 00:36:48.119
+Fernando Guimarães Ferreira: Uma técnica muito direta é a Just Ask. Apenas pergunte
+
+231
+00:36:48.230 --> 00:36:58.520
+Fernando Guimarães Ferreira: que é basicamente você falar correct. Por exemplo, aqui você faz o comando direto, corrija a gramática dessa sentença.
+
+232
+00:36:58.890 --> 00:37:01.150
+Fernando Guimarães Ferreira: É,
+
+233
+00:37:01.620 --> 00:37:15.920
+Fernando Guimarães Ferreira: eles foram na loja e compraram comida. Aí. A resposta direta aqui da lnm Day Went to the Store to Buy Food? Não, and by food. Aqui está um outro ponto
+
+234
+00:37:16.330 --> 00:37:21.839
+Fernando Guimarães Ferreira: aqui já tem uma possibilidade de você dar uma instrução para ele
+
+235
+00:37:22.010 --> 00:37:34.789
+Fernando Guimarães Ferreira: de tal maneira que só a parte verde. É uma resposta da lln. Isso aqui. Você está dando um feel. The blanks. Preencha o espaço vazio que você responde
+
+236
+00:37:34.900 --> 00:37:43.980
+Fernando Guimarães Ferreira: traduza do inglês para o Turco. O inglês, como eu chamo um táxi no aeroporto. E aí você Bota Turkish. Dois pontos.
+
+237
+00:37:44.090 --> 00:37:47.940
+Fernando Guimarães Ferreira: Porque dali o modelo. Já entende que a partir dali ele vai escrever em turco.
+
+238
+00:37:48.920 --> 00:38:05.970
+Fernando Guimarães Ferreira: Então você está alinhando com uma resposta esperada aqui já é uma técnica. Já é uma pergunta, mas já é uma pergunta estruturada com o fio The Blanks, preenchendo as lacunas,
+
+239
+00:38:06.860 --> 00:38:23.070
+Fernando Guimarães Ferreira: corrija a sentença. Se tiver múltiplas respostas corretas numere elas em uma lista numerada. Então aqui, além de você estar fazendo o pedido, você já está pedindo estruturando uma saída.
+
+240
+00:38:23.250 --> 00:38:41.179
+Fernando Guimarães Ferreira: Eles foram para Store and by food aí já pediu múltiplas respostas numeradas. Então o modelo já entende que tem uma formatação de saída que precisa. E essa formatação está aqui. Um ponto, né? Day Went to the store and bot food
+
+241
+00:38:41.210 --> 00:38:48.029
+Fernando Guimarães Ferreira: all day went to The Store to Buy Food. Então são duas respostas possíveis. Então eles já dão como uma lista estruturada.
+
+242
+00:38:48.810 --> 00:38:51.660
+Fernando Guimarães Ferreira: Alguma dúvida aqui, por enquanto simples, né?
+
+243
+00:38:52.890 --> 00:39:02.080
+Fernando Guimarães Ferreira: Uma técnica muito, muito, muito, muito, muito importante, muito, muito conhecida. É field short learnings
+
+244
+00:39:02.290 --> 00:39:08.709
+Fernando Guimarães Ferreira: full shot learning é uma técnica, de você apresentar alguns poucos exemplos
+
+245
+00:39:09.100 --> 00:39:16.160
+Fernando Guimarães Ferreira: para o modelo e o modelo. Com aqueles exemplos, ele consegue generalizar a resposta.
+
+246
+00:39:16.700 --> 00:39:21.209
+Fernando Guimarães Ferreira: Então, a partir de alguns exemplos, você consegue uma resposta estruturada.
+
+247
+00:39:21.720 --> 00:39:24.539
+Fernando Guimarães Ferreira: Então, aqui, por exemplo,
+
+248
+00:39:25.300 --> 00:39:34.480
+Fernando Guimarães Ferreira: cem exemplos. Quando eu dou uma just ask, ou seja, só faço a pergunta: mesmo com Field burning. Eu gostaria que a resposta fosse não.
+
+249
+00:39:34.900 --> 00:39:47.690
+Fernando Guimarães Ferreira: Passei para ele. The book was about ww Segunda Guerra Mundial. Www world war Ii. Não sei como eles falam. Acho que é World War Ii.
+
+250
+00:39:49.510 --> 00:40:04.129
+Fernando Guimarães Ferreira: Avaliação, resposta: dois pontos. Ah, ele respondem aquilo. Ele entendeu quando a gente pede uma avaliação. Fala I found the book to be incredible informative and interest. Ou seja, não deu a resposta. Não,
+
+251
+00:40:04.130 --> 00:40:11.490
+Fernando Guimarães Ferreira: mas você não deu nenhum contexto para o modelo. Como é que você pode dar algum contexto para o modelo? É indicando para ele
+
+252
+00:40:11.580 --> 00:40:18.130
+Fernando Guimarães Ferreira: como você gostaria da resposta. Então aqui, ó, é review this movie sucks
+
+253
+00:40:18.610 --> 00:40:24.050
+Fernando Guimarães Ferreira: é avaliativo. É subjetivo? Essa é a pergunta. Dois pontos Yes.
+
+254
+00:40:24.600 --> 00:40:30.580
+Fernando Guimarães Ferreira: O filme é ruim. Isso é uma opinião subjetiva. Review this book
+
+255
+00:40:30.720 --> 00:40:37.190
+Fernando Guimarães Ferreira: this Tv, show talks about the ocean. Isso é subjetivo. Não o show fala sobre
+
+256
+00:40:37.600 --> 00:40:47.010
+Fernando Guimarães Ferreira: isso aqui tudo faz parte do prompt. Eu estou dando exemplos, separando um dos exemplos aqui. Bem próximos para ele entender que são exemplos separados.
+
+257
+00:40:47.830 --> 00:40:54.249
+Fernando Guimarães Ferreira: This Book had a Lot of Flows. Esse livro teve muitas falhas. Isso é subjetivo. Sim,
+
+258
+00:40:54.420 --> 00:41:02.059
+Fernando Guimarães Ferreira: agora eu vou escrever o que eu quero que ele faça The Book was about Ww now World War Ii. Subjetivo
+
+259
+00:41:02.210 --> 00:41:07.590
+Fernando Guimarães Ferreira: dois pontos. A resposta vai ser não, porque ele aprendeu que depois do subjetivo vem Yes ou não.
+
+260
+00:41:08.280 --> 00:41:14.310
+Fernando Guimarães Ferreira: E ele entende de outros aprendizados que isso aqui não é uma opinião. Isso aqui é um fato.
+
+261
+00:41:15.650 --> 00:41:22.670
+Fernando Guimarães Ferreira: Então a gente está dando alguns exemplos: Feel shot learning, para ele poder dar
+
+262
+00:41:22.850 --> 00:41:24.500
+Fernando Guimarães Ferreira: para a gente poder dar a resposta
+
+263
+00:41:26.110 --> 00:41:42.560
+Fernando Guimarães Ferreira: aqui é a mesma coisa. Sem field short learning the book us not a maze. Isso é subjetivo subjetivo i did not enjoy the Book. Então ele fala uma frase aqui é aleatória. Ele não tem nenhum contexto. Mas se eu der alguns exemplos para ele, eu consigo tunar
+
+264
+00:41:42.800 --> 00:41:50.980
+Fernando Guimarães Ferreira: para tunar. Não é bem a frase a gente não tá fazendo nenhum fine tuning, mas ele consegue entender. E se ajustar a atenção dele para a resposta correta.
+
+265
+00:41:53.220 --> 00:41:54.400
+Fernando Guimarães Ferreira: Fez sentido.
+
+266
+00:41:57.440 --> 00:42:09.800
+Fernando Guimarães Ferreira: Isso aqui é uma técnica muito legal para a gente fazer classificadores fáceis. Por exemplo, eu dou alguns exemplos, por exemplo, de classificação de relevância, classificação de sentimento.
+
+267
+00:42:09.800 --> 00:42:17.759
+Fernando Guimarães Ferreira: Dou alguns exemplos para ele complicados para entender qual a avaliação que você está fazendo. E a partir da
+
+268
+00:42:17.800 --> 00:42:26.240
+Fernando Guimarães Ferreira: conhecimento geral dele, ele pode dar já uma resposta correta. Aí tinha um perguntado cinco mil exemplos. É bom.
+
+269
+00:42:27.000 --> 00:42:32.519
+Fernando Guimarães Ferreira: Bom, mas pode ser três. Pode ser quatro. Pode ser cinco. Pode ser vinte.
+
+270
+00:42:32.630 --> 00:42:38.209
+Fernando Guimarães Ferreira: Isso aqui são realmente poucos exemplos para você dar
+
+271
+00:42:38.790 --> 00:42:54.090
+Fernando Guimarães Ferreira: com essa técnica. Você ajusta a saída. Olha, dado esse input, eu quero esse altipúdio com essa técnica, você ajusta a ironia com essa técnica. Você ajusta várias coisas que você pode pensar sobre o ponto.
+
+272
+00:42:54.090 --> 00:42:59.000
+Fernando Guimarães Ferreira: E é tão importante essa técnica que o artigo original do Gpt3
+
+273
+00:42:59.000 --> 00:43:09.680
+Fernando Guimarães Ferreira: se chama langwood models are full shotlands, ou seja, modelo de linguagem são são máquinas, e aí
+
+274
+00:43:09.940 --> 00:43:20.390
+Fernando Guimarães Ferreira: ferramentas de aprendizagem baseadas em feel shot, ou seja, em poucos exemplos salas
+
+275
+00:43:20.510 --> 00:43:30.729
+Fernando Guimarães Ferreira: o modelo em si pressupõe isso. Ele se ajusta, ele consegue aprender. E o Gpt3 o artigo que lançou o Gpt3 para o mundo
+
+276
+00:43:30.910 --> 00:43:33.310
+Fernando Guimarães Ferreira: que ainda era open source
+
+277
+00:43:33.450 --> 00:43:45.609
+Fernando Guimarães Ferreira: indicava então essa é a técnica de Prompt base para todas as outras. Tudo que a gente vai fazer é o aprendizado a partir de exemplos.
+
+278
+00:43:45.830 --> 00:43:57.409
+Fernando Guimarães Ferreira: Fernando, é possível fazer Prompt sem dar exemplo? Sim, é o que a gente chama de zero Shot. A gente não dá exemplo nenhum. E espera a resposta certa. Mas aí o que acontece?
+
+279
+00:43:58.370 --> 00:44:14.459
+Fernando Guimarães Ferreira: A gente está dependendo menos do nosso contexto. A gente está ajustando menos a possibilidade. Então você está mais aberto a não ter quando a gente dar alguns exemplos. A gente está
+
+280
+00:44:14.650 --> 00:44:19.119
+Fernando Guimarães Ferreira: criando possibilidades de ter uma previsibilidade melhor dos resultados.
+
+281
+00:44:19.570 --> 00:44:22.699
+Fernando Guimarães Ferreira: Voltando para a questão de previsibilidade,
+
+282
+00:44:25.730 --> 00:44:37.000
+Fernando Guimarães Ferreira: estruturação de saída. Os Llms podem gerar texto em vários formatos. Aqui um exemplo: Translate to Church give the fine way sort as a vale de Jason.
+
+283
+00:44:37.000 --> 00:44:48.760
+Fernando Guimarães Ferreira: Aí ele escreve aqui how do I call do táxi. E aí ele já responde. Aqui em turco, soro. E aí fala que em turco quem souber falar turco, por favor, pronuncia. Para mim
+
+284
+00:44:49.920 --> 00:45:03.969
+Fernando Guimarães Ferreira: funciona. Funciona. Mas qual é essa estrutura, né? Ele está falando até que soro! E Sturkish for question, ou seja, ele escreveu pergunta. E aí escreveu a pergunta de novo em inglês em turco aqui.
+
+285
+00:45:04.110 --> 00:45:21.580
+Fernando Guimarães Ferreira: Então talvez essa estrutura não seja a estrutura que você precise para comunicação com o seu sistema. Por exemplo, para poder fazer via que o Kevin. Falando do Skills Md, você poder fazer uma comunicação com uma ferramenta externa do seu agente, por exemplo,
+
+286
+00:45:22.120 --> 00:45:40.710
+Fernando Guimarães Ferreira: o que a gente precisa. A gente precisa de previsibilidade. Então vamos juntar feel shock learning com a previsibilidade que a gente precisa. Com a pergunta que a gente precisa, beleza. Agora eu tenho aqui. Traduz a frase de a leitura final
+
+287
+00:45:40.780 --> 00:45:46.199
+Fernando Guimarães Ferreira: como um Jason. E aí é, que tal em inglês? Vai ter a frase de input
+
+288
+00:45:46.690 --> 00:45:51.119
+Fernando Guimarães Ferreira: a saída em Jason tem que ser assim em inglês. A mesma frase
+
+289
+00:45:51.530 --> 00:46:02.999
+Fernando Guimarães Ferreira: em turco, a frase de saída. Se eu escrevo aqui em inglês, como eu chamo um táxi. Ele vai entender essa frase e vai repetir
+
+290
+00:46:03.250 --> 00:46:08.780
+Fernando Guimarães Ferreira: dando uma formatação. A gente passa a ter uma formatação mais previsível.
+
+291
+00:46:10.570 --> 00:46:13.199
+Fernando Guimarães Ferreira: Dúvidas, até que perguntas?
+
+292
+00:46:21.100 --> 00:46:26.640
+Fernando Guimarães Ferreira: Eu fico perguntando porque, como todo mundo fica com a câmera fechada, eu não sei nem se vocês estão aí. Na realidade.
+
+293
+00:46:27.270 --> 00:46:29.100
+matheus.fontes: Não estamos aqui. Sim, professor.
+
+294
+00:46:29.100 --> 00:46:35.960
+Fernando Guimarães Ferreira: Outra característica muito importante. São as pessoas. Boa, Jorge. Obrigado.
+
+295
+00:46:36.160 --> 00:46:38.079
+Fernando Guimarães Ferreira: São as persona.
+
+296
+00:46:38.270 --> 00:46:42.860
+Fernando Guimarães Ferreira: As personas. É uma maneira. Valeu, Matheus. Obrigado.
+
+297
+00:46:43.600 --> 00:46:47.239
+Fernando Guimarães Ferreira: As pessoas são uma maneira de a gente ter
+
+298
+00:46:48.150 --> 00:46:52.940
+Fernando Guimarães Ferreira: Oi, Pedro. Assim pô. Vira outra aula. Pessoal, vocês não sabem como isso é melhor.
+
+299
+00:46:53.310 --> 00:46:54.630
+Fernando Guimarães Ferreira: Boa, Andrei.
+
+300
+00:46:55.560 --> 00:47:04.269
+Fernando Guimarães Ferreira: As pessoas ajustam como a gente. Vai ter
+
+301
+00:47:05.850 --> 00:47:13.750
+Fernando Guimarães Ferreira: o tipo de voz que a gente vai ter. O tipo de resposta que a gente vai ter o tipo de vocabulário que a gente vai utilizar na resposta.
+
+302
+00:47:13.820 --> 00:47:24.060
+Fernando Guimarães Ferreira: Então os modelos foram treinados para diferentes estilos, então é possível a gente, por exemplo, aprender diferentes estilos
+
+303
+00:47:24.060 --> 00:47:35.229
+Fernando Guimarães Ferreira: para a gente conseguir ajustar as respostas da melhor maneira possível. Então, aqui, alguns exemplos. Alguns exemplos são esdrúxulos, outros nem tanto.
+
+304
+00:47:35.270 --> 00:47:51.740
+Fernando Guimarães Ferreira: Responda essa pergunta como se você fosse um atendente de uma loja. Aí onde estão as cenouras. As cenouras estão na Carrots. Acho que Carrots é cenouras. Estão na sessão de produtos perto das cebolas e das batatas.
+
+305
+00:47:51.940 --> 00:48:01.919
+Fernando Guimarães Ferreira: Aí é que a gente tem pô responde como uma pessoa rude. Onde estão as cebolas? Aí? Aponta para lá. Points Over There,
+
+306
+00:48:02.170 --> 00:48:08.210
+Fernando Guimarães Ferreira: responda com um cara muito feliz de estar respondendo.
+
+307
+00:48:08.940 --> 00:48:27.099
+Fernando Guimarães Ferreira: Ah, logo ali, siga me e eu vou mostrar onde estão as cebolas. Eles estão logo ali, coisas assim mais animais. Então você vai ajustando por quê? Porque na frase de alinhamento, esses ajustes foram feitos. Foram apresentados exemplos, né? Assim né? Tiveram exemplos que mostravam em livros pessoas Foods.
+
+308
+00:48:27.100 --> 00:48:33.289
+Fernando Guimarães Ferreira: Tenho exemplos que mostravam. Ele consegue associar esses pontos
+
+309
+00:48:33.290 --> 00:48:41.949
+Fernando Guimarães Ferreira: para botar. Responda como uma pessoa horrível. Não temos qualquer comida aqui. Principalmente para judeus.
+
+310
+00:48:41.950 --> 00:48:54.309
+Fernando Guimarães Ferreira: Isso é uma coisa que em alinhamento é excluído. Normalmente, né? Os modelos, eles não vão carregar, ou vão tentar não carregar preconceitos e tudo mais, mas isso é sempre de novo na fase de alinhamento.
+
+311
+00:48:55.260 --> 00:49:13.519
+Fernando Guimarães Ferreira: Pense como uma pessoa fora da caixa. Enfim, você pode fazer então isso. É bacana para você ter respostas. Aí a gente tem aqui algumas arquiteturas, enfim, mas os principais pontos para a gente chegar nessa.
+
+312
+00:49:13.520 --> 00:49:16.980
+Fernando Guimarães Ferreira: Ok, falamos do básico de Prompt,
+
+313
+00:49:17.300 --> 00:49:25.139
+Fernando Guimarães Ferreira: e aí ele tem algumas técnicas especializadas antes de a gente entrar nas técnicas propriamente ditas.
+
+314
+00:49:26.380 --> 00:49:35.960
+Fernando Guimarães Ferreira: Vou mostrar para vocês. Vou combinar com vocês como que a gente pode acessar o modelo através de Api
+
+315
+00:49:36.340 --> 00:49:54.999
+Fernando Guimarães Ferreira: para a gente fazer alguns desses testes e vocês poderem utilizar recentemente. Isso é muito recente. Isso foi posterior a gente criar, por exemplo, a trilha de aprendizado do curso. Um pouco antes de começar aqui as aulas,
+
+316
+00:49:55.130 --> 00:50:08.359
+Fernando Guimarães Ferreira: o Google liberou de maneira gratuita alguns modelos através do Collab. Então, nisso eu vou mostrar para vocês como a gente acessar isso, esses modelos de maneira gratuita para a gente,
+
+317
+00:50:08.360 --> 00:50:19.879
+Fernando Guimarães Ferreira: pelo menos por hora com a conta do infinite. A gente tem. Por que eu falo por hora? Porque eles mudam de ideia. Então eu não sei como vai ser o modelo disso, mas por enquanto, vocês conseguem utilizar.
+
+318
+00:50:20.340 --> 00:50:28.639
+Fernando Guimarães Ferreira: É uma biblioteca chamada Froome Google Collab, importe ai
+
+319
+00:50:29.460 --> 00:50:34.589
+Fernando Guimarães Ferreira: essa biblioteca dá acesso a alguns modelos para a gente trabalhar.
+
+320
+00:50:35.700 --> 00:50:37.050
+Fernando Guimarães Ferreira: Então aqui eu posso,
+
+321
+00:50:54.700 --> 00:50:57.540
+Fernando Guimarães Ferreira: tá, já chamou aqui. Agora eu vou botar aqui. Ai,
+
+322
+00:50:58.010 --> 00:51:00.390
+Fernando Guimarães Ferreira: ponto para a gente ver quais são os modelos.
+
+323
+00:51:06.370 --> 00:51:08.239
+Fernando Guimarães Ferreira: Então a gente tem basicamente três.
+
+324
+00:51:08.240 --> 00:51:11.940
+renata.abreu: Localmente essa biblioteca.
+
+325
+00:51:12.280 --> 00:51:13.060
+Fernando Guimarães Ferreira: Não. Isso aqui é o que.
+
+326
+00:51:13.060 --> 00:51:13.619
+renata.abreu: Não é meu.
+
+327
+00:51:13.620 --> 00:51:14.179
+Fernando Guimarães Ferreira: E aí?
+
+328
+00:51:14.330 --> 00:51:15.670
+Fernando Guimarães Ferreira: Isso é que eu estou no colapso.
+
+329
+00:51:16.160 --> 00:51:18.669
+Fernando Guimarães Ferreira: Isso aqui a gente está em movimento.
+
+330
+00:51:19.370 --> 00:51:23.290
+renata.abreu: Mas eu não consigo selar localmente pelo pipa. Não.
+
+331
+00:51:23.810 --> 00:51:25.420
+Fernando Guimarães Ferreira: Eu sou uma.
+
+332
+00:51:25.790 --> 00:51:27.710
+Fernando Guimarães Ferreira: Eu sou uma biblioteca.
+
+333
+00:51:28.050 --> 00:51:30.109
+Fernando Guimarães Ferreira: Uso deles aqui.
+
+334
+00:51:30.280 --> 00:51:33.030
+Jorge Martins Bernardo: Só para ele. Será que não dá para estar lá.
+
+335
+00:51:34.140 --> 00:51:38.590
+Fernando Guimarães Ferreira: Não consegui fazer funcionar. Pelo menos na minha máquina. Então não sei.
+
+336
+00:51:38.590 --> 00:51:41.029
+Jorge Martins Bernardo: Acho que a próxima pergunta é: você tentou.
+
+337
+00:51:41.030 --> 00:51:44.700
+Fernando Guimarães Ferreira: É, tentei, tentei e não consegui fazer funcionar. Deu algum.
+
+338
+00:51:44.700 --> 00:51:47.990
+Jorge Martins Bernardo: Maldade, velho.
+
+339
+00:51:47.990 --> 00:52:03.039
+Fernando Guimarães Ferreira: Mas vai. Que, né? Aquilo que eu disse quando eu testei. Talvez agora já esteja no Pip, porque eu não tinha no Pip para instalação. Talvez agora já esteja. Então fica para vocês aí a.
+
+340
+00:52:03.480 --> 00:52:07.790
+Fernando Guimarães Ferreira: O teste é
+
+341
+00:52:07.920 --> 00:52:18.910
+Fernando Guimarães Ferreira: como eu estruturo um prompt básico com a minha técnica, digamos assim, de prompt. Para melhorar minhas respostas. Eu formato meu
+
+342
+00:52:19.010 --> 00:52:23.320
+Fernando Guimarães Ferreira: problema sempre em quatro pontos.
+
+343
+00:52:23.500 --> 00:52:30.009
+Fernando Guimarães Ferreira: Eu sempre dou o contexto, eu dou a tarefa que tem que ser feita a saída e a entrada do meu problema.
+
+344
+00:52:30.380 --> 00:52:37.410
+Fernando Guimarães Ferreira: Eu estruturo já nessa maneira para ajudar. E aí eu tenho prompts às vezes, que ficam muito com.
+
+345
+00:52:37.410 --> 00:52:54.020
+Fernando Guimarães Ferreira: Porque eu tenho uma parte de contexto grande que funciona, tipo ali no meu Prompt, já como uma referência trechos de livro, trechos de artigos. Isso eu estou falando da interação do modelo propriamente dito. Se, por exemplo, eu não tenho um Rag associado, um modelo associado,
+
+346
+00:52:54.020 --> 00:52:56.490
+Fernando Guimarães Ferreira: mas eu já estruturo dessa maneira.
+
+347
+00:52:56.490 --> 00:53:03.570
+Fernando Guimarães Ferreira: Para facilitar o uso da ferramenta. Então, se a gente fosse fazer aqui uma.
+
+348
+00:53:04.210 --> 00:53:06.460
+Fernando Guimarães Ferreira: Um Trump cheese
+
+349
+00:53:06.750 --> 00:53:18.140
+Fernando Guimarães Ferreira: básico do básico, um prompt pau para toda a obra. Como que o professor instruturou ali. Eu faria alguma coisa nesse sentido. Assim eu teria um contexto.
+
+350
+00:53:18.930 --> 00:53:36.020
+Fernando Guimarães Ferreira: E aí, por exemplo, vou botar aqui. Você é um analista de suporte técnico sênior de uma empresa
+
+351
+00:53:37.810 --> 00:53:38.920
+Fernando Guimarães Ferreira: de dados.
+
+352
+00:53:39.190 --> 00:53:42.510
+Fernando Guimarães Ferreira: Esse é o meu contexto. Vou dar para ele uma tarefa.
+
+353
+00:53:43.140 --> 00:53:45.109
+Fernando Guimarães Ferreira: Como é que eu daria essa tarefa.
+
+354
+00:53:45.320 --> 00:54:03.990
+Fernando Guimarães Ferreira: Classifique o sentimento do chamado técnico e extraia o produto mencionado.
+
+355
+00:54:07.820 --> 00:54:11.829
+Fernando Guimarães Ferreira: Então aqui eu tenho contexto e tarefa. Vou botar meu input.
+
+356
+00:54:12.060 --> 00:54:22.520
+Fernando Guimarães Ferreira: Qual o input meu input? Aqui é o painel de controle do módulo de vendas.
+
+357
+00:54:23.420 --> 00:54:32.349
+Fernando Guimarães Ferreira: Simplesmente parou de carregar hoje de manhã.
+
+358
+00:54:34.850 --> 00:54:46.609
+Fernando Guimarães Ferreira: Preciso disso urgente. Então aqui é um usuário. Estou aqui fingindo que é um usuário. Está vindo a entrada direto de um sistema, alguma coisa assim. E o output.
+
+359
+00:54:49.210 --> 00:54:51.429
+Fernando Guimarães Ferreira: Eu vou citar alguma coisa assim.
+
+360
+00:54:52.090 --> 00:54:55.070
+Fernando Guimarães Ferreira: Formato de saída.
+
+361
+00:54:57.620 --> 00:54:58.690
+Fernando Guimarães Ferreira: Jason,
+
+362
+00:55:14.610 --> 00:55:21.560
+Fernando Guimarães Ferreira: sentimentos aí aqui, alguma coisa? Tipo positivo,
+
+363
+00:55:22.770 --> 00:55:32.320
+Fernando Guimarães Ferreira: negativo. Eu vou dar sentimentos em português, já que eu estou positivo, negativo, neutro.
+
+364
+00:55:35.770 --> 00:55:37.610
+Fernando Guimarães Ferreira: E aqui eu vou estar vivo, né?
+
+365
+00:55:40.350 --> 00:55:44.450
+Fernando Guimarães Ferreira: Produto, vou inclusive inverter aqui as aspas.
+
+366
+00:55:46.720 --> 00:55:48.089
+renato.paula: O senhor ficou neuro aí.
+
+367
+00:55:49.930 --> 00:55:54.569
+renato.paula: Isso aqui é só uma representação. Mas só para evitar.
+
+368
+00:55:54.840 --> 00:55:55.660
+Fernando Guimarães Ferreira: Obrigado. Obrigado,
+
+369
+00:56:01.620 --> 00:56:02.510
+Fernando Guimarães Ferreira: Putz
+
+370
+00:56:07.730 --> 00:56:09.170
+Fernando Guimarães Ferreira: sentimento.
+
+371
+00:56:14.040 --> 00:56:22.709
+Fernando Guimarães Ferreira: Não faz diferença nenhuma no Python, mas no Jason, aspas simples não são válidas, tá? Então por isso que eu inverti as aspas
+
+372
+00:56:22.890 --> 00:56:23.850
+Fernando Guimarães Ferreira: para a gente.
+
+373
+00:56:24.710 --> 00:56:30.089
+Fernando Guimarães Ferreira: Beleza. Eu criei aqui três variáveis. E agora eu vou fazer o meu prompt estruturado Prompt
+
+374
+00:56:32.360 --> 00:56:34.690
+Fernando Guimarães Ferreira: vai ser esse aqui.
+
+375
+00:57:04.180 --> 00:57:06.940
+Fernando Guimarães Ferreira: Eu posso inclusive escrever de tarefa.
+
+376
+00:57:07.480 --> 00:57:09.730
+Fernando Guimarães Ferreira: Task: Em contexto.
+
+377
+00:57:11.330 --> 00:57:12.790
+Fernando Guimarães Ferreira: Um Putin
+
+378
+00:57:15.900 --> 00:57:16.760
+Fernando Guimarães Ferreira: saude,
+
+379
+00:57:24.560 --> 00:57:25.700
+Fernando Guimarães Ferreira: altitude.
+
+380
+00:57:31.560 --> 00:57:35.029
+Fernando Guimarães Ferreira: Isso aqui nem precisa tanto inter assim, tá? Vai ser um negócio mais
+
+381
+00:57:38.110 --> 00:57:39.290
+Fernando Guimarães Ferreira: mais compacto.
+
+382
+00:57:40.500 --> 00:57:43.909
+renato.paula: Eu imaginei que você estivesse deixando assim para melhorar legibilidade.
+
+383
+00:57:44.370 --> 00:57:46.300
+Fernando Guimarães Ferreira: Pode ter um negócio mais compacto.
+
+384
+00:57:46.890 --> 00:57:50.309
+Fernando Guimarães Ferreira: Então aqui a gente tem o Prompt. E agora eu vou fazer uma resposta.
+
+385
+00:57:52.940 --> 00:57:56.590
+Fernando Guimarães Ferreira: Ai Generative Text
+
+386
+00:57:57.140 --> 00:58:02.920
+Fernando Guimarães Ferreira: Prompt. E aí eu vou escolher qual o modelo que a gente está trabalhando pegar aqui. O modelo
+
+387
+00:58:03.640 --> 00:58:05.540
+Fernando Guimarães Ferreira: aqui, por exemplo, esse aqui.
+
+388
+00:58:09.640 --> 00:58:13.240
+Fernando Guimarães Ferreira: E aí ele não gostou de. É Model name. Aqui tá,
+
+389
+00:58:19.750 --> 00:58:20.690
+Fernando Guimarães Ferreira: trinta.
+
+390
+00:58:23.990 --> 00:58:25.379
+Fernando Guimarães Ferreira: E aí ele tem o Jason.
+
+391
+00:58:25.620 --> 00:58:28.600
+Fernando Guimarães Ferreira: Produto, avaliação negativa.
+
+392
+00:58:31.070 --> 00:58:39.000
+Fernando Guimarães Ferreira: Poderia botar aqui um outro formato de saída. Tipo o painel. Extrai o sentimento, o pedido
+
+393
+00:58:40.760 --> 00:58:43.630
+Fernando Guimarães Ferreira: e aqui eu possa botar produto.
+
+394
+00:58:45.540 --> 00:58:56.170
+Fernando Guimarães Ferreira: O nome do produto faltou aqui nome do produto e aqui perdido.
+
+395
+00:58:56.310 --> 00:58:58.020
+Fernando Guimarães Ferreira: E aí botar aqui, hein?
+
+396
+00:58:59.030 --> 00:59:03.830
+Fernando Guimarães Ferreira: Perdido, Tchau, roda de novo.
+
+397
+00:59:09.290 --> 00:59:11.819
+Fernando Guimarães Ferreira: E aí resolveu o problema de carregamento.
+
+398
+00:59:12.340 --> 00:59:14.729
+Fernando Guimarães Ferreira: Painel de controle do módulo de venda.
+
+399
+00:59:15.330 --> 00:59:24.029
+Fernando Guimarães Ferreira: Vou rodar de novo. É possível que tenha uma resposta diferente. Pode estar levemente diferente, mas a formatação provavelmente vai estar
+
+400
+00:59:24.280 --> 00:59:29.429
+Fernando Guimarães Ferreira: sentada sempre perto do que a gente está pedindo. Por quê? Porque a gente está
+
+401
+00:59:29.540 --> 00:59:40.690
+Fernando Guimarães Ferreira: refinando o prompt de uma maneira. Então meus prompts sempre têm essa formatação, às vezes tarefa primeiro contexto, depois, mas assim, sempre tentando delimitar
+
+402
+00:59:40.690 --> 00:59:50.209
+Fernando Guimarães Ferreira: o contexto de tarefa. Se eu tiver regras, por exemplo, no contexto, talvez eu bote aqui regras
+
+403
+00:59:51.290 --> 00:59:55.000
+Fernando Guimarães Ferreira: com uma camada secundária ao contexto.
+
+404
+00:59:55.110 --> 01:00:00.030
+Fernando Guimarães Ferreira: Isso aqui Mark Dow vira tipo um subtítulo, por exemplo,
+
+405
+01:00:00.310 --> 01:00:03.300
+Fernando Guimarães Ferreira: e possa enumerar as regras aqui.
+
+406
+01:00:04.250 --> 01:00:08.640
+Fernando Guimarães Ferreira: Não é botar coisas assim. Sei lá.
+
+407
+01:00:10.060 --> 01:00:24.980
+Fernando Guimarães Ferreira: Painel vai o de controle de controle que a gente botou, não o de controle do módulo de vendas
+
+408
+01:00:25.770 --> 01:00:35.050
+Fernando Guimarães Ferreira: é sempre prioridade ter prioridade máxima lá.
+
+409
+01:00:35.200 --> 01:00:39.320
+Fernando Guimarães Ferreira: E aí eu setor. Alguma coisa aqui? Como por exemplo?
+
+410
+01:00:44.670 --> 01:00:46.220
+Fernando Guimarães Ferreira: Prioridade
+
+411
+01:00:53.600 --> 01:00:59.600
+Fernando Guimarães Ferreira: baixa, média alta, o máximo.
+
+412
+01:01:08.140 --> 01:01:12.809
+Fernando Guimarães Ferreira: Prioridade máxima. Vou ter essa regra. A regra está lá no contexto do prompt.
+
+413
+01:01:13.060 --> 01:01:19.510
+Fernando Guimarães Ferreira: Então as regras viram? Ah, se eu mudo a frase é que está preciso urgente. Posso botar assim. Ó,
+
+414
+01:01:19.850 --> 01:01:21.820
+Fernando Guimarães Ferreira: não preciso.
+
+415
+01:01:22.770 --> 01:01:24.250
+Fernando Guimarães Ferreira: Urgente. Sei lá.
+
+416
+01:01:25.570 --> 01:01:33.150
+Fernando Guimarães Ferreira: Não é necessário consertar, sei lá,
+
+417
+01:01:33.770 --> 01:01:38.239
+Fernando Guimarães Ferreira: perde a prioridade. Mas eu disse na regra que o módulo é sem prioridade máxima.
+
+418
+01:01:42.600 --> 01:01:43.920
+Fernando Guimarães Ferreira: Prioridade máxima.
+
+419
+01:01:44.370 --> 01:01:56.590
+Fernando Guimarães Ferreira: Então, assim ele obedece. A gente está acertando e melhorando a previsibilidade do nosso resultado, acertando um contexto de prompt mais importante,
+
+420
+01:01:58.030 --> 01:02:04.939
+Fernando Guimarães Ferreira: fez sentido. Pessoal, isso aqui é tipo, vou fazer qualquer coisa que é mais rápido do que
+
+421
+01:02:05.460 --> 01:02:22.199
+Fernando Guimarães Ferreira: faça isso. Eu preciso de um pouquinho mais de uma solução. Eu já crio essa estrutura e já boto. Já penso na maneira de me comunicar com o chat gpt ou com o modelo que for o Geminnaec no caso,
+
+422
+01:02:22.350 --> 01:02:26.870
+Fernando Guimarães Ferreira: nem precisa ser uma Gemini mais moderna, o dois.cinco. Enfim,
+
+423
+01:02:27.050 --> 01:02:30.039
+Fernando Guimarães Ferreira: de tal maneira que a gente consiga fazer
+
+424
+01:02:33.340 --> 01:02:34.560
+Fernando Guimarães Ferreira: perguntas.
+
+425
+01:02:39.380 --> 01:02:42.620
+pedro.duarte: Não é necessariamente uma pergunta, né?
+
+426
+01:02:42.640 --> 01:03:00.050
+pedro.duarte: Mas assim, para o projeto anterior que queria resolver ali, era a questão de Nps classificar quem que vai responder por isso daqui vai analisar. Vai ser time de suporte time de produto
+
+427
+01:03:00.050 --> 01:03:10.899
+pedro.duarte: time de pós vendas. Enfim, e daí? Eu não achei, tipo, nenhum data set nesse sentido. Eu não podia usar os dados da empresa, né? Aí eu fui gerar numa Llm.
+
+428
+01:03:11.420 --> 01:03:31.129
+pedro.duarte: E daí? Eu beleza. No começo, ficou tudo muito genérico. Eu comecei a colocar ali as regras de como eu queria. Eu quero que tenha uma variedade maior. Eu quero que tenha alguns erros ortográficos para eu testar ali e ver como seria a questão da correção. Abreviações também.
+
+429
+01:03:31.130 --> 01:03:32.060
+pedro.duarte: E aí
+
+430
+01:03:32.490 --> 01:03:48.689
+pedro.duarte: mesmo colocando ali, ele meio que se limitou. Por mais que eu falasse. Ó, eu quero, sei lá, trinta exemplos diferentes de como expressar tal frase, expressar tal coisa,
+
+431
+01:03:48.690 --> 01:03:55.739
+pedro.duarte: pelo menos no chat gpt. Ele não conseguiu entregar uma variação muito grande,
+
+432
+01:03:55.900 --> 01:03:59.810
+pedro.duarte: aí acabou que no final. Daí o que eu imagino,
+
+433
+01:04:00.140 --> 01:04:07.430
+pedro.duarte: provavelmente no meu prompt. Eu tava fazendo alguma coisa. Não tava muito certo ali que ele não tava.
+
+434
+01:04:08.020 --> 01:04:08.870
+Fernando Guimarães Ferreira: Mas qual foi o modelo.
+
+435
+01:04:08.870 --> 01:04:09.220
+pedro.duarte: Isto é.
+
+436
+01:04:09.220 --> 01:04:10.680
+Fernando Guimarães Ferreira: Qualquer dúvida.
+
+437
+01:04:11.540 --> 01:04:12.220
+pedro.duarte: Oi.
+
+438
+01:04:12.350 --> 01:04:14.179
+Fernando Guimarães Ferreira: Qual foi o modelo que você usou?
+
+439
+01:04:15.050 --> 01:04:17.440
+pedro.duarte: Eu fiz pelo chat Gpt.
+
+440
+01:04:17.600 --> 01:04:18.950
+pedro.duarte: Eu não conseguia um leão.
+
+441
+01:04:19.090 --> 01:04:23.919
+Fernando Guimarães Ferreira: Qual o modelo no chat Ept. Tu pode escolher quais modelos tu lembra.
+
+442
+01:04:24.720 --> 01:04:27.499
+pedro.duarte: Não teria que parar pra dar uma olhadinha ali.
+
+443
+01:04:27.500 --> 01:04:35.319
+Fernando Guimarães Ferreira: É que, por exemplo, usando o fast, por exemplo, ele vai ter uma variabilidade menor, o fashion, o que não é.
+
+444
+01:04:35.320 --> 01:04:35.930
+pedro.duarte: Cem, vinte e um.
+
+445
+01:04:36.180 --> 01:04:47.040
+Fernando Guimarães Ferreira: Mas o completo dele vai ter uma variedade menor de qualquer maneira. Porque ele tenta ajustar a resposta para o mais rápido possível por trás. É essa a questão que eu estou botando.
+
+446
+01:04:47.490 --> 01:04:58.349
+Fernando Guimarães Ferreira: Talvez valesse a pena você dar alguns exemplos, por exemplo, de possibilidades de diferentes usos, com erros e tudo mais para você tentar forçar
+
+447
+01:04:58.620 --> 01:05:04.810
+Fernando Guimarães Ferreira: ele principalmente erros ortográficos. Ele é muito treinado para não fazer um alinhamento.
+
+448
+01:05:04.920 --> 01:05:12.530
+Fernando Guimarães Ferreira: Então é uma limitação do modelo. Basicamente você tentar gerar coisas erradas.
+
+449
+01:05:12.680 --> 01:05:30.809
+Fernando Guimarães Ferreira: Então talvez você indicar o tipo de erro com exemplos seja uma coisa que ajuste ele para a primeira fase, onde ele aprendeu muita coisa errada. Todos esses modelos aprenderam muitas coisas erradas, porque eles pegaram o texto da Internet, né? Nem tudo tinha qualidade.
+
+450
+01:05:31.030 --> 01:05:43.760
+Fernando Guimarães Ferreira: Mas tem que fugir do alinhamento, porque no alinhamento ele aprende a escrever. Então tu tem que dar a maneira de tentar contornar essas características. Por exemplo.
+
+451
+01:05:45.030 --> 01:05:53.269
+pedro.duarte: Sim, é. Eu me lembro que eu botei alguns exemplos, mas, tipo assim chega um ponto que tu também não veio na cabeça muitas formas diferentes de tu falar a mesma coisa, né?
+
+452
+01:05:53.270 --> 01:05:54.100
+Fernando Guimarães Ferreira: Eu estou pedindo.
+
+453
+01:05:54.100 --> 01:06:00.060
+pedro.duarte: Algo pra ele que de cabeça, tu não sabe responder, né? Sim.
+
+454
+01:06:01.790 --> 01:06:03.609
+Fernando Guimarães Ferreira: Mas vale a pena, pelo menos.
+
+455
+01:06:04.320 --> 01:06:16.339
+Fernando Guimarães Ferreira: Bom, pessoal, outra possibilidade diferente dessa aqui é peraí. Eu tenho que deslocou aqui. Foi mal
+
+456
+01:06:16.670 --> 01:06:18.960
+Fernando Guimarães Ferreira: que eu tenho que pegar uma chave válida.
+
+457
+01:06:23.060 --> 01:06:24.030
+hildenilson.albano: Tchau.
+
+458
+01:06:24.330 --> 01:06:25.600
+Fernando Guimarães Ferreira: Pode falar aí. Denilson.
+
+459
+01:06:26.500 --> 01:06:34.839
+hildenilson.albano: Esses parâmetros que o senhor configurou no Prompt. O contexto tarefa o input shop e o input.
+
+460
+01:06:35.220 --> 01:06:35.670
+Fernando Guimarães Ferreira: É isso?
+
+461
+01:06:35.670 --> 01:06:42.829
+hildenilson.albano: Eles já são pré definidos. Ou foi uma coisa livre que você colocou? Eu posso ter vários outros.
+
+462
+01:06:43.120 --> 01:06:54.740
+Fernando Guimarães Ferreira: Você pode ter vários outros. Essa aqui é uma estrutura que eu entendo que funciona, porque os prompts são treinados com essa mentalidade tem um contexto, uma tarefa, uma entrada e uma saída.
+
+463
+01:06:56.100 --> 01:06:56.800
+hildenilson.albano: E aí?
+
+464
+01:06:57.130 --> 01:07:08.200
+Fernando Guimarães Ferreira: Mas não é assim. Você pode escrever aqui, por exemplo, tudo em inglês. Você pode botar outra ordem? Eu só estou tentando mostrar para vocês como uma regra geral,
+
+465
+01:07:08.450 --> 01:07:11.250
+Fernando Guimarães Ferreira: como eu faço.
+
+466
+01:07:12.360 --> 01:07:12.870
+Fernando Guimarães Ferreira: Tá ok.
+
+467
+01:07:12.870 --> 01:07:13.520
+hildenilson.albano: Obrigado.
+
+468
+01:07:13.520 --> 01:07:18.000
+Fernando Guimarães Ferreira: Essa é a ideia. Pelo menos deixa eu só alugar aqui
+
+469
+01:07:19.220 --> 01:07:22.080
+Fernando Guimarães Ferreira: para pegar uma chave e mostrar para vocês
+
+470
+01:07:22.460 --> 01:07:34.040
+Fernando Guimarães Ferreira: o outro objetivo de hoje, que é mostrar como funciona. Usando diretamente o modelo de Ept, é a pedir
+
+471
+01:07:36.630 --> 01:07:37.510
+Fernando Guimarães Ferreira: tchau.
+
+472
+01:07:41.370 --> 01:07:49.029
+Fernando Guimarães Ferreira: Essa vai ser uma chave que vai se autoimplodir após a aula, né? Mas enfim, é. É.
+
+473
+01:07:49.440 --> 01:07:53.600
+Fernando Guimarães Ferreira: Deixa eu voltar aqui. Então aqui. Bom, isso aqui
+
+474
+01:07:54.250 --> 01:08:01.349
+Fernando Guimarães Ferreira: deixa eu botar o nome para depois compartilhar com vocês, né? Pronto em dinheiro, hein?
+
+475
+01:08:02.400 --> 01:08:05.990
+Fernando Guimarães Ferreira: Gemini e opiniã
+
+476
+01:08:09.630 --> 01:08:12.869
+Fernando Guimarães Ferreira: aqui. Se a gente botar open ai
+
+477
+01:08:16.979 --> 01:08:21.500
+Fernando Guimarães Ferreira: o que eu preciso. Eu preciso. Aí eu tenho que instalar fazer um Pip Stone, né?
+
+478
+01:08:23.000 --> 01:08:26.580
+Fernando Guimarães Ferreira: Do Openai.
+
+479
+01:08:27.170 --> 01:08:34.639
+Fernando Guimarães Ferreira: Aí tem um pacote Python que faz a instalação
+
+480
+01:08:34.819 --> 01:08:39.929
+Fernando Guimarães Ferreira: que faz a comunicação com a Open Eye. Sem grandes problemas.
+
+481
+01:08:45.109 --> 01:08:53.150
+Fernando Guimarães Ferreira: Bom, importe o s from get pass.
+
+482
+01:08:53.560 --> 01:08:55.500
+Fernando Guimarães Ferreira: Não importa.
+
+483
+01:09:01.069 --> 01:09:05.659
+Fernando Guimarães Ferreira: Eu vou citar uma variável de ambiente que vai conter
+
+484
+01:09:05.880 --> 01:09:16.070
+Fernando Guimarães Ferreira: a minha chave. Como que eu pego essa chave. Isso aqui é padrão, tá sempre. É isso aqui
+
+485
+01:09:16.310 --> 01:09:19.589
+Fernando Guimarães Ferreira: se vocês vierem, né?
+
+486
+01:09:22.069 --> 01:09:31.670
+Fernando Guimarães Ferreira: Se vocês vierem na plataforma da Openai, vocês vão precisar. Esse aqui não é a mesma coisa que o chat Gpt. Eu quero fazer login na plataforma da Api.
+
+487
+01:09:32.630 --> 01:09:44.430
+Fernando Guimarães Ferreira: Vocês têm a possibilidade de criar, de botar aqui um dinheiro, acrescentar alguns créditos não precisa ser muito.
+
+488
+01:09:44.529 --> 01:09:51.419
+Fernando Guimarães Ferreira: Basta ter um cartão de crédito, botar ali alguns poucos dólares. Vocês conseguem utilizar a Api
+
+489
+01:09:51.500 --> 01:10:11.100
+Fernando Guimarães Ferreira: para testes para usos, enfim, para pontos assim, realmente não precisa ser muito caro, mas não pode ser zero. Você vai ter ali alguns gastos. Acho que o primeiro crédito. Tem que ser no mínimo cinco dólares. Alguma coisa assim. Normalmente não sai caro o uso aqui, né? Sei lá, em dinheiro não tem
+
+490
+01:10:11.570 --> 01:10:14.469
+Fernando Guimarães Ferreira: interface aqui que move. Usa a gente. Talvez aqui.
+
+491
+01:10:14.950 --> 01:10:15.610
+Fernando Guimarães Ferreira: Tchau.
+
+492
+01:10:17.900 --> 01:10:25.970
+Fernando Guimarães Ferreira: Que número de tokens usados, por exemplo. Enfim, por mim vamos ver aqui na janela de.
+
+493
+01:10:28.450 --> 01:10:31.270
+Fernando Guimarães Ferreira: É Março.
+
+494
+01:10:31.510 --> 01:10:33.120
+Fernando Guimarães Ferreira: Uma pessoa. Acho que eu usei.
+
+495
+01:10:44.940 --> 01:10:46.130
+Fernando Guimarães Ferreira: Tá carregando.
+
+496
+01:10:46.710 --> 01:10:52.730
+Fernando Guimarães Ferreira: Bom, claramente esse gráfico não está funcionando, mas tem aqui foram duzentos e sessenta
+
+497
+01:10:53.190 --> 01:11:00.879
+Fernando Guimarães Ferreira: pedidos. Um milhão de requests a partir de dinheiro por algum motivo. Não está atualizando para março.
+
+498
+01:11:01.500 --> 01:11:09.950
+Fernando Guimarães Ferreira: Sim, enfim, interface não tá das melhores. Mas enfim, não é absurdo de caro. Não
+
+499
+01:11:10.320 --> 01:11:16.290
+Fernando Guimarães Ferreira: é possível usar se. Eu preciso de um cartão de crédito para o uso de vocês.
+
+500
+01:11:16.600 --> 01:11:29.560
+Fernando Guimarães Ferreira: Bom, e aqui já te atendo, Efraim. Se eu botar aqui, eu vou botar para opinião que
+
+501
+01:11:30.640 --> 01:11:37.830
+Fernando Guimarães Ferreira: porque aí a gente tem a possibilidade de escrever a chave que eu já copiei e colei.
+
+502
+01:11:40.360 --> 01:11:52.890
+Fernando Guimarães Ferreira: E aí agora eu tenho no meu ambiente, eu posso usar, ele vai olhar essa chave de ambiente e vai fazer pesquisas para Openai. Vou fazer a mesma coisa que a gente fez ali em cima. Vou olhar os modelos
+
+503
+01:11:53.260 --> 01:12:02.140
+Fernando Guimarães Ferreira: que a gente tem disponíveis. Cliente, models o lixo, modas
+
+504
+01:12:02.610 --> 01:12:06.870
+Fernando Guimarães Ferreira: aí são todos os modelos, né? Aí a Open Eye
+
+505
+01:12:07.000 --> 01:12:20.530
+Fernando Guimarães Ferreira: disponibiliza através de Api. Você que vai usar. Você vai gastar. Você vai ter todos os modelos que você quiser aqui da chave deles. E a gente pode estruturar exatamente o mesmo prompt que a gente tinha feito antes,
+
+506
+01:12:20.660 --> 01:12:27.060
+Fernando Guimarães Ferreira: sem nenhum tipo de ponto que eu vou botar aqui response
+
+507
+01:12:31.630 --> 01:12:38.180
+Fernando Guimarães Ferreira: exatamente o que a gente tinha feito, né? O outro cliente que a gente já criou. O cliente ali em cima
+
+508
+01:12:38.410 --> 01:12:40.029
+Fernando Guimarães Ferreira: é chat.
+
+509
+01:12:40.170 --> 01:12:44.410
+Fernando Guimarães Ferreira: Ponto Completions Great.
+
+510
+01:12:46.310 --> 01:12:50.049
+Fernando Guimarães Ferreira: Vou escolher qual é o modelo que eu quero.
+
+511
+01:12:52.610 --> 01:12:57.390
+Fernando Guimarães Ferreira: Gpt é cinco,cinco, por exemplo.
+
+512
+01:12:59.870 --> 01:13:10.470
+Fernando Guimarães Ferreira: Eu vou escrever aqui uma aqui. É como se fosse realmente um chat que a gente estivesse implementando
+
+513
+01:13:10.680 --> 01:13:18.080
+Fernando Guimarães Ferreira: no meu chat. Eu estou falando que eu sou usuário, então eu vou botar.
+
+514
+01:13:21.050 --> 01:13:23.190
+Fernando Guimarães Ferreira: É exatamente isso aqui que ele está Botando,
+
+515
+01:13:26.970 --> 01:13:30.800
+Fernando Guimarães Ferreira: Row user. E o meu conteúdo é o prompt
+
+516
+01:13:32.410 --> 01:13:36.440
+Fernando Guimarães Ferreira: que a gente criou então isso aqui que eu estou falando é um chat.
+
+517
+01:13:36.600 --> 01:13:40.959
+Fernando Guimarães Ferreira: É uma conversa de chat. O Prompt é o mesmo que a gente tinha criado lá atrás.
+
+518
+01:13:41.260 --> 01:13:45.550
+Fernando Guimarães Ferreira: A mensagem que eu estou passando aqui é do usuário.
+
+519
+01:13:46.390 --> 01:13:47.130
+Fernando Guimarães Ferreira: E aí?
+
+520
+01:13:51.160 --> 01:13:53.150
+Fernando Guimarães Ferreira: E aí vou ter a resposta.
+
+521
+01:14:06.990 --> 01:14:11.690
+Fernando Guimarães Ferreira: Aí eu tenho a resposta, que é exatamente a mesma resposta
+
+522
+01:14:12.220 --> 01:14:24.569
+Fernando Guimarães Ferreira: que a gente tinha falado. Veja, sentimento negativo, produto, painel de controles pedido. Não é necessário consertar, mas a prioridade é máxima, porque a gente setor, esse pedido está.
+
+523
+01:14:24.920 --> 01:14:32.739
+Fernando Guimarães Ferreira: Está a ponto. Aquele botou informativo. Mas vejam que dois modelos distintos estão acertando exatamente a mesma formatação.
+
+524
+01:14:33.180 --> 01:14:35.910
+Fernando Guimarães Ferreira: Pode falar. Efraim, tu tava com a mão já levantada.
+
+525
+01:14:37.720 --> 01:14:43.659
+Efrain Colmenares: Ah, professor, eu tenho uma dúvida. Por exemplo, para o projeto,
+
+526
+01:14:44.470 --> 01:14:51.149
+Efrain Colmenares: como funciona? Segundo sua experiência passada, quando os alunos entregam.
+
+527
+01:14:51.260 --> 01:14:54.350
+Efrain Colmenares: Por exemplo, um script em Python.
+
+528
+01:14:55.030 --> 01:15:06.609
+Efrain Colmenares: Tipo, você já teve problemas de instalação? Esse tipo de problema, eu digo, porque eu tenho receio de mandar um projeto como tal Sci Python, porque já no
+
+529
+01:15:07.060 --> 01:15:21.900
+Efrain Colmenares: Collab já vem já rodando. Então assim o meu receio é que você, Ah, eu mando um projeto, então você instalando na sua máquina. Ah, faltou tal dependência. Enfim, e não roda. Então, como essa experiência que você já teve.
+
+530
+01:15:23.780 --> 01:15:33.079
+Fernando Guimarães Ferreira: Eu posso até mostrar para vocês. Não na aula de hoje, mas mais para o final do curso.
+
+531
+01:15:33.560 --> 01:15:41.300
+Fernando Guimarães Ferreira: Normalmente, quando a gente embarca uma solução local. A gente bota todos os requisitos, tudo numa formatação
+
+532
+01:15:41.410 --> 01:15:43.429
+Fernando Guimarães Ferreira: para que eu
+
+533
+01:15:44.020 --> 01:15:58.520
+Fernando Guimarães Ferreira: use diretamente o que você está fazendo o que eu estou fazendo em Python, você pode usar um ambiente virtual, e nesse ambiente virtual, configurar de tal maneira que eu instale exatamente as mesmas bibliotecas, as mesmas versões. Aqui
+
+534
+01:15:58.520 --> 01:16:06.420
+Fernando Guimarães Ferreira: falo para vocês de Paiemv. Falo de Virtualenviron ou Uv. Tem várias soluções em Python. Para isso.
+
+535
+01:16:06.570 --> 01:16:16.800
+Fernando Guimarães Ferreira: Mais extremado do que isso é criar um container docer que vocês para executar. Vai executar dentro do container docer. Você
+
+536
+01:16:16.810 --> 01:16:28.469
+Fernando Guimarães Ferreira: de alguma maneira, está isolando o ambiente. Como regra geral, isso não é nem uma questão de aluno ou não. Essa questão de funciona na minha máquina é muito comum, e essas soluções são soluções
+
+537
+01:16:28.540 --> 01:16:48.070
+Fernando Guimarães Ferreira: que tentam isolar esse problema de uma maneira soft, vamos dizer assim que é você não, beleza. Essas foram as versões de biblioteca que eu usei. Isso não garante necessariamente compatibilidade. Por exemplo, você está desenvolvendo Windows, e eu tenho aqui uma máquina Linux on macos.
+
+538
+01:16:48.160 --> 01:16:59.180
+Fernando Guimarães Ferreira: Talvez as mesmas bibliotecas funcionem de maneira, mesmo na mesma versão, elas funcionem, ou tem dependências diferentes entre si, e isso dê um resultado levemente diferente ou muito diferente, talvez
+
+539
+01:16:59.440 --> 01:17:12.079
+Fernando Guimarães Ferreira: num isolamento maior. Essa questão de um container, um container é um isolamento maior, porque você está embarcando um sistema operacional inteiro. É como se você estivesse pegando uma máquina e entregando essa máquina.
+
+540
+01:17:12.540 --> 01:17:28.069
+Fernando Guimarães Ferreira: Qual é a vantagem do Collab? A gente está todo mundo rodando remoto no mesmo ambiente. Então essa é uma vantagem para essa entrega. É importante que funcione para eu poder rodar e tenha as instruções para isso.
+
+541
+01:17:28.220 --> 01:17:34.030
+Fernando Guimarães Ferreira: Então, se tiver requisitos, se tiver ferramentas, tem que obedecer a isso.
+
+542
+01:17:36.080 --> 01:17:52.029
+Efrain Colmenares: Mesmo utilizando o Docker, às vezes dá problema, por exemplo, que tem que instalar tal coisa. E eu penso que como você tem tantos alunos, não é bom. Você vai parar meia hora, quarenta minutos para fazer rodar. Só um projeto. Sabe.
+
+543
+01:17:52.450 --> 01:17:59.149
+Fernando Guimarães Ferreira: Eu amo que você tenha essa preocupação. E gostei da preocupação.
+
+544
+01:17:59.150 --> 01:18:06.099
+Efrain Colmenares: Por enquanto, colapso, sei lá. Por isso eu pergunto, né?
+
+545
+01:18:06.100 --> 01:18:14.510
+Fernando Guimarães Ferreira: Siga seu coração. E lembre que eu sou um professor único. Pode falar, Kevin.
+
+546
+01:18:15.500 --> 01:18:18.290
+kevin.rodrigues: Eu fiquei curioso com essa questão das rouras. Aí,
+
+547
+01:18:18.590 --> 01:18:22.610
+kevin.rodrigues: quais são e como a gente pode descobrir quais elas são.
+
+548
+01:18:22.610 --> 01:18:30.769
+Fernando Guimarães Ferreira: Tem duas Rolls possíveis para você. Uma Row é usuário, a outra é o sistema ou dois usuários, alguma coisa assim. Mas
+
+549
+01:18:31.020 --> 01:18:35.760
+Fernando Guimarães Ferreira: você poderia ter um sistema aqui e você dizer, né?
+
+550
+01:18:36.260 --> 01:18:43.350
+Fernando Guimarães Ferreira: Para ele que o content é, por exemplo, nesse caso aqui, né?
+
+551
+01:18:43.510 --> 01:18:58.510
+Fernando Guimarães Ferreira: Que é? Sei lá. Você é um sistema de alertas que notifica usuários, desenvolvedores.
+
+552
+01:19:00.950 --> 01:19:03.829
+Fernando Guimarães Ferreira: O que a gente está fazendo aqui? Você está no tom de voz.
+
+553
+01:19:05.670 --> 01:19:18.170
+Fernando Guimarães Ferreira: Então aqui a gente está fazendo um chat que já recebe o Prompt. Imagina que o Prompt. Agora vamos lá no chat Gpt. Por que eu digo que o chat Gpt é preparado? Porque o chat Gpt você recebe, por exemplo, um input.
+
+554
+01:19:18.700 --> 01:19:26.049
+Fernando Guimarães Ferreira: Talvez a gente pudesse mudar o input aqui, só que em torno do input, já tem uma série de questões já preparadas no Prompt
+
+555
+01:19:26.230 --> 01:19:32.699
+Fernando Guimarães Ferreira: para facilitar inclusive um content para facilitar
+
+556
+01:19:32.850 --> 01:19:40.090
+Fernando Guimarães Ferreira: essa resposta. E a partir disso, você tem que botar uma vírgula. Mas a partir disso, você já tem,
+
+557
+01:19:40.910 --> 01:19:42.500
+Fernando Guimarães Ferreira: né?
+
+558
+01:19:42.860 --> 01:19:50.550
+Fernando Guimarães Ferreira: Uma resposta que aqui no caso, não vai mudar nada, porque eu botei aqui. Mas poderia botar, né? Você é. Sei lá,
+
+559
+01:19:51.150 --> 01:19:59.340
+Fernando Guimarães Ferreira: é você é um sistema de alertas que notifica crianças de cinco anos
+
+560
+01:20:00.030 --> 01:20:06.589
+Fernando Guimarães Ferreira: para fazer tarefa. Sei lá, essa é uma coisa meio ridícula. Mas talvez ajuste aqui.
+
+561
+01:20:10.190 --> 01:20:16.319
+Fernando Guimarães Ferreira: Não ajustou muita coisa porque o pedido é bem literal, mas enfim, você poderia fazer alguma coisa nesse sentido,
+
+562
+01:20:16.530 --> 01:20:18.140
+Fernando Guimarães Ferreira: tá, então
+
+563
+01:20:18.870 --> 01:20:33.149
+Fernando Guimarães Ferreira: o sistema. Você pode botar role. Você sempre responde de alguma maneira. Isso aqui pode ter todo um prompt associado, mas é sempre sistema e usuário. É sempre essa troca porque aqui a gente está fazendo um check. Teve
+
+564
+01:20:33.350 --> 01:20:37.820
+Fernando Guimarães Ferreira: inclusive, né?
+
+565
+01:20:40.080 --> 01:20:51.690
+Fernando Guimarães Ferreira: Uma pesquisa interessante, né? É relacionando a misoginia, enfim, a como
+
+566
+01:20:53.170 --> 01:21:03.039
+Fernando Guimarães Ferreira: tentar tirar, digamos assim, do modelo. O que o modelo não foi de misoginia? Não, desculpa. Vou resetar. Estou confundindo os casos
+
+567
+01:21:03.140 --> 01:21:05.400
+Fernando Guimarães Ferreira: tem um. Não sei se vocês conhecem.
+
+568
+01:21:05.400 --> 01:21:06.240
+Jorge Martins Bernardo: Ebc.
+
+569
+01:21:07.670 --> 01:21:09.219
+Fernando Guimarães Ferreira: É. Mas no caso.
+
+570
+01:21:09.220 --> 01:21:11.020
+Jorge Martins Bernardo: Pesadora americana, né.
+
+571
+01:21:11.020 --> 01:21:13.830
+Fernando Guimarães Ferreira: Não, o caso que eu quero contar é do New York Times.
+
+572
+01:21:14.060 --> 01:21:23.770
+Fernando Guimarães Ferreira: O New York Times tem um processo famoso contra Openai, que está sendo feito de direitos
+
+573
+01:21:24.860 --> 01:21:34.570
+Fernando Guimarães Ferreira: de direitos. Sobre o que o New York Times escreveu. Propriedade intelectual, direito de propriedade intelectual
+
+574
+01:21:34.840 --> 01:21:40.439
+Fernando Guimarães Ferreira: e o New York Times gostaria de provar que o
+
+575
+01:21:40.720 --> 01:21:45.940
+Fernando Guimarães Ferreira: determinados textos do New York Times foram usados no treinamento
+
+576
+01:21:46.300 --> 01:21:51.869
+Fernando Guimarães Ferreira: do chat Gpt. Então o que ele fez. Ele setou
+
+577
+01:21:53.030 --> 01:22:01.610
+Fernando Guimarães Ferreira: respostas. Ele fez todo um conjunto de respostas do chat Gpt com essa questão de Rolls,
+
+578
+01:22:01.700 --> 01:22:16.780
+Fernando Guimarães Ferreira: porque no alinhamento. O chat Gpt não é instruído a não dar trechos exatos do que ele foi treinado exatamente para não ter problema de estar usando um texto de um New York Times de algum texto proprietário.
+
+579
+01:22:17.130 --> 01:22:21.839
+Fernando Guimarães Ferreira: Abro um parênteses aqui. O Copilot. Quando foi lançado, ele deu
+
+580
+01:22:22.020 --> 01:22:27.960
+Fernando Guimarães Ferreira: trechos inteiros de códigos proprietários instalados no Github como resposta.
+
+581
+01:22:28.050 --> 01:22:42.499
+Fernando Guimarães Ferreira: Isso foi um problema grande que a Microsoft enfrentou nas primeiras semanas de uso, porque alguns códigos proprietários, inclusive comentários, dizendo de onde aquele código tinha saído. O Copilot cuspiu
+
+582
+01:22:42.500 --> 01:22:48.880
+Fernando Guimarães Ferreira: então os modelos hoje no alinhamento são instruídos para não dar respostas iguais a textos
+
+583
+01:22:48.940 --> 01:22:55.309
+Fernando Guimarães Ferreira: que existam na base. Eles têm esse alinhamento por questões exatamente, evitar processos.
+
+584
+01:22:55.590 --> 01:23:02.420
+Fernando Guimarães Ferreira: Então, o que eles fizeram? Eles fizeram conversas de usuários como se fosse um usuário do futuro
+
+585
+01:23:02.770 --> 01:23:22.490
+Fernando Guimarães Ferreira: que estivesse convidando ou conversando com a máquina e a máquina, e conseguiram setar de tal maneira que a máquina. Olha, você já sabe que eu já sei que você conhece esse conteúdo. Você já me disse desse conteúdo. Repita ele agora. Fizeram de tal maneira que, no contexto,
+
+586
+01:23:22.490 --> 01:23:33.800
+Fernando Guimarães Ferreira: saía do alinhamento para o texto já foi dado anteriormente, você pode falar o texto agora, e aí eles cuspiam. E essa foi a prova que foi uma prova material que entrou no processo
+
+587
+01:23:33.800 --> 01:23:43.280
+Fernando Guimarães Ferreira: que a Oppenheim conseguiu cuspir Hitler Literis, ou seja, o texto completo, sem nenhum trecho da conversa
+
+588
+01:23:43.280 --> 01:23:55.259
+Fernando Guimarães Ferreira: ter sido mostrado aquele trecho. Então, dessa maneira, para alguns textos. Eles provaram que aquele texto, de alguma maneira, que estava atrás de um paywall
+
+589
+01:23:55.280 --> 01:24:04.830
+Fernando Guimarães Ferreira: foi usado no treinamento e poderia ser disponibilizado para usuários do chat Gpt
+
+590
+01:24:04.860 --> 01:24:18.650
+Fernando Guimarães Ferreira: para aquilo. A Open Eye não tinha pago nada e estava cobrando. Então a questão é essa a questão não é usar no treino, mas é ter esse conhecimento e estar cobrando para usuários sem repassar a parte dos lucros.
+
+591
+01:24:19.090 --> 01:24:29.489
+Fernando Guimarães Ferreira: Então eles fizeram com essa jogada aqui, usar um modelo, e nesse modelo, lubridiar de alguma maneira o sistema explicando para o sistema de uma maneira diferente.
+
+592
+01:24:30.160 --> 01:24:38.830
+Fernando Guimarães Ferreira: É um parênteses só para dizer que é bem potente. Bem poderoso. O que a gente pode fazer agora, Jorge? Esse caso do racismo? Eu não sei.
+
+593
+01:24:38.940 --> 01:24:39.580
+Fernando Guimarães Ferreira: É isso.
+
+594
+01:24:39.580 --> 01:24:44.350
+Jorge Martins Bernardo: Caramba, achei o nome dela, que é a Doutora Timothy Gebru.
+
+595
+01:24:44.960 --> 01:24:45.430
+Fernando Guimarães Ferreira: Eu não.
+
+596
+01:24:45.430 --> 01:24:47.819
+Jorge Martins Bernardo: Pesquisadora de Ia,
+
+597
+01:24:47.970 --> 01:24:55.820
+Jorge Martins Bernardo: e ela fez um experimento de pôr uma máscara branca no rosto e usar para o reconhecimento facial que as grandes
+
+598
+01:24:55.930 --> 01:25:02.730
+Jorge Martins Bernardo: de a dizem ter poder de reconhecimento. E ela identificou que é
+
+599
+01:25:02.990 --> 01:25:20.020
+Jorge Martins Bernardo: quando ela colocava uma máscara branca sobre o rosto com características específicas do rosto dela. As Ias reconheciam quando ela tirava as Yas, não reconheciam. Então ela conseguiu provar o viés racial dos grandes modelos de treinamento.
+
+600
+01:25:20.040 --> 01:25:23.089
+Jorge Martins Bernardo: E aí ela processou a meta
+
+601
+01:25:23.510 --> 01:25:43.000
+Jorge Martins Bernardo: a Open. Ai. Acho que a Anthrop não entrou. Não, mas ela ganhou. E o processo dela. Ela não pedia nenhum ressarcimento financeiro. Ela pedia pesquisa e desenvolvimento de novos modelos que levassem isso em consideração. E hoje. Ela é uma consultora
+
+602
+01:25:43.590 --> 01:25:56.069
+Jorge Martins Bernardo: desse rolê de ética. Então, ela fala muito sobre os vieses? Não só racial, porque ela é uma mulher negra. Então ela identificou o racial como a dor dela.
+
+603
+01:25:56.240 --> 01:26:01.190
+Jorge Martins Bernardo: Mas ela fala de todos os outros também religiosos.
+
+604
+01:26:01.190 --> 01:26:07.880
+Fernando Guimarães Ferreira: É? Eu falei de eugenia. Porque aí já numa outra pesquisa,
+
+605
+01:26:08.140 --> 01:26:11.849
+Fernando Guimarães Ferreira: já baseado nesse caso, do New York Times.
+
+606
+01:26:12.000 --> 01:26:13.730
+Fernando Guimarães Ferreira: É o.
+
+607
+01:26:14.370 --> 01:26:26.540
+Fernando Guimarães Ferreira: O pesquisador simulou como se houvesse uma conversa misógina dentro desse chat, como se o próprio sistema fosse dando respostas,
+
+608
+01:26:26.610 --> 01:26:32.949
+Fernando Guimarães Ferreira: favorecendo uma conversa de cunho misógino.
+
+609
+01:26:33.020 --> 01:26:50.329
+Fernando Guimarães Ferreira: E aí, para a resposta, alguns modelos, mesmo com esse histórico, alguns modelos foram capazes de dizer Não, esse é o caminho errado. Você não deve fazer isso. Enquanto outros modelos entraram numa espiral e foram reforçando aquelas mensagens
+
+610
+01:26:50.330 --> 01:26:55.389
+Fernando Guimarães Ferreira: de uma maneira que esse contexto mostra
+
+611
+01:26:55.390 --> 01:27:06.099
+Fernando Guimarães Ferreira: que existe um viés e que esse viés depende muito do contexto. E aí o objetivo da pesquisa era indicar assim, a gente precisa entender
+
+612
+01:27:06.100 --> 01:27:18.389
+Fernando Guimarães Ferreira: quais são os dados, quais são as regras que estão sendo dadas no alinhamento para a gente poder saber como esses modelos vão se comportar. Por exemplo, se estiverem alucinando numa sessão com algum usuário,
+
+613
+01:27:18.390 --> 01:27:23.920
+Fernando Guimarães Ferreira: vale lembrar que, há pouco tempo atrás, a Open Eye até diminutiu o erro.
+
+614
+01:27:23.940 --> 01:27:31.379
+Fernando Guimarães Ferreira: Enfim, mas falou que é uma possibilidade do modelo que ela indicou um adolescente americano a se suicidar
+
+615
+01:27:31.710 --> 01:27:44.219
+Fernando Guimarães Ferreira: numa conversa. E o adolescente se matou. Porque numa conversa ele falando, falando falando que ele achava que era melhor ele se matar. Em determinado momento, o modelo falou:
+
+616
+01:27:44.380 --> 01:27:49.509
+Fernando Guimarães Ferreira: Ah, olhando todas as suas ponderações, acho que você tem razão. Você deveria se matar.
+
+617
+01:27:49.800 --> 01:28:00.700
+Fernando Guimarães Ferreira: Então, assim tipo, quando chega num momento extremo. Assim, já que a ferramenta tem esse contexto geral,
+
+618
+01:28:00.700 --> 01:28:18.550
+Fernando Guimarães Ferreira: é importante entender todos os guardiors que elas têm para poder evitar exatamente esse uso, lembrando que a própria Openai ficou muito orgulhosa de dizer que já era a ferramenta mais usada nos Estados Unidos para consultas psicológicas.
+
+619
+01:28:18.550 --> 01:28:19.270
+Jorge Martins Bernardo: E aí?
+
+620
+01:28:19.270 --> 01:28:32.800
+Fernando Guimarães Ferreira: Então os americanos, então é a principal ferramenta de terapia que hoje em dia os americanos estão usando. É exatamente o Gpt, então, assim. E ela não é treinada para isso. Ela não tem certificação para isso. Não tem estudo para isso.
+
+621
+01:28:32.800 --> 01:28:46.670
+Fernando Guimarães Ferreira: Como tem essas possibilidades, esse tipo de estudo, e aí a gente entra na questão de regulação e tudo mais são importantes para a gente poder mostrar. Não existe esse problema. Existe essa possibilidade. Existe esse caminho
+
+622
+01:28:46.670 --> 01:28:53.299
+Fernando Guimarães Ferreira: hoje em dia. O modelo responde assim: Ah, não. Mas a gente tem todos os guardiã, não, mas olha, se ir por essa direção,
+
+623
+01:28:53.310 --> 01:29:17.439
+Fernando Guimarães Ferreira: olha aqui o que acontece. Eu acho que é alguma coisa nesse sentido, mas isso é um parênteses. Só para entender que essa possibilidade de a gente simular conversa. E aqui é um modelo cru. Eu acho que o principal é isso aqui não é a solução chat gpt que aí tem. Aqui é o modelo. O que o modelo vai responder como um modelo de linguagem. Isso, por si só, é uma solução diferente que a interface do chat gpt
+
+624
+01:29:17.830 --> 01:29:24.099
+Fernando Guimarães Ferreira: aqui ainda mais aqui, essas técnicas de pronto, essas coisas vão ser relevantes.
+
+625
+01:29:25.360 --> 01:29:27.250
+Fernando Guimarães Ferreira: Gabriel, pode falar.
+
+626
+01:29:29.660 --> 01:29:36.499
+gabriel.aquino: Professor. Eu queria perguntar em relação a esse caso do New York Times. A gente poderia falar que foi
+
+627
+01:29:36.710 --> 01:29:40.570
+gabriel.aquino: uma questão de Jael Break do modelo.
+
+628
+01:29:41.710 --> 01:29:46.629
+Fernando Guimarães Ferreira: Não, certamente eles usaram. Eles evadiram ali a
+
+629
+01:29:47.500 --> 01:29:50.979
+Fernando Guimarães Ferreira: que tem um outro ponto nos Estados Unidos
+
+630
+01:29:51.800 --> 01:29:57.189
+Fernando Guimarães Ferreira: e em outros países. Mas nos Estados Unidos têm decisões nessa direção.
+
+631
+01:29:57.500 --> 01:30:14.280
+Fernando Guimarães Ferreira: Que você é permitido quebrar paywalls, páginas de pagamento de conteúdo. Se você está pegando conteúdo para a pesquisa
+
+632
+01:30:14.860 --> 01:30:17.989
+Fernando Guimarães Ferreira: é permitido. Existem
+
+633
+01:30:18.120 --> 01:30:30.149
+Fernando Guimarães Ferreira: existem já decisões positivas da Suprema Corte Americana, que permite que, para a pesquisa, você pode consumir, material que é protegido por pagamentos.
+
+634
+01:30:30.490 --> 01:30:40.029
+Fernando Guimarães Ferreira: A Open Air era uma instituição de capital aberto para pesquisa. A Open Air fechou o capital e gerou um modelo de linguagem de Pt, que virou um mercado
+
+635
+01:30:40.510 --> 01:30:46.059
+Fernando Guimarães Ferreira: no momento que deixa de ser pesquisa e passa a ser
+
+636
+01:30:46.170 --> 01:30:57.080
+Fernando Guimarães Ferreira: um produto comercial. As decisões aí são contrárias. As decisões dizem que você precisa comprar os direitos de uso.
+
+637
+01:30:57.250 --> 01:31:11.790
+Fernando Guimarães Ferreira: Então a questão é essa. É o direito de uso. E aí está, na Internet. É público: aí tem toda essa discussão. E aí eu não sou legislador, muito menos americano
+
+638
+01:31:11.790 --> 01:31:25.020
+Fernando Guimarães Ferreira: para entender exatamente, mas esse é o processo hoje em dia ativo na Austrália, já decidiram em favor das companhias de mídia, onde existe um imposto que todos esses modelos têm que pagar.
+
+639
+01:31:25.120 --> 01:31:29.200
+Fernando Guimarães Ferreira: É um percentual que todos esses modelos pagam para a mídia tradicional
+
+640
+01:31:29.320 --> 01:31:31.889
+Fernando Guimarães Ferreira: para poder operar dentro da Austrália, por exemplo.
+
+641
+01:31:32.020 --> 01:31:40.170
+Fernando Guimarães Ferreira: Aí cada país vai ter sua solução. São coisas que estão sendo discutidas agora. Não tem um modelo padrão ainda
+
+642
+01:31:40.290 --> 01:31:47.860
+Fernando Guimarães Ferreira: cem. Mas é isso tipo os modelos para existirem. Eles certamente quebraram
+
+643
+01:31:48.100 --> 01:31:54.459
+Fernando Guimarães Ferreira: vários e vários registros de propriedade intelectual.
+
+644
+01:31:55.700 --> 01:32:04.259
+Fernando Guimarães Ferreira: Difícil de provar. Mas o New York Times fez um experimento que teoricamente conseguiu mostrar trechos inteiros que eles só conseguiram
+
+645
+01:32:04.280 --> 01:32:17.249
+Fernando Guimarães Ferreira: disponibilizar. Eles só conseguem disponibilizar porque compraram ou porque invadiram de alguma maneira o conteúdo e estão disponibilizando através do seu modelo. E esse é o problema. O problema não é eles terem consumido
+
+646
+01:32:17.540 --> 01:32:24.270
+Fernando Guimarães Ferreira: paywall a estarem disponibilizando, através de uma assinatura.
+
+647
+01:32:27.060 --> 01:32:41.680
+gabriel.aquino: Sim, sim. É que eu estava pensando que geralmente eu já tinha estudado antes. Mas em relação, vamos supor, eu quero que o modelo me ajude na questão da airbussegurança de algo mais assim,
+
+648
+01:32:41.830 --> 01:32:48.170
+gabriel.aquino: de pesquisa de segurança, eu quero tentar um exemplo: invadir um sistema com permissão.
+
+649
+01:32:48.350 --> 01:32:57.839
+gabriel.aquino: Mas aí eu queria que a Ia me ajudasse. E geralmente ela tem esses bloqueios, né? Então, geralmente o pessoal que entende mais. Faz um dial break do modelo
+
+650
+01:32:57.840 --> 01:33:10.960
+gabriel.aquino: para ele poder gerar todo esse código que vamos supor eu quero fazer um malware para testar alguma coisa. Então, se você está normalmente o modelo, ele vai negar porque ele fala que é perigoso, que não pode
+
+651
+01:33:11.030 --> 01:33:21.189
+gabriel.aquino: e realmente teria que fazer algum joe break pra você conseguir ter essa resposta, né? Aí, analisando esse caso do New York Times, eu meio que fiz. Essa associação também.
+
+652
+01:33:21.460 --> 01:33:34.980
+Fernando Guimarães Ferreira: Sim, é uma maneira. Sim, e o modelo direto vai ter menos proteções do que o modelo que está a solução chat Gpt
+
+653
+01:33:35.220 --> 01:33:37.290
+Fernando Guimarães Ferreira: vai ter menos soluções.
+
+654
+01:33:37.640 --> 01:33:39.600
+Fernando Guimarães Ferreira: É por um.
+
+655
+01:33:39.760 --> 01:33:45.050
+Fernando Guimarães Ferreira: Deixa eu ver se eu consigo acessar aqui. Mas por uma causa muito menos nobre
+
+656
+01:33:45.270 --> 01:33:49.660
+Fernando Guimarães Ferreira: ou mais nobre, dependendo do ponto de vista de quem está falando.
+
+657
+01:33:49.900 --> 01:33:53.159
+Fernando Guimarães Ferreira: Deixa eu ver se eu acho aqui rapidinho pra mostrar para vocês.
+
+658
+01:33:54.160 --> 01:34:01.120
+Fernando Guimarães Ferreira: Se vocês pedirem para o cheque Gpt para eles gerarem imagens de desenhos animados, por exemplo,
+
+659
+01:34:01.550 --> 01:34:10.040
+Fernando Guimarães Ferreira: ele vai dizer que ele não pode fazer, tá? Isso é o.
+
+660
+01:34:10.270 --> 01:34:12.819
+Fernando Guimarães Ferreira: Ok, deixa eu ver se eu consigo achar aqui.
+
+661
+01:34:13.200 --> 01:34:17.770
+Fernando Guimarães Ferreira: Ele vai dizer que tem propriedade intelectual. Enfim, uma série de coisas
+
+662
+01:34:17.980 --> 01:34:22.989
+Fernando Guimarães Ferreira: que não vai permitir fazer. Deixa eu ver se eu acesso. Só para mostrar
+
+663
+01:34:23.140 --> 01:34:27.339
+Fernando Guimarães Ferreira: isso? Que aconteceu, que eu perdi todos os meus logins no inferno nisso
+
+664
+01:34:28.220 --> 01:34:31.269
+Fernando Guimarães Ferreira: é, tá tudo pedindo login hoje.
+
+665
+01:34:33.320 --> 01:34:38.950
+Fernando Guimarães Ferreira: Alguma coisa limpou meus cookies aqui. Eu estou realmente assim.
+
+666
+01:34:40.040 --> 01:34:45.310
+Fernando Guimarães Ferreira: Vamos ver se eu acho. Aqui não é isso.
+
+667
+01:34:47.090 --> 01:34:49.370
+Fernando Guimarães Ferreira: Acho que eu vou achar isso agora.
+
+668
+01:34:49.900 --> 01:34:50.750
+Fernando Guimarães Ferreira: Tchau.
+
+669
+01:34:51.340 --> 01:34:53.460
+Fernando Guimarães Ferreira: Descompatilhar até a nossa noite.
+
+670
+01:34:57.550 --> 01:34:59.130
+Fernando Guimarães Ferreira: E aí
+
+671
+01:35:02.480 --> 01:35:03.880
+Fernando Guimarães Ferreira: eu fiz.
+
+672
+01:35:04.930 --> 01:35:11.930
+Fernando Guimarães Ferreira: É uma festinha de aniversário para minha filha mês passado.
+
+673
+01:35:12.410 --> 01:35:14.910
+Fernando Guimarães Ferreira: E aí o tema da festa
+
+674
+01:35:15.590 --> 01:35:20.850
+Fernando Guimarães Ferreira: era rock. Só que Rocky é com os personagens que ela gosta
+
+675
+01:35:21.410 --> 01:35:24.520
+Fernando Guimarães Ferreira: com os personagens dessa. Foi o pedido dela de.
+
+676
+01:35:24.690 --> 01:35:27.070
+Fernando Guimarães Ferreira: De festa de aniversário.
+
+677
+01:35:28.280 --> 01:35:34.080
+Fernando Guimarães Ferreira: E o que que eu fiz? Deixa eu ver se eu acho. Aqui é,
+
+678
+01:35:38.320 --> 01:35:39.539
+Fernando Guimarães Ferreira: não sei se eu vou achar,
+
+679
+01:35:40.120 --> 01:35:49.550
+Fernando Guimarães Ferreira: mas enfim, não vou achar aqui rápido. Não quero perder tempo com isso. Mas eu tirei uma foto. A foto. Eu tenho aqui que ela gosta muito de
+
+680
+01:35:50.070 --> 01:35:54.110
+Fernando Guimarães Ferreira: do Homem Aranha. Enfim, eu tirei uma foto
+
+681
+01:35:55.620 --> 01:36:01.969
+Fernando Guimarães Ferreira: dos bonecos que ela tem, os bonequinhos que ela tem e pedir redesenhem essa foto
+
+682
+01:36:02.160 --> 01:36:04.069
+Fernando Guimarães Ferreira: como uma banda de rock,
+
+683
+01:36:04.430 --> 01:36:19.220
+Fernando Guimarães Ferreira: usando o estilo do desenho do Homem Aranha. Aí ele fez exatamente. Agora. Se eu disse: Desenha os bonecos do Homem Aranha com Rock ele diz: Propriedade intelectual. Eu não consigo fazer.
+
+684
+01:36:19.830 --> 01:36:28.560
+Fernando Guimarães Ferreira: Então assim foi uma maneira que eu achei de falar. Ele desenha no estilo. Ele pegou o personagem, tem um personagem que ele não identificou, que era o Homem Aranha.
+
+685
+01:36:29.850 --> 01:36:35.609
+Fernando Guimarães Ferreira: Mas é muito parecido com o Homem Aranha. Então, na hora que ele desenhando o estilo do Homem Aranha. Ficou exatamente o Homem Aranha tocando guitarra.
+
+686
+01:36:36.330 --> 01:36:47.870
+Fernando Guimarães Ferreira: E deu certo. E consegui fazer o cartaz que eu queria fazer. Sem grandes problemas. Quer dizer, é uma maneira de a gente burlar as proteções de alinhamento que eles têm e tudo mais. Toda essa
+
+687
+01:36:48.010 --> 01:36:53.309
+Fernando Guimarães Ferreira: é é todos esses.
+
+688
+01:36:53.310 --> 01:37:04.199
+renata.abreu: Tive um caso parecido que era com o Super Mário que a pessoa falava. Ah, eu quero um jogo com que tenha um.
+
+689
+01:37:04.390 --> 01:37:08.360
+renata.abreu: Um boneco aí. Ah, eu quero que ele tenha um chapéu.
+
+690
+01:37:08.610 --> 01:37:12.179
+renata.abreu: Agora quero que ele esteja num jogo 2d.
+
+691
+01:37:12.470 --> 01:37:19.399
+renata.abreu: Aí ele vai ficando parecido com o Super Mario. À medida que as instruções vão dando.
+
+692
+01:37:20.350 --> 01:37:26.830
+Fernando Guimarães Ferreira: Exato. Então a gente tem. Como é isso? Os modelos. Eles obedecem.
+
+693
+01:37:26.960 --> 01:37:34.130
+Fernando Guimarães Ferreira: As proteções são exemplos que eles dão para dizer isso. Você não pode gerar. Mas se você consegue fugir
+
+694
+01:37:34.410 --> 01:37:51.750
+Fernando Guimarães Ferreira: de alguma maneira. Obviamente isso agora está gravado aqui. Se alguém da Open Eye, aqui na turma. Trabalha no Open Eye amanhã. Talvez já tenha esse exemplo para dizer: não pode gerar através de foto de boneco e aí é um novo alinhamento que não funciona mais, entende? Então são essas
+
+695
+01:37:51.750 --> 01:38:03.969
+Fernando Guimarães Ferreira: essas questões que a gente vai trabalhando, mas são maneiras de a gente criar prompts para ter mais previsível. Dentro do nosso exemplo. Aqui, um exemplo lúdico para vocês
+
+696
+01:38:04.100 --> 01:38:12.890
+Fernando Guimarães Ferreira: queria botar para vocês também. Para a gente não deixar de fazer ainda na aula de hoje, um exemplo
+
+697
+01:38:13.280 --> 01:38:27.809
+Fernando Guimarães Ferreira: de fio shot classificar, por exemplo, eu já copiei e colhei aqui classificar o feedback de um cliente numa escala de uma a cinco estrelas. E aí nesse fio shot dá alguns exemplos. O aplicativo fecha sozinho toda vez que eu logo uma estrela
+
+698
+01:38:28.110 --> 01:38:33.640
+Fernando Guimarães Ferreira: é bom, mas falta opções de customização. Três estrelas. Excelente ferramenta.
+
+699
+01:38:34.150 --> 01:38:40.140
+Fernando Guimarães Ferreira: Mudou nossa rotina. Cinco estrelas aí aqui. Baseado nesses exemplos,
+
+700
+01:38:41.310 --> 01:38:44.249
+Fernando Guimarães Ferreira: baseado nesses exemplos, travou aqui a.
+
+701
+01:38:45.930 --> 01:38:51.920
+Fernando Guimarães Ferreira: Ah wake. Vamos ver assim, aqui vamos ver se volta.
+
+702
+01:38:53.790 --> 01:38:55.660
+Fernando Guimarães Ferreira: Deixou atualizar.
+
+703
+01:38:57.850 --> 01:39:01.830
+Fernando Guimarães Ferreira: Acho que foi muita emoção aqui para ele. Muita coisa aberta.
+
+704
+01:39:11.440 --> 01:39:12.839
+Fernando Guimarães Ferreira: Deixa ele abrir de novo.
+
+705
+01:39:13.940 --> 01:39:18.409
+Fernando Guimarães Ferreira: Pronto, é, vou ter que rodar de novo.
+
+706
+01:39:26.850 --> 01:39:36.290
+Fernando Guimarães Ferreira: Então, aqui, baseado nesses exemplos, eu vou agora rodar
+
+707
+01:39:37.140 --> 01:39:41.349
+Fernando Guimarães Ferreira: a resposta, né? Então, mesma coisa que a gente fez aqui. Eu não vou nem
+
+708
+01:39:42.260 --> 01:39:48.380
+Fernando Guimarães Ferreira: reescrever. Só vou botar aqui, baseada aqui.
+
+709
+01:39:49.510 --> 01:39:51.590
+Fernando Guimarães Ferreira: Só que eu vou botar o Full shotline.
+
+710
+01:40:00.510 --> 01:40:02.499
+Fernando Guimarães Ferreira: Aquele está esperando.
+
+711
+01:40:03.330 --> 01:40:07.349
+Fernando Guimarães Ferreira: Na realidade vai demorar pra rodar. Se eu não der pra ele a chave
+
+712
+01:40:08.200 --> 01:40:14.640
+Fernando Guimarães Ferreira: que ele tá esperando pra rodar a chave. Agora, aqui, peraí, pronto.
+
+713
+01:40:17.560 --> 01:40:25.029
+Fernando Guimarães Ferreira: Consigo usar quase tudo, mas o servidor demora bastante. Então a gente agora roda
+
+714
+01:40:28.870 --> 01:40:32.450
+Fernando Guimarães Ferreira: avaliação, três estrelas, três estrelas. É A.
+
+715
+01:40:33.290 --> 01:40:37.300
+Fernando Guimarães Ferreira: Funciona quase tudo, mas demora então chuva ali, meio
+
+716
+01:40:37.530 --> 01:40:43.889
+Fernando Guimarães Ferreira: elogiando e criticando. Ele deu três estrelas a partir desses exemplos que a gente passou para ele
+
+717
+01:40:44.020 --> 01:40:53.969
+Fernando Guimarães Ferreira: nessa formatação, poderia passar aqui, por exemplo, contexto, tarefa. A gente poderia estruturar exatamente da mesma maneira que a gente fez tarefa.
+
+718
+01:40:55.430 --> 01:40:57.070
+Fernando Guimarães Ferreira: Contexto,
+
+719
+01:41:03.680 --> 01:41:04.650
+Fernando Guimarães Ferreira: Tchau,
+
+720
+01:41:08.100 --> 01:41:09.580
+Fernando Guimarães Ferreira: input
+
+721
+01:41:13.250 --> 01:41:16.420
+Fernando Guimarães Ferreira: altitude. Podemos fazer exatamente a mesma coisa.
+
+722
+01:41:26.140 --> 01:41:27.440
+Fernando Guimarães Ferreira: Três estrelas.
+
+723
+01:41:28.270 --> 01:41:35.170
+Fernando Guimarães Ferreira: Ele entende já esse formato. Esse formato, geralmente já estão embutidos na ideia dele.
+
+724
+01:41:35.300 --> 01:41:49.310
+Fernando Guimarães Ferreira: Então o que a gente fazendo. É só explicitando esse formato que a gente tem uma tarefa. A gente tem sempre um contexto, que são os nossos exemplos aqui no caso, a gente tem entrada e agora a gente quer uma saída. Não tem especificação. Nenhuma de saída aqui, por exemplo,
+
+725
+01:41:50.010 --> 01:41:53.699
+Fernando Guimarães Ferreira: poderia ter, mas não tem. Então ele só dá a saída para mim
+
+726
+01:41:54.740 --> 01:42:01.450
+Fernando Guimarães Ferreira: só para vocês agora, a partir de agora, vocês sempre olharem os prompts que vocês vão produzir
+
+727
+01:42:01.750 --> 01:42:08.730
+Fernando Guimarães Ferreira: dessa maneira. Esses prontos sempre estão estruturados nessa formatação básica.
+
+728
+01:42:10.020 --> 01:42:19.590
+Fernando Guimarães Ferreira: Tá bom, beleza pessoal. Então, na próxima aula, a gente trabalha com
+
+729
+01:42:20.290 --> 01:42:43.569
+Fernando Guimarães Ferreira: tipos diferentes de Prompt. Além disso, além do Feel Shot, além dessa estrutura base, a gente tem algumas técnicas, inclusive técnicas, que vão nos ajudar com agentes. E aqui eu boto para vocês. Chain of Foots, que é muito importante encadeamento de ideias self prompt, que é importante. Meta prompt. A gente explica alguns desses usos.
+
+730
+01:42:43.720 --> 01:43:03.620
+Fernando Guimarães Ferreira: Vou usar basicamente na próxima aula, porque eu acho que vai ser o exemplo que vocês vão mais usar usando esse modelo collab germinar e gratuito. Mas sabendo que vocês podem usar essas técnicas em qualquer um dos modelos, Ah, professor: eu quero usar grok: Ah, professor, eu quero usar cloud. Ah, professor, eu quero usar vocês fiquem à vontade para usar o modelo que vocês
+
+731
+01:43:03.620 --> 01:43:04.930
+Fernando Guimarães Ferreira: quiserem usar.
+
+732
+01:43:04.930 --> 01:43:09.640
+Fernando Guimarães Ferreira: Mas esses modelos são modelos
+
+733
+01:43:09.650 --> 01:43:20.910
+Fernando Guimarães Ferreira: que eu aqui na aula, vou usar também. Eu vou mostrar para vocês, o que já tem implementado, por exemplo, de Feel Short, fazer um classificador no The huginface
+
+734
+01:43:20.910 --> 01:43:31.610
+Fernando Guimarães Ferreira: também vai ser nosso próximo objetivo. Fernando eu. Viktor levantou a mão. Eu não quis parar minha explicação para falar sobre a correção, mas eu não entreguei ainda. As correções dos projetos
+
+735
+01:43:31.650 --> 01:43:36.940
+Fernando Guimarães Ferreira: vão ser entregues essa semana. Um feriado semana passada. Eu não consegui fazer essas entregas.
+
+736
+01:43:38.410 --> 01:43:46.480
+Fernando Guimarães Ferreira: É, eu estava só terminando a explicação antes de falar dos projetos. Tá bom.
+
+737
+01:43:48.150 --> 01:43:48.629
+matheus.fontes: O pessoal.
+
+738
+01:43:48.630 --> 01:43:49.220
+Fernando Guimarães Ferreira: E aí?
+
+739
+01:43:49.500 --> 01:43:59.380
+matheus.fontes: Com base nessa. Na terceira aula, mais ou menos no estado dessa segunda disciplina, a gente já consegue. Já iniciando o projeto
+
+740
+01:43:59.600 --> 01:44:02.689
+matheus.fontes: que vai ser entregue dela em algum ponto.
+
+741
+01:44:03.860 --> 01:44:11.820
+matheus.fontes: Eu pergunto mais, porque acho que é o caso de todos. A gente tem trabalho e tal. A gente tem outras.
+
+742
+01:44:11.820 --> 01:44:31.789
+Fernando Guimarães Ferreira: A gente pode olhar o projeto. Eu acho que eu apresentei por cima, mas o projeto basicamente é vocês fazerem uma solução. Utilizando técnicas e técnicas de Prompt. É uma das ideias que a gente tem na mesa para vocês resolverem.
+
+743
+01:44:32.490 --> 01:44:36.589
+Fernando Guimarães Ferreira: Então aqui, ó, é
+
+744
+01:44:37.460 --> 01:44:53.249
+Fernando Guimarães Ferreira: questão do projeto. Como você pode construir uma aplicação cognitiva com Llm capaz de receber entradas em linguagem natural, acessar ou processar conteúdo externo, produzir respostas úteis ou estruturadas e justificar tecnicamente suas decisões de arquitetura,
+
+745
+01:44:53.250 --> 01:45:08.189
+Fernando Guimarães Ferreira: então você deverá desenvolver uma aplicação funcional de Allms Empyt a solução deve representar um sistema aplicado e não apenas de uma sequência de testes isolados. Ela deve envolver uma entrada em linguagem, uso de linguagem natural, estratégia de Prompt,
+
+746
+01:45:08.290 --> 01:45:12.150
+Fernando Guimarães Ferreira: geração ou interpretação de saída, recuperação
+
+747
+01:45:12.160 --> 01:45:27.329
+Fernando Guimarães Ferreira: em forma de embeds ou algum mecanismo de resposta. O projeto pode ser aplicado em contextos como assistente para busca de documentos, busca semântica em base de conhecimento, análise e classificação de textos corporativos, sumarização e triagem de documentos,
+
+748
+01:45:27.330 --> 01:45:32.979
+Fernando Guimarães Ferreira: extração de informações, assistentes e suporte técnico, chatbot para perguntas,
+
+749
+01:45:32.980 --> 01:45:43.660
+Fernando Guimarães Ferreira: análise de tickets de reclamações ou feedbacks, assistente privativo para documentos sensíveis sistema de perguntas e respostas com base em corpos próprios.
+
+750
+01:45:43.670 --> 01:45:50.880
+Fernando Guimarães Ferreira: Então, basicamente, vocês vão fazer uma solução. E aí, nessa solução, tem alguns requisitos ao longo do projeto.
+
+751
+01:45:50.880 --> 01:46:07.520
+Fernando Guimarães Ferreira: Mas vocês podem escolher qual a ferramenta que vocês querem usar. Que está a Open Ai Api. Ah, não, eu quero usar o Gemini que eu apresentei hoje. Quando eu fiz esse enunciado, ainda não existiam esses modelos gratuitos no colapso. Então vocês podem utilizar o modelo gratuito, é importante que eu consiga executar.
+
+752
+01:46:07.520 --> 01:46:12.100
+Fernando Guimarães Ferreira: Então, na decisão de vocês, vocês considerem isso.
+
+753
+01:46:12.100 --> 01:46:30.570
+Fernando Guimarães Ferreira: Então você pode fazer tarefas que vocês acharem que é importante, mas precisa ter estruturação de prompts para fazer alguma coisa. Precisa ter um embed, então esse conteúdo vai ser construído. Então, assim resposta: vocês podem começar a fazer o projeto.
+
+754
+01:46:30.610 --> 01:46:44.330
+Fernando Guimarães Ferreira: A minha sugestão na aula que eu li, o enunciado, ou pelo menos parte do enunciado é que vocês já comecem a discutir, fazer um brainstorming com o próprio modelo de linguagem natural. Quais são as possibilidades?
+
+755
+01:46:44.380 --> 01:46:57.769
+Fernando Guimarães Ferreira: Dados, o roteiro que vocês têm, com os problemas que vocês têm para fazer uma solução. Vocês não precisam usar tudo, mas vocês precisam justificar as utilizações que vocês estão fazendo, porque determinadas escolhas.
+
+756
+01:46:59.780 --> 01:47:04.500
+Efrain Colmenares: Para o Hagi aí antes pelos arquivos onde.
+
+757
+01:47:06.810 --> 01:47:20.569
+Fernando Guimarães Ferreira: A gente vai ter ainda aula de Ragn. Uma possibilidade. É uma ferramenta que eu vou apresentar para vocês. Chamada Gpt for All, que é uma ferramenta bem interessante, até como acesso de Prompt.
+
+758
+01:47:20.880 --> 01:47:32.970
+Fernando Guimarães Ferreira: Mas a gente também pode usar uma base, por exemplo, Chroma. Db: que está aqui tem algumas dicas disso já aqui no anunciado. Então são algumas ferramentas que a gente vai olhar aqui no percurso.
+
+759
+01:47:34.970 --> 01:47:36.569
+pedro.duarte: Professor. Uma dúvida
+
+760
+01:47:36.670 --> 01:47:46.979
+pedro.duarte: tem alguma forma de, por exemplo, partindo do princípio que a minha solução vai ser, eu vou usar ali
+
+761
+01:47:46.980 --> 01:47:57.630
+pedro.duarte: como um complemento ali, ou o modelo. Vou passar para ele uma documentação de um sistema financeiro gigantesca, e
+
+762
+01:47:57.630 --> 01:48:06.339
+pedro.duarte: basicamente, os prompts ali seriam tipo, tirar dúvida. Como que eu faço isso no produto? Como que eu faço aquilo
+
+763
+01:48:06.500 --> 01:48:21.730
+pedro.duarte: tem alguma forma de, tipo, eu disponibilizar essa documentação, mas eu não enviar o documento, professor ou algo assim. Algo tive que, tipo, só meio que por debaixo dos panos. A gente tem alguma forma de fazer isso? A gente vai ver algo assim ou.
+
+764
+01:48:23.270 --> 01:48:25.100
+Fernando Guimarães Ferreira: Para disponibilizar para mim.
+
+765
+01:48:25.540 --> 01:48:26.170
+pedro.duarte: É.
+
+766
+01:48:26.670 --> 01:48:39.130
+Fernando Guimarães Ferreira: Casos específicos. Assim, vocês podem disponibilizar. Eu mostro, mas vocês podem disponibilizar o próprio binário do do
+
+767
+01:48:39.360 --> 01:48:41.460
+Fernando Guimarães Ferreira: enfim, dos modelos aqui da.
+
+768
+01:48:41.460 --> 01:48:49.260
+pedro.duarte: Ter um modelo funcionando, mas que o professor não tenha acesso ao documento direto. Sabe algo nesse sentido?
+
+769
+01:48:49.260 --> 01:48:58.860
+Fernando Guimarães Ferreira: É importante. Se for uma informação confidencial, se o modelo tiver acesso, eu posso ter acesso.
+
+770
+01:48:59.400 --> 01:49:06.080
+Fernando Guimarães Ferreira: Então isso é importante. Até eu boto essa ressalva em algum momento aqui do
+
+771
+01:49:06.140 --> 01:49:19.800
+Fernando Guimarães Ferreira: do texto. Tipo, eu tenho que tomar cuidado, tá? Não faço nada confidencial para essa entrega. Quero alguma coisa confidencial, mas vou aplicar depois. Aplica depois, pessoal. Não entrega nada confidencial para mim,
+
+772
+01:49:20.180 --> 01:49:25.830
+Fernando Guimarães Ferreira: porque os vetores, eles vão carregar a informação e eu vou.
+
+773
+01:49:26.060 --> 01:49:32.500
+Fernando Guimarães Ferreira: Não tenho nem interesse, mas eu poderia fazer engenharia reversa, tal como foi feito pelo New York Times, por exemplo.
+
+774
+01:49:32.550 --> 01:49:49.390
+Fernando Guimarães Ferreira: Então o melhor é não fazer esse tipo de coisa. Mas usem aí conteúdo aberto. Usem o manual de alunos do Infinity. Façam soluções aqui para vocês consumirem. Pensem em coisas que são interessantes para o bem geral da nação.
+
+775
+01:49:49.780 --> 01:49:56.080
+Fernando Guimarães Ferreira: E depois apliquem nos trabalhos de vocês. Acho que é a resposta mais completa que eu posso dar.
+
+776
+01:49:56.520 --> 01:49:57.050
+pedro.duarte: Sim
+
+777
+01:49:57.470 --> 01:50:04.389
+pedro.duarte: que a primeira coisa que vem na cabeça é os problemas do dia a dia ali do trabalho que já tá engatilhado, né? Mas.
+
+778
+01:50:04.790 --> 01:50:05.660
+Fernando Guimarães Ferreira: Arranja a.
+
+779
+01:50:05.660 --> 01:50:07.800
+pedro.duarte: Laranja.
+
+780
+01:50:08.210 --> 01:50:26.809
+Fernando Guimarães Ferreira: É uma coisa que você não se importe, mas qualquer coisa que for eticamente complexo para você não disponibiliza, não, e é um cuidado que eu não estou nem falando. Só na disciplina, tá um cuidado que vocês têm que ter. Por exemplo, quando submetem coisas. Lembro vocês que na Samsung houveram demissões
+
+781
+01:50:26.810 --> 01:50:32.820
+Fernando Guimarães Ferreira: de pessoas que estavam submetendo contratos para resumir no chat Gpt.
+
+782
+01:50:33.040 --> 01:50:48.740
+Fernando Guimarães Ferreira: Em resumo, esse contrato eram contratos privados que, ao botar no chat gpt, deixam de ser privados. Porque está indo para uma nuvem externa. Algumas pessoas foram demitidas quando foram pegas fazendo isso. Então é um tipo de cuidado que a gente precisa ter no nosso dia a dia
+
+783
+01:50:51.550 --> 01:50:52.060
+Fernando Guimarães Ferreira: bom.
+
+784
+01:50:52.060 --> 01:50:57.840
+Jorge Martins Bernardo: Quem quiser saber mais sobre Data Governance na era da Ia. Dou um curso, hein?
+
+785
+01:50:58.110 --> 01:50:59.809
+Fernando Guimarães Ferreira: Opa, boa, boa.
+
+786
+01:50:59.810 --> 01:51:03.610
+Jorge Martins Bernardo: Mas não é. Eu só dou curso pela empresa. Só.
+
+787
+01:51:03.800 --> 01:51:08.119
+Fernando Guimarães Ferreira: Dá uma palestra aqui pra gente. Pô um webinar pra gente.
+
+788
+01:51:08.120 --> 01:51:11.429
+Jorge Martins Bernardo: Vamos, vamos. A gente pode marcar. Pô com o maior prazer.
+
+789
+01:51:11.620 --> 01:51:18.579
+Fernando Guimarães Ferreira: Tá certo, combinado. Já vamos conversar. Tá bom, pessoal. Bom, pessoal. Bons estudos. Bom descanso. Qualquer coisa
+
+790
+01:51:18.730 --> 01:51:22.449
+Fernando Guimarães Ferreira: pelo infinity online e vou disponibilizar as correções. Beleza.
+
+791
+01:51:22.450 --> 01:51:23.400
+matheus.fontes: Olha, pessoa.
+
+792
+01:51:23.710 --> 01:51:24.439
+hildenilson.albano: Valeu para si.
+
+793
+01:51:24.440 --> 01:51:25.270
+gabriel.aquino: Tchau, Tchau.
+
+794
+01:51:25.270 --> 01:51:26.030
+fabricio.gouveia: Tchau.
+

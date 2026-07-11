@@ -1,0 +1,3238 @@
+WEBVTT
+
+1
+00:00:13.130 --> 00:00:14.370
+Fernando Guimarães Ferreira: Boa noite.
+
+2
+00:00:16.100 --> 00:00:17.270
+fabricio.gouveia: Sou uma boa noite.
+
+3
+00:00:18.020 --> 00:00:20.309
+Fernando Guimarães Ferreira: Todos nessa véspera de feriado.
+
+4
+00:00:22.090 --> 00:00:23.100
+gabriel.aquino: Boa noite.
+
+5
+00:00:26.080 --> 00:00:27.600
+Fernando Guimarães Ferreira: A noite
+
+6
+00:00:30.830 --> 00:00:33.130
+Fernando Guimarães Ferreira: é.
+
+7
+00:00:34.740 --> 00:00:36.189
+Fernando Guimarães Ferreira: Ah, não sei onde.
+
+8
+00:00:37.850 --> 00:00:43.549
+Fernando Guimarães Ferreira: Bom, pessoal, temos algum algum comentário? Alguma coisa por hora?
+
+9
+00:00:44.410 --> 00:00:45.720
+Fernando Guimarães Ferreira: Uma dúvida.
+
+10
+00:00:50.240 --> 00:00:50.900
+Fernando Guimarães Ferreira: Enquanto eu tô.
+
+11
+00:00:51.450 --> 00:00:52.329
+fabricio.gouveia: Do que eu.
+
+12
+00:00:52.920 --> 00:00:55.699
+Fernando Guimarães Ferreira: Deixando aqui páginas para eu poder compartilhar a tela.
+
+13
+00:00:58.550 --> 00:01:02.810
+Fernando Guimarães Ferreira: Muitas e muitas páginas, muitas abas abertas nesse momento são segundos.
+
+14
+00:01:06.960 --> 00:01:08.469
+Fernando Guimarães Ferreira: É? Tá aqui.
+
+15
+00:01:24.900 --> 00:01:25.950
+Fernando Guimarães Ferreira: Imagina, até.
+
+16
+00:01:27.680 --> 00:01:29.120
+Fernando Guimarães Ferreira: Está bem baixinho.
+
+17
+00:01:30.260 --> 00:01:32.189
+Fernando Guimarães Ferreira: Deixa eu aumentar o som. Então
+
+18
+00:01:35.600 --> 00:01:36.750
+Fernando Guimarães Ferreira: melhorou.
+
+19
+00:01:42.590 --> 00:01:45.530
+Fernando Guimarães Ferreira: Eu estava mudo. Não, né? Só um baixinho.
+
+20
+00:01:46.780 --> 00:01:48.839
+fabricio.gouveia: Uhum, é um pouco baixo.
+
+21
+00:01:51.730 --> 00:01:54.140
+Fernando Guimarães Ferreira: Bom, pessoal, hoje a gente dá continuidade.
+
+22
+00:01:54.630 --> 00:01:56.480
+Fernando Guimarães Ferreira: Está mudo. Eu estou mudo.
+
+23
+00:01:59.310 --> 00:02:03.069
+Pablo Caricio De Barros: Agora não. Agora está normal. Agora. Normalizou.
+
+24
+00:02:04.660 --> 00:02:07.769
+Fernando Guimarães Ferreira: É o Pablo. Está falando que eu estou mudo. Não, né.
+
+25
+00:02:08.460 --> 00:02:11.440
+Pablo Caricio De Barros: Está conseguindo me ouvir, Professor? Não sei.
+
+26
+00:02:11.440 --> 00:02:12.990
+Fernando Guimarães Ferreira: Eu te escudo. Te escudo.
+
+27
+00:02:12.990 --> 00:02:18.270
+Pablo Caricio De Barros: É? Não. Então estava bem ruim. Assim estava muito baixinho. Mas agora tá de boa.
+
+28
+00:02:18.610 --> 00:02:19.760
+Pablo Caricio De Barros: Agora voltou.
+
+29
+00:02:20.440 --> 00:02:21.839
+Pablo Caricio De Barros: Normalizou aí.
+
+30
+00:02:22.850 --> 00:02:25.820
+Fernando Guimarães Ferreira: Tá bom. Qualquer coisa. Vocês vão me avisando, tá?
+
+31
+00:02:26.250 --> 00:02:28.820
+Fernando Guimarães Ferreira: É, pessoal.
+
+32
+00:02:29.230 --> 00:02:45.369
+Fernando Guimarães Ferreira: Então, a gente na última aula, a gente fez uma contextualização histórica de como a gente chegou até as Llms, a visão de redes neurais, o progresso e hoje a gente vai para uma parte,
+
+33
+00:02:45.440 --> 00:02:50.339
+Fernando Guimarães Ferreira: um pouquinho mais
+
+34
+00:02:53.820 --> 00:03:06.349
+Fernando Guimarães Ferreira: de utilização dessas ferramentas, mas também de compreensão. Um pouco melhor, de como elas funcionam. Pelo menos de novo, sem entrar em detalhes
+
+35
+00:03:06.690 --> 00:03:15.499
+Fernando Guimarães Ferreira: matemáticos ou aprofundados em relação à arquitetura, a gente vai ver quais são os pontos que favorecem essa arquitetura,
+
+36
+00:03:15.510 --> 00:03:29.979
+Fernando Guimarães Ferreira: mas o principal ponto é a utilização de modelos. A gente tem muitos e muitos modelos que a gente pode utilizar. Então nossa intenção vai ser utilizar esses modelos
+
+37
+00:03:30.570 --> 00:03:43.490
+Fernando Guimarães Ferreira: e a grande modificação que traz uma revolução real dentro desse contexto é realmente a arquitetura de Transformers
+
+38
+00:03:43.700 --> 00:03:48.750
+Fernando Guimarães Ferreira: que, sem o de novo sem.
+
+39
+00:03:48.860 --> 00:03:50.700
+Fernando Guimarães Ferreira: É
+
+40
+00:03:51.030 --> 00:04:05.060
+Fernando Guimarães Ferreira: aqui delongar nessa explicação. Mas, historicamente falando, o transforme é criado em dois mil e dezassete, publicado em dois mil e dezassete, mas ele vem resolver
+
+41
+00:04:05.060 --> 00:04:11.940
+Fernando Guimarães Ferreira: um outro tipo de redes que vinham sendo desenvolvidas, que são as redes recorrentes.
+
+42
+00:04:12.100 --> 00:04:21.670
+Fernando Guimarães Ferreira: Então, a arquitetura de redes recorrentes, a Rnn ou a Lstm, que é também uma rede sequencial.
+
+43
+00:04:22.580 --> 00:04:35.149
+Fernando Guimarães Ferreira: Ela vem como uma alternativa às redes neurais clássicas. Vamos dizer, assim que não pensavam no dado sequencial.
+
+44
+00:04:35.330 --> 00:04:54.380
+Fernando Guimarães Ferreira: Ela não pensava no dado como uma sequência de eventos. E aí é só vocês lembrarem aqui. A gente não precisa nem falar de rede neural, mas qualquer algoritmo como de classificação que a gente utilizou. Pensam na entrada como se fosse um vetor fixo. Por exemplo, Tfdf.
+
+45
+00:04:54.470 --> 00:05:02.789
+Fernando Guimarães Ferreira: E a gente sempre falou nos algoritmos que esse vetor fixo desrespeitava qualquer questão de
+
+46
+00:05:03.290 --> 00:05:09.599
+Fernando Guimarães Ferreira: ordem. As entradas dos vetores não eram sequenciais.
+
+47
+00:05:09.640 --> 00:05:26.520
+Fernando Guimarães Ferreira: Então a gente. Eu vou fazer um Tfdf de mil sem pensar sem entender muito. A gente entende que o algoritmo vai receber um vetor tamanho mil e vai ter uma saída que, por exemplo, pode ser um classificador relevante ou não relevante na rede neural. É a mesma coisa
+
+48
+00:05:26.800 --> 00:05:31.709
+Fernando Guimarães Ferreira: quando a gente tem uma rede neural
+
+49
+00:05:32.010 --> 00:05:50.980
+Fernando Guimarães Ferreira: que não é uma rede neural, que é uma rede neural, digamos, clássica. A gente vai ter alguma coisa nesse formato. Assim. Imagina que se eu tivesse aqui um neurônio, se eu tiver dois neurônios aqui na camada intermediária, essas mesmas entradas vão fazer alguma coisa assim?
+
+50
+00:05:51.100 --> 00:05:55.139
+Fernando Guimarães Ferreira: Um desenho aqui, bem mal feito. Mas o que eu estou falando aqui.
+
+51
+00:05:57.250 --> 00:06:00.080
+Fernando Guimarães Ferreira: Esse aqui seria uma rede neural onde eu tenho, né?
+
+52
+00:06:00.290 --> 00:06:09.249
+Fernando Guimarães Ferreira: Quatro entradas, ou seja, quatro neurônios na camada de entrada. Isso aqui mapeia cada uma das posições no vetor
+
+53
+00:06:09.520 --> 00:06:20.459
+Fernando Guimarães Ferreira: tem dois neurônios na camada intermediária. Isso, enfim, não importa tanto para a gente agora e um neurônio na camada de saída. O que é o principal aqui é que isso aqui é sempre fixo.
+
+54
+00:06:20.780 --> 00:06:32.460
+Fernando Guimarães Ferreira: Então o meu vetor é sempre fixo. A gente tem que codificar os textos de uma maneira fixa. Então os dados não tinham sequências. Qual é a ordem desses neurônios não interessa
+
+55
+00:06:32.870 --> 00:06:45.759
+Fernando Guimarães Ferreira: com o tempo. Isso é uma limitação desses modelos modela. Ah, obrigado, Kevin. Muito obrigado pelo desejo de aniversário. Fico feliz. Fiz anos ontem.
+
+56
+00:06:46.510 --> 00:06:48.630
+Fernando Guimarães Ferreira: É.
+
+57
+00:06:49.210 --> 00:07:06.250
+Fernando Guimarães Ferreira: Não deixa de. O modelo acaba tendo essa informação sequencial. E como a gente entende hoje os dados, as coisas. A gente não tem contexto
+
+58
+00:07:06.250 --> 00:07:13.760
+Fernando Guimarães Ferreira: no momento que a gente não tem. Então se cria um tipo de processamento
+
+59
+00:07:13.760 --> 00:07:27.399
+Fernando Guimarães Ferreira: onde os dados criam se uma arquitetura que na realidade, em vez de eu ter uma entrada como aquela que eu tinha falado. Eu vou ter uma entrada, assim
+
+60
+00:07:27.970 --> 00:07:29.890
+Fernando Guimarães Ferreira: como se eu tivesse módulos
+
+61
+00:07:33.580 --> 00:07:34.900
+Fernando Guimarães Ferreira: sequenciais.
+
+62
+00:07:37.660 --> 00:07:40.590
+Fernando Guimarães Ferreira: O desenho está ficando feio, mas alguma coisa assim. Tá
+
+63
+00:07:40.930 --> 00:07:45.730
+Fernando Guimarães Ferreira: como se eu tivesse módulos sequenciais e isso aqui.
+
+64
+00:07:48.110 --> 00:07:50.059
+Fernando Guimarães Ferreira: Isso aqui indefinido.
+
+65
+00:07:50.780 --> 00:08:07.150
+Fernando Guimarães Ferreira: Então isso aqui é uma rede neural. Eu pensei isso aqui dentro. O neurônio e tudo mais. Aqui, uma palavra entra. Essa palavra é treinada. Serve como uma entrada aqui e tem uma saída. Essa saída vai servir de entrada para a próxima palavra.
+
+66
+00:08:07.970 --> 00:08:14.109
+Fernando Guimarães Ferreira: E esses dados, essa aqui é uma rede sequencial em alto nível.
+
+67
+00:08:14.750 --> 00:08:27.539
+Fernando Guimarães Ferreira: E essas palavras vão sendo postas sequencialmente. Então isso aqui eu já tenho dados do que veio para trás influenciar no que vai sair de output aqui na frente.
+
+68
+00:08:27.830 --> 00:08:40.299
+Fernando Guimarães Ferreira: E aí, na última dessas camadas, isso aqui também passa a ser flexível o número de palavras que eu vou usar vão ser o número dessas unidades que eu estou usando
+
+69
+00:08:40.470 --> 00:09:00.920
+Fernando Guimarães Ferreira: isso foi uma maneira de codificar dados sequenciais. E aqui, textos, séries temporais, séries históricas. Qualquer dado que se pense em sequencial, músicas, ações. Enfim, qualquer. Dado que eu pense como alguma coisa sequencial
+
+70
+00:09:00.980 --> 00:09:09.750
+Fernando Guimarães Ferreira: passou a ter uma maneira da sequência influenciar o texto. Isso funcionava bem,
+
+71
+00:09:10.750 --> 00:09:13.330
+Fernando Guimarães Ferreira: passou se a gerar bem textos.
+
+72
+00:09:13.580 --> 00:09:14.820
+Fernando Guimarães Ferreira: Contudo,
+
+73
+00:09:15.070 --> 00:09:30.999
+Fernando Guimarães Ferreira: todavia, no entanto, isso aqui tem uma limitação. Que é vocês estão vendo que existe uma sequência de entrada e saída. Então, o dado que está entrando aqui, ele está influenciando todas as camadas posteriores. Porém,
+
+74
+00:09:31.120 --> 00:09:43.209
+Fernando Guimarães Ferreira: vocês devem imaginar que a cada camada, a cada passagem que eu faço, dependendo aqui do número de unidades que eu vou usar essa informação aqui vai se diluindo.
+
+75
+00:09:43.720 --> 00:09:49.710
+Fernando Guimarães Ferreira: Então esse, digamos assim, esse modelo tem uma memória curta,
+
+76
+00:09:49.910 --> 00:09:54.779
+Fernando Guimarães Ferreira: porque as informações do início do contexto vão se perdendo,
+
+77
+00:09:54.890 --> 00:09:59.060
+Fernando Guimarães Ferreira: então a implementação disso para a geração de texto
+
+78
+00:09:59.380 --> 00:10:10.190
+Fernando Guimarães Ferreira: acaba gerando textos que vão se perdendo e delirando muito rápido, porque o contexto está ligado muito forte ao que vem imediatamente atrás.
+
+79
+00:10:10.300 --> 00:10:23.709
+Fernando Guimarães Ferreira: Então ele começa a gerar texto em um determinado momento, aquela entrada, o que a gente teria como o contexto inicial, ele se perde e o texto acaba divergindo. Principalmente textos muito longos.
+
+80
+00:10:24.680 --> 00:10:32.230
+Fernando Guimarães Ferreira: Isso é um problema. Então isso aqui, voltando a lembrar isso aqui. Eu estou falando da camada do Rnn.
+
+81
+00:10:32.730 --> 00:10:36.290
+Fernando Guimarães Ferreira: Mais para frente. Vai ter um.
+
+82
+00:10:36.410 --> 00:10:39.850
+Fernando Guimarães Ferreira: Um slide explicando um pouco melhor isso, mas
+
+83
+00:10:40.490 --> 00:10:56.829
+Fernando Guimarães Ferreira: a revolução. E aí eu boto aqui a palavra revolução. A revolução que o Transformer traz é, em parte, isso é a possibilidade de a gente processar da mesma maneira que a Renene fazia um processamento sequencial.
+
+84
+00:10:57.420 --> 00:11:07.099
+Fernando Guimarães Ferreira: Só que de uma maneira que a gente pode paralisar. Não precisa ser token à toa que a gente pode olhar coisas sequenciais.
+
+85
+00:11:07.290 --> 00:11:17.509
+Fernando Guimarães Ferreira: E a gente passa a ter numa arquitetura diferente, por causa, principalmente do mecanismo de selfie que eu já vou falar para vocês. O que se trata
+
+86
+00:11:18.130 --> 00:11:25.169
+Fernando Guimarães Ferreira: é uma dependência de longo alcance. O que é o selfie?
+
+87
+00:11:25.390 --> 00:11:33.159
+Fernando Guimarães Ferreira: Isso aqui. Ele parte do princípio naquela sequência que eu tinha desenhado para vocês.
+
+88
+00:11:33.780 --> 00:11:42.100
+Fernando Guimarães Ferreira: Que, para prever a próxima palavra, eu tinha que saber exatamente o contexto que a gente tem anteriormente.
+
+89
+00:11:42.160 --> 00:11:55.510
+Fernando Guimarães Ferreira: Mas se vocês pensarem como nós, por exemplo, lemos textos, a gente não necessariamente processa a palavra a palavra para compreender um texto numa leitura rápida.
+
+90
+00:11:55.510 --> 00:12:06.709
+Fernando Guimarães Ferreira: A gente não precisa introduzi lo em dois mil e dezassete no Paper. Numa leitura rápida. A gente presta atenção em algumas palavras, para poder entender o contexto
+
+91
+00:12:06.720 --> 00:12:09.850
+Fernando Guimarães Ferreira: e a atenção. É isso é um mecanismo.
+
+92
+00:12:10.430 --> 00:12:26.929
+Fernando Guimarães Ferreira: Em vez de pensar a palavra. A palavra é um mecanismo da arquitetura que permite que o texto preste atenção em alguns termos e não todos os termos.
+
+93
+00:12:27.050 --> 00:12:45.980
+Fernando Guimarães Ferreira: Isso também é treinado. Também tem pesos. Enfim, isso é parte dos parâmetros que são treinados da rede. Entender, dada uma frase, quais são os termos importantes para serem relevantes para a geração da próxima palavra. Isso permite que palavras que estão lá no início do contexto sejam levadas em consideração
+
+94
+00:12:46.680 --> 00:12:58.029
+Fernando Guimarães Ferreira: pela importância delas para o contexto e não pela ordem das palavras. Eu tenho então a sequência, mas essa sequência não é uma coisa rígida. Ela é uma coisa que me permite
+
+95
+00:12:58.410 --> 00:13:12.859
+Fernando Guimarães Ferreira: ponderada por uma importância. Então a gente passa a ter uma compreensão melhor do conteúdo. Então, de novo, sem entrar nos detalhes de que cada um desses bloquinhos estão fazendo, não é o nosso papel aqui,
+
+96
+00:13:13.980 --> 00:13:23.910
+Fernando Guimarães Ferreira: mas é importante que vocês entendam que a grande importância do transforme é que ele consegue,
+
+97
+00:13:24.030 --> 00:13:26.360
+Fernando Guimarães Ferreira: com esse mecanismo de atenção,
+
+98
+00:13:26.560 --> 00:13:42.500
+Fernando Guimarães Ferreira: entender partes específicas do texto, e aí, com esse mecanismo, ele consegue ter resultados com uma janela de contexto maior, também com muitos parâmetros associados.
+
+99
+00:13:43.600 --> 00:13:53.100
+Fernando Guimarães Ferreira: Então, três inovações para a gente resumir, três inovações estruturais, torná las transformam a base de todos os modelos de linguagem
+
+100
+00:13:53.360 --> 00:14:11.230
+Fernando Guimarães Ferreira: modernos, mecanismo de selfie cada Tolkien avalia a relevância de todos os outros, simultaneamente capturando relações semânticas ao longo de longa distância, com precisão, ou seja, esse termo está relacionado a todos os outros termos, mas com um grau de uma ponderação de importância.
+
+101
+00:14:11.340 --> 00:14:26.909
+Fernando Guimarães Ferreira: Próximo termo, vai receber essa informação ponderada. Então ele. Não vou perdendo a informação ao longo do texto. Essa informação vai sendo carregada. Óbvio que eu ainda tenho uma janela de contexto, mas é uma janela de contexto muito maior.
+
+102
+00:14:27.120 --> 00:14:39.379
+Fernando Guimarães Ferreira: Processamento em paralelo, todos os toques são processados ao mesmo tempo, já que todos os tokens conhecem todos os tokens. Então tudo é processado ao mesmo tempo, acelerando drasticamente o treinamento
+
+103
+00:14:39.440 --> 00:14:50.800
+Fernando Guimarães Ferreira: e viabilizando modelos com bilhões de parâmetros. Imagina que eu tivesse que processar token a token com bilhões de parâmetros, seria inviável. Essa aqui. Eu tenho um processamento
+
+104
+00:14:50.800 --> 00:15:02.170
+Fernando Guimarães Ferreira: paralelo e de novo Gpus muito importantes e o vetor de posição são somados aos embeides de entrada, preservando a ordem sequencial, sem necessidade de processamento linear.
+
+105
+00:15:02.750 --> 00:15:13.900
+Fernando Guimarães Ferreira: Aí a gente tem basicamente duas famílias de tipos de Transformers. A gente vê aqui que tem duas partes, digamos assim. Eu tenho uma parte de encode. E outra parte de decode.
+
+106
+00:15:14.870 --> 00:15:24.550
+Fernando Guimarães Ferreira: Eu tenho uma família que é só em Cold. Ela só faz. Ela só codifica
+
+107
+00:15:24.870 --> 00:15:31.790
+Fernando Guimarães Ferreira: o que é uma leitura bidirecional. Analisa a frase inteira de uma vez só.
+
+108
+00:15:32.200 --> 00:15:51.549
+Fernando Guimarães Ferreira: Muito usado, Burt, o Burt, que a gente até falou na última aula, bastante usado para classificação. Também é utilizado para análise textual sem label. Tem alguns algoritmos até hoje. O Burch é um modelo pequeno, bem pequeno
+
+109
+00:15:51.680 --> 00:15:55.690
+Fernando Guimarães Ferreira: perto dos grandes de hoje em dia.
+
+110
+00:15:55.790 --> 00:16:14.209
+Fernando Guimarães Ferreira: E ele é muito utilizado. E outra família é a de Decoder. E aí vem toda a família Gpt, que é uma leitura que vai prevendo palavra por palavra. E aí faz geração de texto. Chatbot escrita criativa. Enfim, então o Butcher processa todo o texto ao mesmo tempo.
+
+111
+00:16:14.210 --> 00:16:20.949
+Fernando Guimarães Ferreira: Enquanto o Gpt vai processando palavra, a palavra vai criando palavra a palavra são duas famílias distintas
+
+112
+00:16:21.400 --> 00:16:38.520
+Fernando Guimarães Ferreira: para a geração de texto. O Gpt é bem mais utilizado. O Burt não serve muito para esse propósito. Não tem resultados tão bons. Mas quando a gente está falando de classificação, de ler uma informação inteira, o Burt ainda, apesar do tamanho, é bastante utilizado.
+
+113
+00:16:39.000 --> 00:16:41.880
+Fernando Guimarães Ferreira: Tá dúvidas, perguntas. Até agora.
+
+114
+00:16:47.910 --> 00:16:49.250
+pedro.duarte: Professor. Nesse caso.
+
+115
+00:16:49.250 --> 00:16:49.630
+Fernando Guimarães Ferreira: Ah, sim.
+
+116
+00:16:49.630 --> 00:16:52.440
+pedro.duarte: Pode voltar ali um slide, por favor?
+
+117
+00:16:54.820 --> 00:17:13.510
+pedro.duarte: Nesse caso, por exemplo, o Burt seria muito mais útil quando eu tivesse, por exemplo, lendo um contrato ali, por exemplo, de um empréstimo, e eu quero identificar, por exemplo, dentro desse contrato, quais que são,
+
+118
+00:17:13.520 --> 00:17:17.569
+pedro.duarte: tipo, os parâmetros financeiros para o cálculo dos valores, por exemplo,
+
+119
+00:17:17.700 --> 00:17:25.829
+pedro.duarte: ele não é necessariamente geração de texto que é só analisar, identificar, extrair essa informação.
+
+120
+00:17:26.339 --> 00:17:42.829
+Fernando Guimarães Ferreira: Não para a extração da informação. O Gpt é mais interessante. Por quê? Porque ele processa a palavra a palavra então, para extrair, você vai ter essa informação estruturada nessa sequência. O Bush é bom se eu quero ver o texto como um todo,
+
+121
+00:17:42.829 --> 00:17:47.779
+Fernando Guimarães Ferreira: se você quiser ver, cara, é sobre o que esse documento.
+
+122
+00:17:47.979 --> 00:18:00.439
+Fernando Guimarães Ferreira: Então isso é uma coisa que, principalmente se você quiser representar através de Embed. Se você quiser fazer um classificador, você quer codificar o texto inteiro? Ele é bom para isso.
+
+123
+00:18:00.819 --> 00:18:01.809
+Fernando Guimarães Ferreira: Melhor.
+
+124
+00:18:02.769 --> 00:18:10.629
+Fernando Guimarães Ferreira: É possível fazer o que você falou com Bush também. Mas aí, se eu estiver quebrando o documento em documentos menores.
+
+125
+00:18:12.040 --> 00:18:20.930
+pedro.duarte: Normalmente, esse tipo de documento é separado por partes, né? Tem, tipo, as cláusulas financeiras. Tem as outras cláusulas que são.
+
+126
+00:18:20.930 --> 00:18:21.300
+Fernando Guimarães Ferreira: Pode ser.
+
+127
+00:18:21.300 --> 00:18:23.299
+pedro.duarte: Quebrasse o documento em partes menores.
+
+128
+00:18:23.300 --> 00:18:30.160
+Fernando Guimarães Ferreira: Aí você tem um pré processamento. Enquanto no Gpt, esse pré processamento fica para o modelo, entendeu?
+
+129
+00:18:30.160 --> 00:18:30.780
+pedro.duarte: Sim.
+
+130
+00:18:31.790 --> 00:18:42.780
+Fernando Guimarães Ferreira: Você embarca essa inteligência para o modelo que é a base dos agentes hoje em dia e tudo mais. Você não vai fazer um agente com Encoder?
+
+131
+00:18:43.060 --> 00:18:45.139
+Fernando Guimarães Ferreira: Você vai fazer um agente com o decoro.
+
+132
+00:18:46.380 --> 00:18:47.300
+pedro.duarte: Tchau.
+
+133
+00:18:49.710 --> 00:19:06.460
+Fernando Guimarães Ferreira: Então os modelos são usados para resolver todos os tipos de tarefas de Pnl de processamento de linguagem natural. A gente ainda está na nossa competência de Pnl, então a gente pode fazer classificação de sentenças, classificação de palavras, geração de texto, exteração de respostas de um texto, geração
+
+134
+00:19:06.460 --> 00:19:11.649
+Fernando Guimarães Ferreira: de sentenças a partir de um texto de entrada. Enfim, a gente tem todas essas tarefas.
+
+135
+00:19:12.060 --> 00:19:18.580
+Fernando Guimarães Ferreira: E o lugar aqui pulou algum slide. Eu vou voltar aqui para isso depois.
+
+136
+00:19:19.350 --> 00:19:22.339
+Fernando Guimarães Ferreira: Esses atentos deveria estar
+
+137
+00:19:22.380 --> 00:19:29.580
+Fernando Guimarães Ferreira: mais para trás só para a gente sedimentar. Então a Tension é a memória atrás do tempo.
+
+138
+00:19:29.580 --> 00:19:47.639
+Fernando Guimarães Ferreira: Então a gente tem antes da tensão. Isso aqui, é como funcionava antes, antes da tensão dos transformadores. Por exemplo, a sequencial era alguma coisa assim, ele aprendia a codificar num espaço intermediário e a decodificar o texto tinha que passar inteiro. E eu tinha uma sequência em relação a isso.
+
+139
+00:19:47.730 --> 00:19:50.200
+Fernando Guimarães Ferreira: E aqui está a
+
+140
+00:19:50.350 --> 00:20:06.859
+Fernando Guimarães Ferreira: como se estaria representado. O quanto que eu carrego de memória. Imagina que a informação que eu estou gerando aqui, todas essas camadas, elas têm saídas. A que me interessa é a palavra sendo gerada aqui, por exemplo, dessa sequência,
+
+141
+00:20:07.400 --> 00:20:25.200
+Fernando Guimarães Ferreira: essa palavra em azul mais escura. Ela está carregando informação desses Layers. Percebam que aqui o que deu início. Eu já perdi essa informação. Aqui. Não existe mais. Então eu vou perdendo a cada unidade da recorrente.
+
+142
+00:20:25.250 --> 00:20:38.440
+Fernando Guimarães Ferreira: Eu vou perdendo o contexto. Então, intervalos maiores, textos maiores que vinte palavras. O resultado já começava a ficar bastante ruim. Isso com referência.
+
+143
+00:20:38.530 --> 00:20:48.020
+Fernando Guimarães Ferreira: Então o que ele faz é usar esse mecanismo de selfie, que é um mecanismo que permite olhar todas as palavras ao mesmo tempo
+
+144
+00:20:48.020 --> 00:20:59.849
+Fernando Guimarães Ferreira: e aí para gerar a próxima palavra. Ele pondera. E, por exemplo, nesse exemplo, o banco está fechado porque o rio transbordou. A tensão depositada em Rio é o que define que o banco significa margem
+
+145
+00:20:59.920 --> 00:21:06.109
+Fernando Guimarães Ferreira: e não uma instituição financeira. Então, tipo, para entender isso aqui,
+
+146
+00:21:06.750 --> 00:21:13.319
+Fernando Guimarães Ferreira: esse contexto está ligando uma frase à outra.
+
+147
+00:21:14.950 --> 00:21:32.659
+Fernando Guimarães Ferreira: A atenção foi primeiro pensada para redes neurais de processamento de visão. Visão computacional. Por quê? Porque assim como nossa vista, a gente não processa a informação. Pixel a pixel.
+
+148
+00:21:33.070 --> 00:21:43.080
+Fernando Guimarães Ferreira: Geralmente eu tenho um pedaço na imagem que é importante para a gente identificar. O que está acontecendo. Por exemplo, vocês estão enxergando aqui. Eu tenho todo um background aqui que não muda nunca
+
+149
+00:21:43.140 --> 00:22:01.680
+Fernando Guimarães Ferreira: a parede. Graças a Deus está parada. Quem está se mexendo é a minha boca. É uma região muito pequena que tem uma mudança frame a frame. Então vocês. Espero que olhando até ela, estejam processando tanto os slides quanto o que eu estou falando. Então a visão de vocês tem atenção em
+
+150
+00:22:01.740 --> 00:22:11.599
+Fernando Guimarães Ferreira: partes. E se a gente estivesse aqui fazendo um classificador, por exemplo, essas partes seriam mais importantes para essa classificação,
+
+151
+00:22:12.170 --> 00:22:28.339
+Fernando Guimarães Ferreira: entendeu então a atenção já vem disso. Então, por exemplo, quando eu tenho aqui Hello I Love You Hello I Love You, eu tenho uma sequência de pesos que são ponderados, aonde eu digo quais são as palavras mais importantes para cada uma dessas palavras,
+
+152
+00:22:28.340 --> 00:22:32.559
+Fernando Guimarães Ferreira: e esse grafo de atenção, na realidade, vira entrada
+
+153
+00:22:32.560 --> 00:22:37.350
+Fernando Guimarães Ferreira: uma entrada ponderada para o contexto.
+
+154
+00:22:37.350 --> 00:22:55.780
+Fernando Guimarães Ferreira: Então pense nisso como se cada palavra votasse na importância das outras para o seu significado, ao considerar a frase inteira, os transformadores podem determinar com mais precisão o papel e significado de cada palavra, tornando suas interpretações mais ricas contextualmente. Então é isso que eu digo
+
+155
+00:22:55.780 --> 00:23:03.169
+Fernando Guimarães Ferreira: que quando eu passo uma palavra, um token que a gente está falando em palavras, mas são Tolkens quando eu tenho um token,
+
+156
+00:23:03.320 --> 00:23:10.100
+Fernando Guimarães Ferreira: cada toker sabe a relevância dos outros para definir o seu conteúdo semântico.
+
+157
+00:23:10.540 --> 00:23:27.020
+Fernando Guimarães Ferreira: Isso é um super poder então aqui alguns exemplos de como essas camadas ficam relacionadas com as frases, para identificar classes e tudo mais. Pode falar. Pedro.
+
+158
+00:23:27.020 --> 00:23:36.439
+pedro.duarte: E ele sempre considera, por exemplo, todas as palavras da frase não aplica nenhum processamento antes igual, como a gente fez na matéria anterior.
+
+159
+00:23:36.440 --> 00:23:37.320
+Fernando Guimarães Ferreira: A tirar essa.
+
+160
+00:23:37.320 --> 00:23:46.510
+pedro.duarte: É sempre daí, logicamente, o que for. Palavra inútil. Vai ter um peso ridículo em relação dessa forma que ele vai.
+
+161
+00:23:46.610 --> 00:23:56.099
+Fernando Guimarães Ferreira: O que é importante entender é que esses pesos são dinâmicos. Então a cada palavra tem pesos diferentes para os outros. Mas todas as palavras são consideradas,
+
+162
+00:23:56.880 --> 00:23:58.690
+Fernando Guimarães Ferreira: né? Entendi.
+
+163
+00:23:58.690 --> 00:24:01.379
+pedro.duarte: Porque ali era uma florazinha. Tá, entendi.
+
+164
+00:24:01.890 --> 00:24:02.210
+Fernando Guimarães Ferreira: Tá.
+
+165
+00:24:02.210 --> 00:24:03.010
+pedro.duarte: Começo lá.
+
+166
+00:24:04.650 --> 00:24:18.399
+Fernando Guimarães Ferreira: É isso basicamente para definir essa atenção. Qual o valor dessa atenção para cada uma das palavras, a gente tem três variáveis. Uma variável é a palavra que a gente está procurando. A que é, Query?
+
+167
+00:24:18.660 --> 00:24:32.699
+Fernando Guimarães Ferreira: Um K, que são todas as outras palavras e o valor é o quanto que realmente elas são, match entre elas, então o coração do transforme pode ser entendido como um sistema de busca em três papéis.
+
+168
+00:24:32.700 --> 00:24:40.799
+Fernando Guimarães Ferreira: Então, aqui o valor da atenção vai ser uma rede neural. Um softmax softmax é uma função de ativação
+
+169
+00:24:40.800 --> 00:24:53.819
+Fernando Guimarães Ferreira: que torna isso aqui? Probabilístico função de ativação. Para quem não ficou claro as redes neurais, elas.
+
+170
+00:24:54.100 --> 00:25:01.329
+Fernando Guimarães Ferreira: Elas são não lineares, né? Aí, voltando lá pra Mlp, tá?
+
+171
+00:25:01.430 --> 00:25:09.960
+Fernando Guimarães Ferreira: O Mlp é a rasa. As clássicas, né? Digamos, aqui. Eu tenho um Percepton primeiro tipo de rede neural,
+
+172
+00:25:10.150 --> 00:25:16.450
+Fernando Guimarães Ferreira: que não é nenhuma rede neural. É um neurônio, né? Se eu tiver duas entradas aqui, o neurônio.
+
+173
+00:25:16.680 --> 00:25:20.319
+Fernando Guimarães Ferreira: Eu espero que para vocês isso seja mais ou menos
+
+174
+00:25:20.510 --> 00:25:26.989
+Fernando Guimarães Ferreira: simples de entender. Um neurônio, nada mais. É X um e X dois
+
+175
+00:25:29.850 --> 00:25:34.120
+Fernando Guimarães Ferreira: X1 X2 ele nada mais é em sua base.
+
+176
+00:25:34.240 --> 00:25:38.350
+Fernando Guimarães Ferreira: É uma função que some x1 mais X dois.
+
+177
+00:25:40.880 --> 00:25:43.550
+Fernando Guimarães Ferreira: Só que eles fazem isso com peso.
+
+178
+00:25:44.350 --> 00:25:51.230
+Fernando Guimarães Ferreira: Então ele é ponderado por um peso. Esse peso aqui que a gente fala, que são os parâmetros.
+
+179
+00:25:53.230 --> 00:25:58.529
+Fernando Guimarães Ferreira: Esses pesos falam, que são os parâmetros, e isso me dá uma saída. Y.
+
+180
+00:25:59.050 --> 00:26:10.450
+Fernando Guimarães Ferreira: Então isso aqui é isso. Então vocês estão vendo que dessa maneira como eu escrevi aqui, eu nada mais tenho do que uma equação de reta. Isso aqui em Y é igual
+
+181
+00:26:10.640 --> 00:26:18.730
+Fernando Guimarães Ferreira: a Wi X um, mas W2
+
+182
+00:26:18.930 --> 00:26:27.640
+Fernando Guimarães Ferreira: X dois. Isso se eu for representar num plano, eu tenho aqui X um X dois
+
+183
+00:26:28.020 --> 00:26:37.119
+Fernando Guimarães Ferreira: com duas variáveis. Normalmente a gente tem mais variáveis que isso. Mais X dois. Eu vou ter um plano. Eu tenho um plano aqui. Esse é o plano Y igual
+
+184
+00:26:37.340 --> 00:26:40.129
+Fernando Guimarães Ferreira: a zero. Se Y for igual a zero, ele está
+
+185
+00:26:40.360 --> 00:26:46.059
+Fernando Guimarães Ferreira: nesse plano. Isso aqui é áudio linear cento e um. Não tem nada demais.
+
+186
+00:26:46.810 --> 00:26:56.390
+Fernando Guimarães Ferreira: Só que as redes neurais são não lineares, a não linearidade da rede, Frank, é que aqui, na saída, eu acrescento uma função,
+
+187
+00:26:58.510 --> 00:27:17.770
+Fernando Guimarães Ferreira: uma função que seja derivável. Essa função é a que torna essa reta algum comportamento diferente. Eu posso ter várias funções de ativação que se essa soma é menos que zero é zero. E depois de zero é linear. Por exemplo,
+
+188
+00:27:18.540 --> 00:27:24.300
+Fernando Guimarães Ferreira: eu posso ter uma função de ativação, que é quadrática.
+
+189
+00:27:24.530 --> 00:27:44.380
+Fernando Guimarães Ferreira: Eu posso ter uma função de ativação que é exponencial é não linear. Isso tem algumas que são normalmente essa aqui a gente não quer essa aqui. A gente também não quer. A gente vai querer alguma coisa que limite a saída, por exemplo, uma tangente hiperbólica.
+
+190
+00:27:44.440 --> 00:27:53.870
+Fernando Guimarães Ferreira: Coisas desse tipo são normais. Então, softmax é uma função de ativação, ou seja, uma dessas funções na camada de saída do neurônio.
+
+191
+00:27:53.870 --> 00:28:09.130
+Fernando Guimarães Ferreira: E ela tem uma propriedade bacana que ela transforma a saída improbabilística, mostrando que, com o softmax, a saída, o valor da soma de todos os valores que vieram antes. É uma probabilidade.
+
+192
+00:28:09.290 --> 00:28:11.909
+Fernando Guimarães Ferreira: Ah, isso aqui. Eu estou adiantando muito.
+
+193
+00:28:11.930 --> 00:28:27.720
+Fernando Guimarães Ferreira: Nem queria chegar nesses detalhes, mas é só para vocês entenderem que isso aqui é uma função de ativação. Não é mais difícil do que uma conta. Um multiplicador aqui de fatores. E no final, eu passo uma probabilidade. Então a minha atenção é a probabilidade
+
+194
+00:28:27.720 --> 00:28:32.540
+Fernando Guimarães Ferreira: de cada um dos termos ser relevante para eles. Tá bom, deu pra entender. Eu fico muito confuso.
+
+195
+00:28:37.310 --> 00:28:37.929
+Fernando Guimarães Ferreira: Com certeza.
+
+196
+00:28:37.930 --> 00:28:46.699
+pedro.duarte: Deu pra entender quando veio as formas de matemática, ficou um pouquinho mais difícil, mas acho que deu pra pegar o sentido, né? Como que ele funciona.
+
+197
+00:28:47.170 --> 00:28:48.099
+Fernando Guimarães Ferreira: Tá bom. Eu gosto disso.
+
+198
+00:28:48.100 --> 00:28:48.650
+pedro.duarte: Somos o.
+
+199
+00:28:49.240 --> 00:29:00.660
+Fernando Guimarães Ferreira: Enfim. Então essa é a função. Como transforma funciona. É realmente uma revolução. É muito curta. Essa revolução dois mil e dezassete foi o primeiro artigo.
+
+200
+00:29:00.790 --> 00:29:20.649
+Fernando Guimarães Ferreira: Pô a gente está falando de Gpt2 ali. Em dois mil e vinte e dois, o Gpt3 dois mil e vinte e três. E aí não temos esses outros novos modelos. Enfim, não são modelos
+
+201
+00:29:20.660 --> 00:29:33.380
+Fernando Guimarães Ferreira: que mudam essa arquitetura. Ainda falamos da mesma arquitetura e a generativa. Agora vocês têm propriedade para falar, que, pelo menos quando a gente está falando de texto,
+
+202
+00:29:33.410 --> 00:29:42.849
+Fernando Guimarães Ferreira: por que a ia generativa. É um tipo de Machine Learning que é um tipo porque a Ia generativa como a gente conhece. É uma arquitetura possível de rede neural
+
+203
+00:29:43.810 --> 00:30:01.390
+Fernando Guimarães Ferreira: que toda essa arma é muito grande com muitos parâmetros. Mas ela é uma arquitetura possível, no máximo, ali. Duas arquiteturas. Se a gente estiver falando de transformer, decoder ou encoder, então por isso que ele é uma subfamília de muita coisa hoje mesmo, eu tive uma pergunta
+
+204
+00:30:01.390 --> 00:30:17.620
+Fernando Guimarães Ferreira: de um outro professor, não da área, mas a gente ainda usa outros algoritmos que não sejam. Não usa? Se tem muitas aplicações para vários outros algoritmos. Se criou esse hype todo.
+
+205
+00:30:17.620 --> 00:30:25.710
+Fernando Guimarães Ferreira: Obviamente, é muito poderoso, principalmente a, e aí difundir
+
+206
+00:30:25.710 --> 00:30:48.239
+Fernando Guimarães Ferreira: perante a sociedade, modelos de inteligência artificial de fácil uso, porque antigamente, para você criar um modelo de inteligência artificial, não existia esse modelo pré treinado. Você treinava para o teu propósito aqui. Eles conseguiram, pelo tamanho, pela essa propriedade de atenção, disponibilizar modelos para uso
+
+207
+00:30:48.240 --> 00:30:52.579
+Fernando Guimarães Ferreira: genérico. Qualquer pessoa pode utilizar e vai ter bons resultados.
+
+208
+00:30:52.580 --> 00:31:08.160
+Fernando Guimarães Ferreira: Então, assim é muito poderoso. Não quando eu falo aqui, não estou de maneira nenhuma diminuindo o potencial disso tudo. Mas é importante a gente situar que essa é uma das arquiteturas possíveis. E todas essas que estão falando, elas dependem
+
+209
+00:31:08.160 --> 00:31:13.650
+Fernando Guimarães Ferreira: agora, o que a gente deveria pensar na maneira de a gente ter os mesmos resultados.
+
+210
+00:31:13.760 --> 00:31:30.210
+Fernando Guimarães Ferreira: Com variações dessa arquitetura. Para diminuir a quantidade de dados, diminuir a quantidade de parâmetros, tentar não depender de todos os termos. Por exemplo, conhecer todos os termos para poder ter um resultado, porque aqui eu vou ter muito parâmetro para poder acertar. Isso
+
+211
+00:31:31.360 --> 00:31:32.460
+Fernando Guimarães Ferreira: fez sentido.
+
+212
+00:31:32.580 --> 00:31:33.730
+Fernando Guimarães Ferreira: Perguntas,
+
+213
+00:31:37.770 --> 00:31:39.800
+Fernando Guimarães Ferreira: tá show.
+
+214
+00:31:40.940 --> 00:31:56.540
+Fernando Guimarães Ferreira: E acabei de falar para vocês, que a gente tem modelos pré treinados em muitos modelos Igpt e tudo mais. E aí surge a figura de um cara bem bacana, que é o Rugin, face. Que é exatamente isso. Uma face
+
+215
+00:31:56.540 --> 00:32:05.670
+Fernando Guimarães Ferreira: que sorri o Ruginface para quem nunca entrou. Recomendo a todos criarem contas no Ruginface.
+
+216
+00:32:05.720 --> 00:32:11.390
+Fernando Guimarães Ferreira: Vocês podem Logar aqui. É uma comunidade que disponibiliza esses modelos.
+
+217
+00:32:12.040 --> 00:32:17.240
+Fernando Guimarães Ferreira: Eu tenho centenas de milhares, milhares. Vamos lá.
+
+218
+00:32:17.530 --> 00:32:22.549
+Fernando Guimarães Ferreira: Dezenas de milhares. Vamos lá. De modelos treinados à disposição da comunidade.
+
+219
+00:32:22.980 --> 00:32:27.200
+Fernando Guimarães Ferreira: Aqui, a gente tem a possibilidade de utilizar os modelos.
+
+220
+00:32:28.370 --> 00:32:36.159
+Fernando Guimarães Ferreira: O nosso quinze mil modelos nesse momento, aqui não mentira. Dois milhões de modelos. Tá aqui, ó,
+
+221
+00:32:36.700 --> 00:32:39.909
+Fernando Guimarães Ferreira: dois milhões de modelos, quase três milhões de modelos.
+
+222
+00:32:41.230 --> 00:32:44.150
+Fernando Guimarães Ferreira: Esses modelos têm diferentes
+
+223
+00:32:44.620 --> 00:32:56.970
+Fernando Guimarães Ferreira: tipos, diferentes testes que a gente pode fazer aqui com eles, mas tem modelo para tudo. Tem modelo para classificação. Tem modelo para criação de textos. Tem modelo para resumo, tem modelo para
+
+224
+00:32:57.250 --> 00:33:04.650
+Fernando Guimarães Ferreira: a extração. Tem modelo que serve para várias dessas coisas. Ao mesmo tempo. Modelos específicos para idiomas,
+
+225
+00:33:04.650 --> 00:33:20.760
+Fernando Guimarães Ferreira: modelos que são bem menores do que o modelo do Gpt, ou modelos que não são tão menores assim. A gente tem, por exemplo, o lama, quatro, aqui, lama três, que é um modelo muito grande, muito potente. Tem o gema4
+
+226
+00:33:20.780 --> 00:33:22.730
+Fernando Guimarães Ferreira: que é o modelo do Google.
+
+227
+00:33:23.300 --> 00:33:37.779
+Fernando Guimarães Ferreira: A gente tem alguns modelos bem grandes. Alguns modelos não tão grandes para propósito, Fine Tuning. A gente tem muito Burt aqui, mas tunado com ajuste fino para textos.
+
+228
+00:33:37.780 --> 00:33:49.729
+Fernando Guimarães Ferreira: Por exemplo, eu quero um Burt. Mas eu não quero um Burt que foi treinado com uma base de notícias. Eu quero um Burt que foi treinado com uma base de notícias, mas levemente ajustado para textos jurídicos. Por exemplo,
+
+229
+00:33:49.830 --> 00:34:02.910
+Fernando Guimarães Ferreira: vai ter. Eu quero para textos jurídicos da Ucrânia vai ter. Enfim, a gente vai ter esses pontos. Divulg:
+
+230
+00:34:03.760 --> 00:34:10.310
+Fernando Guimarães Ferreira: Então, o ruginface é uma plataforma que a gente consegue acessar
+
+231
+00:34:10.310 --> 00:34:27.670
+Fernando Guimarães Ferreira: sem grandes problemas. Então, a gente tem um hub de modelos. A gente tem os datasets para treinar. Enfim, fazer avaliações. A gente tem uma biblioteca implementada em Python para usar esses modelos. E tem uma comunidade ativa de uso.
+
+232
+00:34:28.409 --> 00:34:40.630
+Fernando Guimarães Ferreira: A gente tem no Face Hub, uma bibliotecas bem potentes, que são as autoclaces,
+
+233
+00:34:40.949 --> 00:34:52.750
+Fernando Guimarães Ferreira: que é um código flexível, autoclaces automóvel e auto Tokenizer, que recebe um modelo específico e eu não preciso reimplementar. Ele consegue identificar. Pode falar, Pedro.
+
+234
+00:34:53.900 --> 00:35:08.590
+pedro.duarte: Uma dúvida. Vamos lá. Partindo do princípio que um modelo resolve exatamente o problema que eu preciso ali, como que é, eu posso usar esse modelo, por exemplo, em produção para uma empresa ou não poder.
+
+235
+00:35:08.590 --> 00:35:09.010
+Fernando Guimarães Ferreira: Olha.
+
+236
+00:35:09.010 --> 00:35:13.810
+pedro.duarte: Como que é? Tá livre pra todo mundo. Sai ser feliz.
+
+237
+00:35:14.210 --> 00:35:21.100
+Fernando Guimarães Ferreira: Tem modelos com diferentes licenças, mas tem vários modelos abertos. Tem modelos para.
+
+238
+00:35:21.100 --> 00:35:23.629
+pedro.duarte: Avaliar a licença de cada um no caso.
+
+239
+00:35:23.630 --> 00:35:27.650
+Fernando Guimarães Ferreira: Avaliar. Mas, por exemplo, o.
+
+240
+00:35:28.040 --> 00:35:31.949
+Fernando Guimarães Ferreira: O lama do Emea, até aberto para qualquer uso, por exemplo.
+
+241
+00:35:32.750 --> 00:35:36.059
+Fernando Guimarães Ferreira: Então, assim que é um modelo bem grande de geração de texto.
+
+242
+00:35:36.400 --> 00:35:44.780
+Fernando Guimarães Ferreira: Então é assim. Tem todos os tipos. Então tem todos os tipos. É legal fazer essa avaliação.
+
+243
+00:35:46.410 --> 00:35:47.070
+Fernando Guimarães Ferreira: Tchau
+
+244
+00:35:47.340 --> 00:35:59.259
+Fernando Guimarães Ferreira: e ele tem também. Alguém estava falando aí de computador e tudo mais. Ele tem playground também para rodar coisas. Quando a gente entra aqui no Ruginface.
+
+245
+00:36:00.280 --> 00:36:03.000
+Fernando Guimarães Ferreira: Ele tem Spaces.
+
+246
+00:36:03.250 --> 00:36:06.649
+Fernando Guimarães Ferreira: Então você pode criar ou usar
+
+247
+00:36:07.120 --> 00:36:16.580
+Fernando Guimarães Ferreira: computing daqui, né? E o Collab? Ele tem Gpu, né? Também é uma coisa que é importante, principalmente pra essa disciplina. Para a gente rodar coisas.
+
+248
+00:36:16.780 --> 00:36:32.829
+Fernando Guimarães Ferreira: Eu vou mostrar para vocês como fazer, mas habilitar a Gpu do Collab facilita bastante. Não é uma Gpu irrestrita, não é uma Gpu que vai funcionar durante vinte e quatro horas. Você rodando alguma coisa. Mas para rodar, alguma coisa funciona
+
+249
+00:36:33.020 --> 00:36:38.730
+Fernando Guimarães Ferreira: mais do que isso. Você sempre pode pagar ali o taxímetro,
+
+250
+00:36:38.920 --> 00:36:52.940
+Fernando Guimarães Ferreira: comprar ali uma máquina, um espaço na nuvem, e não necessariamente um serviço, mas uma máquina que você consiga hospedar, que tem uma Gpu, por exemplo. E aí tem vários tipos de serviços, tanto de Cloud
+
+251
+00:36:52.940 --> 00:37:02.069
+Fernando Guimarães Ferreira: quanto, por exemplo, de aluguel, mesmo de máquinas virtuais, que são excedentes de empresas, enfim, tem alguns serviços na Europa. Isso é comum
+
+252
+00:37:02.190 --> 00:37:08.569
+Fernando Guimarães Ferreira: que algumas máquinas ficam até baratas. A confiabilidade delas são pequenas,
+
+253
+00:37:08.680 --> 00:37:16.860
+Fernando Guimarães Ferreira: mas pô, eu queria que tivesse, estaria aqui usando. Enfim. Mas
+
+254
+00:37:17.270 --> 00:37:26.799
+Fernando Guimarães Ferreira: de qualquer maneira, tem essas possibilidades. Tanto colapso. Enfim, são ferramentas.
+
+255
+00:37:26.950 --> 00:37:29.020
+Fernando Guimarães Ferreira: São ferramentas bacanas.
+
+256
+00:37:31.040 --> 00:37:34.140
+Fernando Guimarães Ferreira: É, então o
+
+257
+00:37:34.520 --> 00:37:43.280
+Fernando Guimarães Ferreira: tocanize. Basicamente, a gente tem o tokenizador que vai criar os textos baseado no modelo. Então eu tenho um cruzamento de modelo
+
+258
+00:37:43.580 --> 00:38:01.769
+Fernando Guimarães Ferreira: e tocanizer um modelo vai pegar. Eu vou ter um Tokenizador específico, um modelo específico para o mesmo modelo. Vou pegar a entrada e vou criar um texto baseado nisso, tá? Vamos criar aqui um.
+
+259
+00:38:02.070 --> 00:38:03.030
+Fernando Guimarães Ferreira: O Collab
+
+260
+00:38:07.630 --> 00:38:14.110
+Fernando Guimarães Ferreira: colab na página certa, que é um Ifnet e um.
+
+261
+00:38:24.500 --> 00:38:27.270
+Fernando Guimarães Ferreira: Olha, vamos ver.
+
+262
+00:38:32.420 --> 00:38:34.710
+Fernando Guimarães Ferreira: Então eu falei do Gpu.
+
+263
+00:38:35.170 --> 00:38:44.230
+Fernando Guimarães Ferreira: Vocês vêm aqui nesse cantinho aqui vocês vão ver que existe Change Run Time.
+
+264
+00:38:45.090 --> 00:38:51.279
+Fernando Guimarães Ferreira: E aqui vocês podem pegar uma Gpu, T4 e Gpu.
+
+265
+00:38:52.040 --> 00:38:56.689
+Fernando Guimarães Ferreira: No momento que vocês fazem isso, Salmo:
+
+266
+00:38:57.680 --> 00:39:03.889
+Fernando Guimarães Ferreira: e aí basta clicar em conectar. Está salvando. Basta clicar em conectar,
+
+267
+00:39:04.830 --> 00:39:10.600
+Fernando Guimarães Ferreira: e às vezes pode acontecer de não ter disponibilidade, mas normalmente o tempo
+
+268
+00:39:12.500 --> 00:39:16.200
+Fernando Guimarães Ferreira: pronto conectado. Agora eu estou conectado numa máquina
+
+269
+00:39:16.370 --> 00:39:22.129
+Fernando Guimarães Ferreira: que tem Gpu e a gente pode usar processamento com o Gpu.
+
+270
+00:39:22.510 --> 00:39:28.969
+Fernando Guimarães Ferreira: Essa dica era conhecida por todos. Alguém aqui não conhecia, só para saber se foi útil.
+
+271
+00:39:32.320 --> 00:39:33.220
+Fernando Guimarães Ferreira: Tá.
+
+272
+00:39:33.220 --> 00:39:34.720
+pedro.duarte: Eu não o conhecia. Também.
+
+273
+00:39:36.250 --> 00:39:45.549
+Fernando Guimarães Ferreira: Então isso ajuda bastante em Gpus e tudo mais.
+
+274
+00:39:46.400 --> 00:39:50.009
+Fernando Guimarães Ferreira: Então a primeira coisa que a gente tem que fazer é instalar
+
+275
+00:39:50.350 --> 00:39:54.179
+Fernando Guimarães Ferreira: os pacotes que vão ser necessários aqui para a gente.
+
+276
+00:39:55.440 --> 00:39:56.960
+Fernando Guimarães Ferreira: É um pico em sol.
+
+277
+00:39:57.920 --> 00:40:09.549
+Fernando Guimarães Ferreira: Datasets Evaluates, que são os pacotes que são todos a biblioteca principal do Hangfrance é essa aqui, transformers
+
+278
+00:40:11.430 --> 00:40:12.670
+Fernando Guimarães Ferreira: as formas.
+
+279
+00:40:20.830 --> 00:40:25.350
+Fernando Guimarães Ferreira: E aqui eu acho que eu posso botar o menos que menos que a última coisa
+
+280
+00:40:40.100 --> 00:40:46.409
+Fernando Guimarães Ferreira: pronto aí só para ficar no mesmo exemplo que tinha pego aqui para não sair.
+
+281
+00:40:47.600 --> 00:40:49.260
+Fernando Guimarães Ferreira: É
+
+282
+00:40:52.130 --> 00:41:03.869
+Fernando Guimarães Ferreira: então aqui eu estou pagando o auto modelo, o automóvel e o tocanais. E estou escolhendo aqui um modelo chamado Microsoft The Berta, um Bert. Normalmente que tem isso aqui é um Bert, tá?
+
+283
+00:41:04.580 --> 00:41:08.859
+Fernando Guimarães Ferreira: E vale a pena, talvez. E até lá, no Berguinface.
+
+284
+00:41:09.360 --> 00:41:11.799
+Fernando Guimarães Ferreira: Primeiro vê se esse modelo ainda está disponível.
+
+285
+00:41:12.790 --> 00:41:17.429
+Fernando Guimarães Ferreira: The Best X. Monta aqui, ó Improving the
+
+286
+00:41:17.550 --> 00:41:30.959
+Fernando Guimarães Ferreira: Bertha e Usain. Lé. Aí tem aqui o que esse treinamento está fazendo? Ele melhora. Burt e Roberta models Us stang attention e nancet. Enfim, The Code.
+
+287
+00:41:31.300 --> 00:41:41.930
+Fernando Guimarães Ferreira: Brincar com o nome de Bert é bacana em modelos em uma disciplina. De. Não lembro se foi aqui no Mpa ou em outro curso,
+
+288
+00:41:42.220 --> 00:41:52.530
+Fernando Guimarães Ferreira: mas um aluno pegou um modelo, fez a refina e chamou para a música para letras de música. E chamou de Robert Carlos.
+
+289
+00:41:53.030 --> 00:41:55.769
+Fernando Guimarães Ferreira: Ser criativo com Burger faz sentido.
+
+290
+00:41:56.180 --> 00:42:05.889
+Fernando Guimarães Ferreira: É, bom, a gente fez aqui. Agora o modelo. Vou pegar exatamente essa parte aqui.
+
+291
+00:42:09.720 --> 00:42:15.440
+Fernando Guimarães Ferreira: Canais. Ó, tá vendo? Ele carregou o modelo.
+
+292
+00:42:16.330 --> 00:42:28.060
+Fernando Guimarães Ferreira: Ele carregou o modelo. Ele está carregando aqui. Esses aqui são os pesos. Aqui está o peso. O modelo tem duzentos e quarenta e um Megas. Um modelo bem pequeno.
+
+293
+00:42:28.600 --> 00:42:39.079
+Fernando Guimarães Ferreira: É aí. Deu aqui alguns errinhos em relação à arquitetura. Enfim, alguma coisinha, mas nada que impeça nosso próximo
+
+294
+00:42:39.540 --> 00:42:42.230
+Fernando Guimarães Ferreira: é vinte.
+
+295
+00:42:42.340 --> 00:42:43.360
+Fernando Guimarães Ferreira: Que é isso aqui?
+
+296
+00:42:46.090 --> 00:42:55.289
+Fernando Guimarães Ferreira: As dimensões. Ó output, o bet tokens e Hidden Dimensions. Então eu tenho um Bet, um texto, só
+
+297
+00:42:55.620 --> 00:42:57.849
+Fernando Guimarães Ferreira: onze tokens. Nesse texto,
+
+298
+00:42:58.630 --> 00:43:09.400
+Fernando Guimarães Ferreira: onze tokens. Nesse texto. Esse texto aqui é composto por onze tokens. Então vocês podem perceber que um token não é por palavra. São trechos das palavras
+
+299
+00:43:09.630 --> 00:43:19.060
+Fernando Guimarães Ferreira: e tem trezentos e oitenta e quatro dimensões escondidas aqui para representar esse texto. Então essa dimensionalidade
+
+300
+00:43:19.210 --> 00:43:28.679
+Fernando Guimarães Ferreira: mostra que cada Tokyo virou um vetor rico em significado e contextual. Então ela é quantidade de dimensão. Uma palavra apontando para a outra
+
+301
+00:43:28.960 --> 00:43:40.790
+Fernando Guimarães Ferreira: para representar esse vetor, esse mecanismo de entrada. Se a gente chegar aqui e olhar isso aqui.
+
+302
+00:43:43.170 --> 00:43:48.309
+Fernando Guimarães Ferreira: Se eu não me engano, se eu não estou errado, a gente pode botar aqui, Archie,
+
+303
+00:43:50.370 --> 00:43:51.739
+Fernando Guimarães Ferreira: isso é muito inglesa.
+
+304
+00:43:51.990 --> 00:43:56.460
+Fernando Guimarães Ferreira: Obrigado. Não, não é, tio. Arrei velhos.
+
+305
+00:43:57.940 --> 00:44:12.349
+Fernando Guimarães Ferreira: É, chorrei agora velhos. Sim, enfim, para a gente enxergar isso aqui seria legal,
+
+306
+00:44:12.990 --> 00:44:15.480
+Fernando Guimarães Ferreira: mas acho que eu não vou conseguir mostrar.
+
+307
+00:44:21.210 --> 00:44:25.980
+Fernando Guimarães Ferreira: Acho que é Tudenz. Não tô lembrando, pessoal, acho que é tudência aqui, não é?
+
+308
+00:44:36.550 --> 00:44:40.479
+Fernando Guimarães Ferreira: Não estou lembrando, mas fala, hein? Perguntas, podem falar.
+
+309
+00:44:42.250 --> 00:44:42.940
+hildenilson.albano: Pessoal.
+
+310
+00:44:42.940 --> 00:44:49.059
+kevin.rodrigues: Mesmo usando tokens. Tipo, com duas, três palavras,
+
+311
+00:44:49.380 --> 00:44:54.670
+kevin.rodrigues: duas, três letras. Ainda dá para ter contexto do conteúdo.
+
+312
+00:44:55.440 --> 00:45:08.169
+Fernando Guimarães Ferreira: Sim, porque o treinamento foi feito assim. Então não é que eu estou usando duas, três palavras, mas essas duas, três letras. Elas estão apontando para outras duas, três letras com mais importância. Por exemplo, se fizerem parte da mesma palavra.
+
+313
+00:45:08.650 --> 00:45:15.399
+kevin.rodrigues: Eu entendo que o processo é tipo. Você precisa tocanizar ele com o mesmo processo que ele foi treinado.
+
+314
+00:45:15.600 --> 00:45:16.480
+Fernando Guimarães Ferreira: Isso.
+
+315
+00:45:17.370 --> 00:45:18.070
+Fernando Guimarães Ferreira: Mas eu.
+
+316
+00:45:18.070 --> 00:45:26.019
+kevin.rodrigues: A minha dúvida era eu pensei que a gente só conseguia manter o contexto se a gente tivesse a palavra por inteiro.
+
+317
+00:45:26.650 --> 00:45:37.360
+Fernando Guimarães Ferreira: Não. Então como que o treinamento é feito, né? Tipo, é por Tolkien. Imagina que isso aqui é um Token. Esse aqui é um token. Esse aqui é um token. Todos os tokens. Eles conhecem todos os outros tokens.
+
+318
+00:45:37.460 --> 00:45:46.860
+Fernando Guimarães Ferreira: Só que para esse token, por exemplo, o mecanismo. O nismo é um token muito importante. Então ele vai ter uma atenção muito grande para poder compreender a palavra inteira.
+
+319
+00:45:47.760 --> 00:45:53.980
+kevin.rodrigues: Ele conhece as distâncias entre todos os outros pontos. Cada um é isso mesmo.
+
+320
+00:45:54.030 --> 00:45:58.690
+Fernando Guimarães Ferreira: Ele tem esse vetor de relevância para todos os outros tokens, sempre.
+
+321
+00:46:00.820 --> 00:46:07.649
+Fernando Guimarães Ferreira: Então não tem problema as palavras estarem separadas. Desde que ele entenda que isso aqui, por exemplo, é muito relevante para entender isso aqui.
+
+322
+00:46:08.040 --> 00:46:18.580
+Fernando Guimarães Ferreira: Mas nem sempre isso é verdade. Às vezes, se a gente vê que inconstitucionalissimamente esses últimos toques talvez não sejam tão importantes para entender que é inconstitucional. Por exemplo,
+
+323
+00:46:19.710 --> 00:46:24.290
+Fernando Guimarães Ferreira: então não necessariamente a palavra inteira carrega o sentido da palavra.
+
+324
+00:46:24.850 --> 00:46:26.430
+Fernando Guimarães Ferreira: Faz sentido.
+
+325
+00:46:28.490 --> 00:46:29.080
+kevin.rodrigues: Sim, sim.
+
+326
+00:46:29.350 --> 00:46:29.950
+pedro.duarte: Sim.
+
+327
+00:46:32.030 --> 00:46:40.480
+Fernando Guimarães Ferreira: Então é isso? Ah, mecanismo. Não sei qual o Token aqui não dá para saber, mas, por exemplo, se for mecan e ismo ismo. Talvez não tenha tanta importância
+
+328
+00:46:41.210 --> 00:46:46.950
+Fernando Guimarães Ferreira: para entender que é mecânico. Se ele sempre aprende que me canta em alguma coisa relacionada a isso.
+
+329
+00:46:48.020 --> 00:46:52.320
+Fernando Guimarães Ferreira: Por exemplo, ou atenção, se o sei lá. O Token é esse.
+
+330
+00:46:53.550 --> 00:47:10.010
+Fernando Guimarães Ferreira: Isso não é uma quebra nem sílabas. São trechos cortados para aprender no modelo. E ele vai aprendendo conforme tudo usa. Então não é necessário. Ele não fala português. Lembrem disso. Ele fala Tolkens. Então, como ele aprendeu esses tokens?
+
+331
+00:47:10.020 --> 00:47:14.990
+Fernando Guimarães Ferreira: Isso é uma coisa importante, até para relacionar com os outros idiomas e tudo mais.
+
+332
+00:47:15.100 --> 00:47:20.170
+Fernando Guimarães Ferreira: Mas o importante é que ele vai ter aqui quebras
+
+333
+00:47:20.340 --> 00:47:23.260
+Fernando Guimarães Ferreira: e essas quebras vão estar relacionadas
+
+334
+00:47:25.430 --> 00:47:28.229
+Fernando Guimarães Ferreira: perguntas. Alguém mais tava com a mão levantada.
+
+335
+00:47:30.090 --> 00:47:31.110
+pedro.duarte: É
+
+336
+00:47:31.910 --> 00:47:42.730
+pedro.duarte: assim. Por exemplo, quando vai utilizar o Compartilh, por exemplo, eles falam: Ah, esse. Daí o custo é de estar cobrando por Tolkien por X Toaching.
+
+337
+00:47:43.190 --> 00:47:43.690
+Fernando Guimarães Ferreira: O é.
+
+338
+00:47:43.690 --> 00:47:53.520
+pedro.duarte: Essa relação aí, essa mesma relação do que a gente. Tá vendo? Ele tá cobrando por cada token gerado aí que ele tá processando, por exemplo,
+
+339
+00:47:53.730 --> 00:47:55.320
+pedro.duarte: algo nesse sentido.
+
+340
+00:47:55.610 --> 00:47:56.100
+Fernando Guimarães Ferreira: É exatamente.
+
+341
+00:47:56.100 --> 00:48:12.650
+pedro.duarte: E para a gente saber como que é essa distribuição. Como basicamente não tem, porque ele não fala português. É como ele aprendeu ali. Então, dependendo do modelo, pode ser que ele vá consumir mais ou menos tolkens. Mas a resposta dele
+
+342
+00:48:12.770 --> 00:48:15.440
+pedro.duarte: vai ser melhor ou pior, né?
+
+343
+00:48:15.710 --> 00:48:18.310
+Fernando Guimarães Ferreira: Isso tem uma média aqui em inglês,
+
+344
+00:48:18.940 --> 00:48:34.170
+Fernando Guimarães Ferreira: mas não sei nem se isso é para todos os modelos, para ser bem sincero, mas uma média no Gpt, pelo menos quatro, que é uma média que o número de Tokins para língua inglesa é setenta a mais do número de palavras em média.
+
+345
+00:48:36.150 --> 00:48:40.689
+Fernando Guimarães Ferreira: Então tu tem ali dez mil palavras. Você vai ter dezassete mil.
+
+346
+00:48:41.120 --> 00:48:43.899
+Fernando Guimarães Ferreira: É talvez em contato.
+
+347
+00:48:43.900 --> 00:48:50.629
+pedro.duarte: Por exemplo, do que com português é a mesma relação ou o inglês? Na teoria, eu gostaria menos.
+
+348
+00:48:50.880 --> 00:48:54.909
+Fernando Guimarães Ferreira: China, por exemplo, gasta bem menos token. Que inglês, chinês.
+
+349
+00:48:56.620 --> 00:48:59.020
+Fernando Guimarães Ferreira: Porque os iodolograma são bem menores, né?
+
+350
+00:49:00.460 --> 00:49:01.050
+pedro.duarte: Sim.
+
+351
+00:49:01.560 --> 00:49:03.250
+Fernando Guimarães Ferreira: Então, quer economizar.
+
+352
+00:49:03.250 --> 00:49:05.660
+pedro.duarte: Posso aprender chinês para.
+
+353
+00:49:05.660 --> 00:49:07.090
+Fernando Guimarães Ferreira: É exato.
+
+354
+00:49:07.090 --> 00:49:07.690
+pedro.duarte: E aí?
+
+355
+00:49:07.690 --> 00:49:15.169
+Fernando Guimarães Ferreira: Mandarim tem bem, menos Token. Não sei te dizer se português tem menos ou mais token. Para ser bem sincero, não sei te dizer isso,
+
+356
+00:49:15.610 --> 00:49:31.999
+Fernando Guimarães Ferreira: mas certamente tem mais estatística em inglês do que português, que é um outro problema do viés dos modelos, o modelo aprendeu muito mais
+
+357
+00:49:32.320 --> 00:49:52.530
+Fernando Guimarães Ferreira: documentos em inglês, e o que ele às vezes faz é entender as traduções diretas de palavras em português e acabar usando esse vés da documentação em inglês, por exemplo, quando a gente está falando de modelos muito grandes, e aí talvez é melhor, em determinados contextos, usar um modelo que tenha sido treinado
+
+358
+00:49:52.660 --> 00:49:56.440
+Fernando Guimarães Ferreira: diretamente no idioma, em vez de usar um modelo de propósito geral.
+
+359
+00:49:59.050 --> 00:50:12.459
+pedro.duarte: Bater vontade de fazer um teste de cachorro, pegar um prompt ali, converter, traduzir ele para chinês e botar em chinês só pra ver o quanto que vai gastar ali em relação a.
+
+360
+00:50:12.490 --> 00:50:13.180
+Fernando Guimarães Ferreira: É o Pô.
+
+361
+00:50:13.180 --> 00:50:15.159
+kevin.rodrigues: Vejo que o.
+
+362
+00:50:15.160 --> 00:50:17.450
+pedro.duarte: É.
+
+363
+00:50:18.060 --> 00:50:20.570
+renata.abreu: Para que esse é o segredo do Deep Simple?
+
+364
+00:50:20.810 --> 00:50:21.750
+renata.abreu: É isso aí.
+
+365
+00:50:25.390 --> 00:50:31.420
+Fernando Guimarães Ferreira: Boa. Então, aqui a gente já passou por essa parte, né? Agora eu queria falar um pouco com vocês do Pipeline.
+
+366
+00:50:31.700 --> 00:50:38.519
+Fernando Guimarães Ferreira: Outra funcionalidade que essa biblioteca trazem para a gente. É exatamente um pipeline de processamento,
+
+367
+00:50:38.690 --> 00:50:42.019
+Fernando Guimarães Ferreira: porque a gente sempre acaba tendo
+
+368
+00:50:42.140 --> 00:50:59.819
+Fernando Guimarães Ferreira: em diferentes atividades. Um pré processamento, por exemplo, transformar em Tokins um pós processamento, reverter de novo para idioma e uma inferência. Então o ruginface já deixa para a gente preparado uma série de pipelines
+
+369
+00:51:00.060 --> 00:51:08.180
+Fernando Guimarães Ferreira: para a gente trabalhar, por exemplo, classificação para fazer inferência de
+
+370
+00:51:08.490 --> 00:51:19.929
+Fernando Guimarães Ferreira: de resumo de texto, pergunta e resposta. Geração de texto. Então tem algumas atividades ligadas
+
+371
+00:51:20.070 --> 00:51:26.719
+Fernando Guimarães Ferreira: a Nlu, ou processamento de linguagem natural, como por exemplo, Nery e tudo mais
+
+372
+00:51:26.840 --> 00:51:35.530
+Fernando Guimarães Ferreira: que a gente sempre vai fazer as mesmas atividades. Então eles disponibilizam para a gente um pipeline
+
+373
+00:51:35.980 --> 00:51:39.129
+Fernando Guimarães Ferreira: é como se fosse, por exemplo, uma.
+
+374
+00:51:39.560 --> 00:51:40.260
+Fernando Guimarães Ferreira: E aí
+
+375
+00:51:41.430 --> 00:51:53.130
+Fernando Guimarães Ferreira: uma loja de aplicativos que eu tenho diferentes modelos. E você? Bom, agora eu quero fazer uma classificação. Aí você vai ter um aplicativo específico para fazer essa classificação facilita bastante o uso
+
+376
+00:51:53.160 --> 00:52:04.010
+Fernando Guimarães Ferreira: de criar soluções usando esses modelos pré treinados, porque você já tem todo o ferramental necessário para executar o modelo.
+
+377
+00:52:04.310 --> 00:52:20.580
+Fernando Guimarães Ferreira: E é normalmente um código muito simples, como eu espero mostrar para vocês a função pipeline, a função que conecta um modelo aos passos de pré processamento e pós processamento. Por exemplo, eu quero fazer um maná de sentimento.
+
+378
+00:52:20.800 --> 00:52:34.770
+Fernando Guimarães Ferreira: Então eu faço aqui? Classificador, análise de sentimento. Ele vai baixar um modelo padrão. Você passa um modelo padrão e você já pode passar a frase. Ou seja, esse é o teu código para fazer um classificador de sentimento usando uma Llm.
+
+379
+00:52:34.880 --> 00:52:36.339
+Fernando Guimarães Ferreira: Tudo que você precisa.
+
+380
+00:52:36.760 --> 00:52:49.880
+Fernando Guimarães Ferreira: Ah, se eu quiser definir outras coisas, você define outras coisas. Quais são os tipos de tarefas que eu posso fazer? Posso fazer extração de características. Posso fazer preenchimento de lacunas. Posso fazer reconhecimentos de
+
+381
+00:52:49.880 --> 00:53:08.090
+Fernando Guimarães Ferreira: de entidade nomeada. Posso fazer perguntas e respostas. Posso fazer sentimento, análise, análise, sentimentos, resumos, geração de texto, tradução, treinamento supervisionado, sem nenhum, sem nenhum exemplo, ou com alguns exemplos, como o Phil Shotland.
+
+382
+00:53:08.120 --> 00:53:10.159
+Fernando Guimarães Ferreira: Essas são algumas
+
+383
+00:53:10.200 --> 00:53:28.059
+Fernando Guimarães Ferreira: das possibilidades. A gente vai falar sobre zero short learning e tudo mais nas próximas aulas, quando a gente fala de Prompt individual, mas é basicamente eu pedi para fazer uma classificação só com a informação que a rede já tem. Ou eu posso dar alguns exemplos que aí são. O Phil shot learning.
+
+384
+00:53:28.500 --> 00:53:29.929
+Fernando Guimarães Ferreira: Pode falar. Kevin.
+
+385
+00:53:30.820 --> 00:53:36.480
+kevin.rodrigues: O quão próximo de processamento de imagem está. Isso porque imagem é um vetor. Também.
+
+386
+00:53:37.500 --> 00:53:43.879
+Fernando Guimarães Ferreira: A gente tem alguns pipelines definidos para imagens também. Mas aí são modelos específicos para imagens.
+
+387
+00:53:45.040 --> 00:54:03.040
+Fernando Guimarães Ferreira: Também tem. São modelos multimodais de texto e imagem. Mas a tecnologia não é de Transformers. A tecnologia são outras arquiteturas. Cnn, Stable de Fusion. Aí são outras arquiteturas de rede neural.
+
+388
+00:54:04.170 --> 00:54:09.480
+Fernando Guimarães Ferreira: Então aqui essa aqui funciona bastante para para Transformers.
+
+389
+00:54:12.500 --> 00:54:29.410
+Fernando Guimarães Ferreira: Então a gente tem o Tokenizador, o modelo e o pós processamento. Aqui, por exemplo, o texto. Esse curso é maravilhoso. Espero que vocês estejam pensando isso nesse momento, vai traduzir para toques esses toques viram números. São representações numéricas,
+
+390
+00:54:29.410 --> 00:54:32.750
+Fernando Guimarães Ferreira: já do processo de treinamento dele.
+
+391
+00:54:32.870 --> 00:54:49.980
+Fernando Guimarães Ferreira: Isso vira uma saída lógica do modelo, alguma coisa que depois é pós processada por um valor. Ah, isso aqui é, por exemplo, positivo, muito mais do que negativo. Então essa é a visão do
+
+392
+00:54:51.830 --> 00:54:57.770
+Fernando Guimarães Ferreira: do ponto bom, eu vou fazer alguns exemplos com vocês na apresentação. Vocês viram alguns exemplos, mas
+
+393
+00:54:58.000 --> 00:55:01.910
+Fernando Guimarães Ferreira: vamos fazer alguns exemplos juntos. Aqui, por exemplo, classificador.
+
+394
+00:55:03.240 --> 00:55:06.680
+Fernando Guimarães Ferreira: Eu já fiz imposto aqui do pipeliner. Não, acho que não.
+
+395
+00:55:08.390 --> 00:55:12.910
+Fernando Guimarães Ferreira: Pronto, pronto.
+
+396
+00:55:13.140 --> 00:55:17.050
+Fernando Guimarães Ferreira: Transformer importe pagão.
+
+397
+00:55:21.930 --> 00:55:24.659
+Fernando Guimarães Ferreira: Então aqui vai ser o classificador.
+
+398
+00:55:25.670 --> 00:55:33.670
+Fernando Guimarães Ferreira: Recebe o pipeline recentemente.
+
+399
+00:55:34.100 --> 00:55:35.280
+Fernando Guimarães Ferreira: Análises.
+
+400
+00:55:39.870 --> 00:55:51.290
+Fernando Guimarães Ferreira: Então agora ele está baixando o modelo. O modelo que ele está baixando é esse aqui. Gilsberty besen case and fine tune pra inglês. Ah, professor, eu não quero esse modelo.
+
+401
+00:55:51.680 --> 00:55:56.979
+Fernando Guimarães Ferreira: Você vai vir aqui na documentação e vai ver que ele tem um parâmetro.
+
+402
+00:55:57.290 --> 00:55:59.390
+Fernando Guimarães Ferreira: É modelo.
+
+403
+00:56:00.620 --> 00:56:12.740
+Fernando Guimarães Ferreira: Então você pode passar para ele qualquer modelo. Qual é a preocupação que você tem que ter? Você quer um classificador? Então você vai vir aqui em modelos.
+
+404
+00:56:13.400 --> 00:56:26.210
+Fernando Guimarães Ferreira: Vai vir aqui aumentando a letra. Porque vocês talvez não estejam enxergando. Você vai vir aqui nas tarefas. Vai olhar aqui em classificador, classifier
+
+405
+00:56:29.180 --> 00:56:32.210
+Fernando Guimarães Ferreira: sentimentos de análise, sentimentos de análise.
+
+406
+00:56:34.710 --> 00:56:47.030
+Fernando Guimarães Ferreira: É Samarization Question é que é decentemente análise, e aí
+
+407
+00:56:51.070 --> 00:56:52.820
+Fernando Guimarães Ferreira: sentimento, análises,
+
+408
+00:56:57.390 --> 00:56:58.400
+Fernando Guimarães Ferreira: por exemplo.
+
+409
+00:56:59.700 --> 00:57:10.100
+Fernando Guimarães Ferreira: E aí você vai verificar se esse modelo, por exemplo, que aqui, de notícias financeiras, se dentro das atividades que ele pode fazer
+
+410
+00:57:11.020 --> 00:57:19.660
+Fernando Guimarães Ferreira: está classificação de sentimentos. Esse modo, esse ativa o resultado. Evaluation.
+
+411
+00:57:20.040 --> 00:57:22.220
+Fernando Guimarães Ferreira: Você tem um negócio me atrapalhando aqui,
+
+412
+00:57:22.540 --> 00:57:27.529
+Fernando Guimarães Ferreira: todos os modelos que fazem parte que foram Fine tunis dele.
+
+413
+00:57:27.670 --> 00:57:33.830
+Fernando Guimarães Ferreira: Mas exatamente onde diz as tarefas? Normalmente é mais fácil do que isso.
+
+414
+00:57:34.780 --> 00:57:36.739
+Fernando Guimarães Ferreira: Vendo aqui nesse modelo específico.
+
+415
+00:57:39.450 --> 00:57:45.529
+Fernando Guimarães Ferreira: A princípio, esse aqui faz. Mas Financial. Ah, tá aqui. Financial sentimental, por exemplo.
+
+416
+00:57:45.640 --> 00:57:54.049
+Fernando Guimarães Ferreira: Então ele é um modelo para fazer aqui para notícias financeiras, por exemplo.
+
+417
+00:57:54.450 --> 00:57:57.680
+Fernando Guimarães Ferreira: Então, esse pipeline. Agora a gente tem um classificador.
+
+418
+00:57:59.080 --> 00:58:02.190
+Fernando Guimarães Ferreira: Esse classificador. A gente vai botar aqui.
+
+419
+00:58:02.670 --> 00:58:06.609
+Fernando Guimarães Ferreira: Não é botar exatamente essa frase que ele botou aqui.
+
+420
+00:58:07.020 --> 00:58:10.359
+Fernando Guimarães Ferreira: Eu estive esperando esse curso a minha vida toda.
+
+421
+00:58:13.050 --> 00:58:17.300
+Fernando Guimarães Ferreira: Positivo, com uma se atividade aqui de noventa e cinco,
+
+422
+00:58:19.070 --> 00:58:26.630
+Fernando Guimarães Ferreira: então é positivo. Se eu botar assim, classifica, não é?
+
+423
+00:58:27.200 --> 00:58:28.949
+Fernando Guimarães Ferreira: É em inglês, aqui, né?
+
+424
+00:58:29.870 --> 00:58:36.380
+Fernando Guimarães Ferreira: Importante observar que esse aqui é um Burt. Ele é, Burt? Como é que eu sei que é Burt Birch? Tá aqui, Burt?
+
+425
+00:58:36.760 --> 00:58:44.190
+Fernando Guimarães Ferreira: Um burt aqui básico tunado, né? Pra alguma coisa em inglês. Então as classes têm que ser em inglês.
+
+426
+00:58:44.740 --> 00:58:46.030
+Fernando Guimarães Ferreira: I hate.
+
+427
+00:58:46.650 --> 00:58:54.800
+Fernando Guimarães Ferreira: Vamos ver aqui Cnn, Cnn com é.
+
+428
+00:58:56.580 --> 00:58:58.560
+Fernando Guimarães Ferreira: É
+
+429
+00:59:02.130 --> 00:59:04.530
+Fernando Guimarães Ferreira: bom. Isso aqui deve ser negativo, né?
+
+430
+00:59:04.640 --> 00:59:18.319
+Fernando Guimarães Ferreira: Uma frase aqui. Bem, ah. Notícias positivas ou negativas? Negativo, com noventa e nove, tá, pode falar, Pedro.
+
+431
+00:59:18.320 --> 00:59:19.629
+pedro.duarte: Pode ser uma
+
+432
+00:59:19.800 --> 00:59:39.490
+pedro.duarte: dúvida boba, mas, por exemplo, assim vamos supor que eu colocasse. Eu fui promovido, mas meu cachorro morreu hoje. Ele consegue, tipo, distinguir as duas coisas diferentes. E baseado nisso, ele dizer, tipo, se eu tendo a estar mais feliz ou mais triste. Algo nesse sentido.
+
+433
+00:59:40.240 --> 00:59:43.760
+pedro.duarte: Ele consegue, tipo, essa percepção.
+
+434
+00:59:44.380 --> 00:59:46.010
+pedro.duarte: Imagino que sim. Mas.
+
+435
+00:59:49.780 --> 00:59:50.620
+Fernando Guimarães Ferreira: Negativo.
+
+436
+00:59:52.150 --> 00:59:58.200
+pedro.duarte: Então ele entende que, independente do coisa isso daí muito mais.
+
+437
+01:00:02.520 --> 01:00:04.810
+hildenilson.albano: Professor. E se fosse
+
+438
+01:00:05.040 --> 01:00:15.360
+hildenilson.albano: em vez essa frase aí, se você colocasse o cachorro morreu. Mas ele foi promovido. Como é que ele ficaria aí? Ele entenderia que é o sentimento negativo.
+
+439
+01:00:33.270 --> 01:00:35.799
+Fernando Guimarães Ferreira: Negativo ainda. O cachorro morreu. Isso é muito sério.
+
+440
+01:00:39.560 --> 01:00:41.680
+fabricio.gouveia: Morte no meio é negativo.
+
+441
+01:00:49.930 --> 01:00:55.269
+Fernando Guimarães Ferreira: Ele está feliz. Ele concordou contigo. Mas você está feliz. Está feliz? Independente do cachorro, morreu.
+
+442
+01:01:08.740 --> 01:01:25.959
+Fernando Guimarães Ferreira: O cachorro morreu. Ele não gostava do cachorro, mas é negativo ainda porque duas negações, ele não gostava do cachorro e o cachorro morreu. Então assim não. Ele vê o Burt, principalmente, ele vê, é diferente. Por exemplo, quando a gente usar um modelo de linguagem para geração de texto,
+
+443
+01:01:26.020 --> 01:01:36.919
+Fernando Guimarães Ferreira: perguntar se é positivo ou negativo. Ele vai olhar esse contexto e talvez faça essa argumentação, porque ele está gerando palavra a palavra aqui. Ele está olhando o contexto inteiro. E aí depende com quem ele foi treinado.
+
+444
+01:01:37.170 --> 01:01:41.100
+Fernando Guimarães Ferreira: Então aqui morte é.
+
+445
+01:01:42.240 --> 01:01:46.859
+Fernando Guimarães Ferreira: Eu gostou meu nome? Vamos ver.
+
+446
+01:01:50.300 --> 01:01:53.509
+Fernando Guimarães Ferreira: Negativo ainda. Se eu botar aqui? It S. Fine.
+
+447
+01:01:57.120 --> 01:02:03.760
+Fernando Guimarães Ferreira: Perder o cachorro é muito muito sério,
+
+448
+01:02:06.300 --> 01:02:09.590
+Fernando Guimarães Ferreira: entendeu? O cachorro é alguma coisa séria. Enfim,
+
+449
+01:02:09.990 --> 01:02:12.190
+Fernando Guimarães Ferreira: esse é o exemplo para vocês.
+
+450
+01:02:13.500 --> 01:02:16.799
+Fernando Guimarães Ferreira: Ah, professor, eu gostaria de gerar texto.
+
+451
+01:02:17.030 --> 01:02:22.690
+Fernando Guimarães Ferreira: Generator, vou botar aqui. Ó gerador
+
+452
+01:02:24.590 --> 01:02:28.610
+Fernando Guimarães Ferreira: lero lero. Vocês sempre quiseram fazer um gerador de lero lero, né?
+
+453
+01:02:29.320 --> 01:02:35.720
+Fernando Guimarães Ferreira: Pipeline text primeiro, é isso.
+
+454
+01:02:41.410 --> 01:02:45.249
+Fernando Guimarães Ferreira: Ah, não pode ter que ser assim, né? Aí pedi demais, também, né?
+
+455
+01:02:47.140 --> 01:02:52.589
+Fernando Guimarães Ferreira: No modelo observe que ele está usando Gpt2
+
+456
+01:02:53.160 --> 01:03:02.629
+Fernando Guimarães Ferreira: que é a mesma arquitetura do Gpt5 que é a mesma arquitetura do Gpt quatro, que é a mesma arquitetura do Gpt3 qual é a diferença do Gpt2 para o Gpt3.
+
+457
+01:03:06.760 --> 01:03:10.789
+pedro.duarte: A quantidade de informações que ele foi. Treinador.
+
+458
+01:03:10.990 --> 01:03:16.669
+Fernando Guimarães Ferreira: Há números de parâmetros. E, evidentemente, a quantidade de informações que lhe foi treinada.
+
+459
+01:03:18.040 --> 01:03:20.340
+Fernando Guimarães Ferreira: Então, se a gente botar aqui, Generator
+
+460
+01:03:24.150 --> 01:03:25.280
+Fernando Guimarães Ferreira: é.
+
+461
+01:03:39.730 --> 01:03:43.680
+Fernando Guimarães Ferreira: Não rodou. O que aconteceu aqui não é gerador de lero lero, né? Desculpa,
+
+462
+01:03:50.060 --> 01:03:50.780
+Fernando Guimarães Ferreira: tá
+
+463
+01:03:51.220 --> 01:04:09.779
+Fernando Guimarães Ferreira: resultado no discurso. Você pode aprender como criar e execute algoritmos e algoritmos algures com entendimento da machine learning e como explorar desafios de machine learning para aprender mais sobre vá para Labwether download. Pronto,
+
+464
+01:04:09.910 --> 01:04:13.229
+Fernando Guimarães Ferreira: se vocês quiserem deixar isso aqui um pouquinho mais bonitinho.
+
+465
+01:04:18.400 --> 01:04:22.640
+Fernando Guimarães Ferreira: Por que vocês podem usar o Gpt2 aqui? Porque o Gpt2 é aberto.
+
+466
+01:04:22.760 --> 01:04:25.890
+Fernando Guimarães Ferreira: Eles fecharam o código a partir do Gpt3.
+
+467
+01:04:33.830 --> 01:04:41.609
+pedro.duarte: Ideia e curiosidade. Não, não sei se o professor tem essa métrica ali, mas se eu fosse subir, por exemplo, para a produção
+
+468
+01:04:42.800 --> 01:04:46.710
+pedro.duarte: modelo desses. Daí, né? Baseado no Gpt2 ali pra
+
+469
+01:04:46.820 --> 01:04:51.309
+pedro.duarte: estreia, informação de algum arquivo ou algo assim.
+
+470
+01:04:51.520 --> 01:04:54.580
+pedro.duarte: Seria muito caro.
+
+471
+01:04:55.520 --> 01:04:56.749
+pedro.duarte: Não como que.
+
+472
+01:04:56.750 --> 01:04:58.059
+Fernando Guimarães Ferreira: Em termos de quê?
+
+473
+01:05:00.160 --> 01:05:02.670
+pedro.duarte: Por exemplo, ele vai ler um.
+
+474
+01:05:02.920 --> 01:05:12.929
+pedro.duarte: Voltando naquele exemplo, aquele, um Pdf de um contrato e extrai informações financeiras do Pdf, por exemplo.
+
+475
+01:05:13.120 --> 01:05:17.219
+Fernando Guimarães Ferreira: Uhum mas é caro no sentido de que assim você.
+
+476
+01:05:17.220 --> 01:05:25.659
+pedro.duarte: É tipo dinheiro. Eu vou subir em produção numa máquina Ws e um serviço que vai.
+
+477
+01:05:26.160 --> 01:05:31.829
+Fernando Guimarães Ferreira: O Gps2 é muito leve rodando assim. Vocês estão vendo? Eu tô rodando aqui. Ele tem, né?
+
+478
+01:05:32.630 --> 01:05:34.090
+Fernando Guimarães Ferreira: O tamanho.
+
+479
+01:05:35.410 --> 01:05:40.090
+Fernando Guimarães Ferreira: Ele tem quinhentos e quarenta megas.
+
+480
+01:05:40.740 --> 01:05:41.920
+Fernando Guimarães Ferreira: Isso é bem leve.
+
+481
+01:05:42.370 --> 01:05:44.820
+Fernando Guimarães Ferreira: E aí é um pouco.
+
+482
+01:05:44.820 --> 01:05:53.479
+pedro.duarte: Por exemplo, se ele resolvesse o meu problema e a nível de licença, seja permitido,
+
+483
+01:05:53.600 --> 01:05:55.980
+pedro.duarte: é algo viável. Por exemplo.
+
+484
+01:05:55.980 --> 01:06:10.030
+Fernando Guimarães Ferreira: É? Depende do volume que você estiver falando, porque ele é leve. Não vai consumir muito recurso. Mas leva alguns segundos para dar uma resposta. Um segundo. Alguma coisa assim como vocês estão vendo aqui. Então eu tenho casos
+
+485
+01:06:10.030 --> 01:06:19.650
+Fernando Guimarães Ferreira: é para esse mês. Eu preciso resolver uma questão que eu estou em duzentos mil tweets para classificar. Se eu levar um segundo para cada um deles, eu levo duzentos mil segundos. Isso não é viável.
+
+486
+01:06:20.620 --> 01:06:35.830
+Fernando Guimarães Ferreira: Então assim tem uma questão de tempo. Aí você estabelece estratégias. Pô vou anotar dez mil, dez mil segundos e eu consigo gastar o que eu faço com os outros que eu não classifiquei. Aí cria um classificador com uma execução mais rápida
+
+487
+01:06:36.090 --> 01:06:53.820
+Fernando Guimarães Ferreira: fazendo como, ah, posso fazer anotação com Gpt3 Gpt quatro um Gpt bom, numa base menor e dessa base, eu tento expandir para fazer uma classificação, por exemplo, aí você pode pensar em estratégias para poder escalar essa volumetria.
+
+488
+01:06:55.470 --> 01:06:55.990
+pedro.duarte: Beleza.
+
+489
+01:06:57.430 --> 01:07:08.829
+Fernando Guimarães Ferreira: Mas em termos de processamento, não é um processamento caro. A gente tá rodando aqui, Collab. Tipo, vocês estão vendo, eu posso botar aqui um time aqui só para você ver, né?
+
+490
+01:07:15.410 --> 01:07:17.069
+kevin.rodrigues: E não dá para paralisar.
+
+491
+01:07:20.930 --> 01:07:31.660
+Fernando Guimarães Ferreira: Dá. Mas aí é mais recurso que você está gastando. Então, tipo, de qualquer maneira, uma execução é cinco segundos. Você vai paralisar. Tem um limite
+
+492
+01:07:31.930 --> 01:07:40.289
+Fernando Guimarães Ferreira: em microserviços. É possível. Você pode criar serviços. Enfim, mas cada um deles está gastando aqui alguns segundos.
+
+493
+01:07:40.930 --> 01:07:50.839
+Fernando Guimarães Ferreira: Isso. Obviamente que aqui eu tô num recurso que não é nem dedicado. Placa de vídeo, concurso. Isso aqui no computador dedicado vai se acordar mais rápido.
+
+494
+01:07:50.960 --> 01:07:53.349
+Fernando Guimarães Ferreira: Mas ainda assim, a escala é segundos
+
+495
+01:07:53.650 --> 01:08:03.260
+Fernando Guimarães Ferreira: que eu vou esquecer. Uma vez lá na empresa, um estagiário fez um programa para rodar. Era um classificador
+
+496
+01:08:03.520 --> 01:08:17.219
+Fernando Guimarães Ferreira: e deixou rodando o final de semana. Aí, quando ele voltou, perguntei, né? Mas falta quanto tempo pra rodar ele. Ah, não sei quantas horas, cara. Era tipo, sete anos se fizesse a conta. Chega caro. Isso aí não está viável. Vai levar sete anos rodando.
+
+497
+01:08:17.740 --> 01:08:23.669
+Fernando Guimarães Ferreira: É isso. Tem que se preocupar com essa. Tipo, é possível, né? Mas tem que.
+
+498
+01:08:23.859 --> 01:08:27.640
+Fernando Guimarães Ferreira: Mas tem que entender essa expectativa.
+
+499
+01:08:29.380 --> 01:08:39.700
+Fernando Guimarães Ferreira: Outro Pipeline. Vamos aqui. Vamos fazer preencher lacuna Prova de Lacuna um Master Pipeline.
+
+500
+01:08:42.840 --> 01:08:44.090
+Fernando Guimarães Ferreira: Filmesk
+
+501
+01:08:47.569 --> 01:08:49.129
+Fernando Guimarães Ferreira: aí eu vou botar aqui,
+
+502
+01:08:58.140 --> 01:08:59.510
+Fernando Guimarães Ferreira: a master
+
+503
+01:09:02.830 --> 01:09:04.149
+Fernando Guimarães Ferreira: vamos botar aqui.
+
+504
+01:09:04.649 --> 01:09:12.090
+Fernando Guimarães Ferreira: Brasil, Will, aí eu vou botar aqui.
+
+505
+01:09:12.399 --> 01:09:13.510
+Fernando Guimarães Ferreira: Mask
+
+506
+01:09:17.520 --> 01:09:28.790
+Fernando Guimarães Ferreira: é de trinta e vinte e seis futebol, o Word.
+
+507
+01:09:30.200 --> 01:09:33.160
+Fernando Guimarães Ferreira: Vou dar ativo Fifa.
+
+508
+01:09:33.880 --> 01:09:35.580
+Fernando Guimarães Ferreira: E aí, Cup.
+
+509
+01:09:37.130 --> 01:09:39.600
+Fernando Guimarães Ferreira: E aí vou pedir para ela me responder
+
+510
+01:09:39.950 --> 01:09:43.450
+Fernando Guimarães Ferreira: com os dois termos possíveis para esse
+
+511
+01:09:45.410 --> 01:09:52.770
+Fernando Guimarães Ferreira: Brasil. E o Host ou. E o boicote. Foram os dois termos possíveis. Ganhar não é? Cogitado por ele.
+
+512
+01:09:53.010 --> 01:09:57.000
+Fernando Guimarães Ferreira: Então ele vai hostil.
+
+513
+01:09:57.000 --> 01:09:57.930
+pedro.duarte: Vagabundo.
+
+514
+01:09:58.080 --> 01:09:59.449
+pedro.duarte: Não acredito.
+
+515
+01:09:59.590 --> 01:10:01.070
+pedro.duarte: E aí?
+
+516
+01:10:01.750 --> 01:10:07.940
+Fernando Guimarães Ferreira: Vamos botar aqui. Cinco. Vamos ver assim. Nossa, top cinco. Ó Atend! Miss Wind,
+
+517
+01:10:08.900 --> 01:10:10.799
+Fernando Guimarães Ferreira: em algum nível, a gente vai ganhar.
+
+518
+01:10:11.410 --> 01:10:12.110
+pedro.duarte: É.
+
+519
+01:10:12.780 --> 01:10:14.399
+Fernando Guimarães Ferreira: Pode falar. O Edenilson.
+
+520
+01:10:17.270 --> 01:10:25.789
+hildenilson.albano: Eu fiquei na dúvida porque o senhor está usando vários papelines que já estão pré prontos. Aí a gente tem acesso a esse código,
+
+521
+01:10:26.040 --> 01:10:28.590
+hildenilson.albano: para ver como é que os caras fizeram isso ou não.
+
+522
+01:10:29.140 --> 01:10:34.690
+Fernando Guimarães Ferreira: Isso aqui é o open source. Sim, mas são códigos complicados.
+
+523
+01:10:35.460 --> 01:10:38.509
+hildenilson.albano: É a mesma curiosidade mesmo. Obrigado.
+
+524
+01:10:38.740 --> 01:10:48.730
+Fernando Guimarães Ferreira: O que você pode customizar esses pipelines. Como eu falei, talvez aqui seja mais fácil.
+
+525
+01:10:49.850 --> 01:10:54.790
+Fernando Guimarães Ferreira: Transforme a gente fez.
+
+526
+01:10:55.980 --> 01:11:03.750
+Fernando Guimarães Ferreira: Você pode customizar usando as variáveis, por exemplo, modelo.
+
+527
+01:11:03.910 --> 01:11:09.350
+Fernando Guimarães Ferreira: Eu quero fazer com esse modelo. Pode testar vários modelos, não é?
+
+528
+01:11:10.240 --> 01:11:17.569
+Fernando Guimarães Ferreira: Enfim, aqui, decidindo devices. Você quer Gpu ou Cpu, por exemplo. É isso que o The Voice significa.
+
+529
+01:11:18.140 --> 01:11:23.379
+Fernando Guimarães Ferreira: Enfim, tu pode sistematizar. Vou passar para vocês darem uma olhadinha aqui na
+
+530
+01:11:33.370 --> 01:11:35.260
+Fernando Guimarães Ferreira: é,
+
+531
+01:11:38.490 --> 01:11:44.759
+Fernando Guimarães Ferreira: é, enfim, isso é uma possibilidade.
+
+532
+01:11:45.180 --> 01:11:48.600
+Fernando Guimarães Ferreira: Outra bastante utilizada.
+
+533
+01:11:48.760 --> 01:11:55.400
+Fernando Guimarães Ferreira: Tradução: translator igual Pipeline
+
+534
+01:12:03.260 --> 01:12:05.279
+Fernando Guimarães Ferreira: passar um modelo aqui para vocês.
+
+535
+01:12:15.830 --> 01:12:24.109
+Fernando Guimarães Ferreira: Não me lembro de qual é o. Sim, que é isso aqui. Obrigado.
+
+536
+01:12:31.360 --> 01:12:33.800
+Fernando Guimarães Ferreira: Aí a gente vai aqui, ó translator.
+
+537
+01:12:49.360 --> 01:12:53.180
+Fernando Guimarães Ferreira: Então aqui eu vou traduzir do inglês para o francês.
+
+538
+01:12:57.770 --> 01:13:04.850
+Fernando Guimarães Ferreira: O que ele não gostou. Aqui, Translation.
+
+539
+01:13:05.890 --> 01:13:06.900
+Fernando Guimarães Ferreira: Isso mudou.
+
+540
+01:13:07.740 --> 01:13:09.810
+Fernando Guimarães Ferreira: F é inglês.
+
+541
+01:13:09.990 --> 01:13:12.140
+Fernando Guimarães Ferreira: Tchau aí, fiéis.
+
+542
+01:13:17.390 --> 01:13:18.440
+Fernando Guimarães Ferreira: Isso aconteceu.
+
+543
+01:13:19.020 --> 01:13:20.130
+Fernando Guimarães Ferreira: E aí
+
+544
+01:13:24.030 --> 01:13:24.700
+Fernando Guimarães Ferreira: diferente.
+
+545
+01:13:26.000 --> 01:13:32.319
+Fernando Guimarães Ferreira: Mudou essa Translation Files e Diversões.
+
+546
+01:13:39.690 --> 01:13:41.880
+Fernando Guimarães Ferreira: Cadê o translator?
+
+547
+01:13:43.130 --> 01:13:44.540
+Fernando Guimarães Ferreira: Exemplos,
+
+548
+01:13:48.430 --> 01:13:50.030
+Fernando Guimarães Ferreira: vou dar login para ver o exemplo,
+
+549
+01:13:58.810 --> 01:14:00.539
+Fernando Guimarães Ferreira: mas eu quero ver o
+
+550
+01:14:06.190 --> 01:14:11.300
+Fernando Guimarães Ferreira: assim que não é isso que eu queria. Queria com Pipeline.
+
+551
+01:14:16.350 --> 01:14:17.879
+Fernando Guimarães Ferreira: Mudou essa.
+
+552
+01:14:19.010 --> 01:14:21.119
+Fernando Guimarães Ferreira: Tem um exemplo aqui com translate.
+
+553
+01:14:27.870 --> 01:14:29.220
+Fernando Guimarães Ferreira: Não, não, não, não, não, não.
+
+554
+01:14:34.920 --> 01:14:39.050
+Fernando Guimarães Ferreira: Vamos ver o que está acontecendo. O que eu posso fazer? Deixa eu voltar para cá.
+
+555
+01:14:39.980 --> 01:14:42.150
+Fernando Guimarães Ferreira: Pipeline Translation
+
+556
+01:14:45.700 --> 01:14:47.470
+Fernando Guimarães Ferreira: é o sim que a Mt.
+
+557
+01:14:48.460 --> 01:14:49.730
+Fernando Guimarães Ferreira: Translation.
+
+558
+01:14:57.790 --> 01:15:03.220
+Fernando Guimarães Ferreira: Vamos ver se vamos ver o que fala do do Pipeline.
+
+559
+01:15:10.470 --> 01:15:12.999
+Fernando Guimarães Ferreira: Engraçado que foi exatamente o que eu tinha posto, né?
+
+560
+01:15:22.800 --> 01:15:23.770
+Fernando Guimarães Ferreira: Estranho?
+
+561
+01:15:28.380 --> 01:15:35.170
+Fernando Guimarães Ferreira: Bom, vou ficar devendo a transdução para vocês. Mudou alguma coisa? Esse código funcionava. Não sei por que não está.
+
+562
+01:15:36.160 --> 01:15:37.850
+Fernando Guimarães Ferreira: Não está funcionando.
+
+563
+01:15:41.740 --> 01:15:50.149
+pedro.duarte: Não sei se tem diferenciação. O En e o Fr não tem Therm maiúsculo, porque pelo menos ali, no erro, ali na máscara. Ali,
+
+564
+01:15:51.800 --> 01:15:53.619
+pedro.duarte: as letras estão em maiúscula.
+
+565
+01:15:56.090 --> 01:16:03.650
+Fernando Guimarães Ferreira: Não, não deveria. Não deveria ser tu, não é?
+
+566
+01:16:04.870 --> 01:16:09.119
+Fernando Guimarães Ferreira: Pode ser isso aqui pode ser isso aqui.
+
+567
+01:16:15.060 --> 01:16:16.920
+Fernando Guimarães Ferreira: Mas eu já tinha instalado.
+
+568
+01:16:47.520 --> 01:16:49.750
+Fernando Guimarães Ferreira: Então todos os modelos de Translation,
+
+569
+01:16:50.940 --> 01:16:55.930
+Fernando Guimarães Ferreira: o Translation. Eu trago depois para vocês, pessoal, não sei por que não está funcionando.
+
+570
+01:16:58.520 --> 01:17:01.410
+Fernando Guimarães Ferreira: A princípio não tem motivo para não funcionar.
+
+571
+01:17:07.840 --> 01:17:09.500
+Fernando Guimarães Ferreira: Princípio não tem.
+
+572
+01:17:10.610 --> 01:17:13.240
+Fernando Guimarães Ferreira: Não tem motivo pra não funcionar. Vou ter que
+
+573
+01:17:17.810 --> 01:17:19.619
+Fernando Guimarães Ferreira: vou ter que entender.
+
+574
+01:17:20.440 --> 01:17:22.250
+Fernando Guimarães Ferreira: Bom, vamos a outro exemplo.
+
+575
+01:17:22.600 --> 01:17:24.540
+Fernando Guimarães Ferreira: Perguntas e respostas, que é um
+
+576
+01:17:24.900 --> 01:17:31.659
+Fernando Guimarães Ferreira: o problema. Isso aqui. Depois eu verifico por que não está funcionando? O que mudou que eu não estou.
+
+577
+01:17:32.510 --> 01:17:35.730
+Fernando Guimarães Ferreira: Eu não estou achando rápido. Pelo menos Translation,
+
+578
+01:17:36.570 --> 01:17:40.820
+Fernando Guimarães Ferreira: tu acha que N e Fr. Vai fazer a diferença? Eu acho que não é isso que não.
+
+579
+01:17:44.080 --> 01:17:46.079
+Fernando Guimarães Ferreira: Mas ele não está achando Translation.
+
+580
+01:17:46.480 --> 01:17:48.960
+Fernando Guimarães Ferreira: Apesar de quando eu botei Translation
+
+581
+01:18:05.020 --> 01:18:05.830
+Fernando Guimarães Ferreira: teste
+
+582
+01:18:16.260 --> 01:18:17.960
+Fernando Guimarães Ferreira: recentemente análise.
+
+583
+01:18:31.290 --> 01:18:33.280
+Fernando Guimarães Ferreira: Bom, vamos perguntar para o.
+
+584
+01:18:34.650 --> 01:18:35.940
+Fernando Guimarães Ferreira: Vamos perguntar pelo
+
+585
+01:18:39.960 --> 01:18:43.889
+Fernando Guimarães Ferreira: chat. Gpt like chat Gpt indica que é alguma coisa para a gente.
+
+586
+01:18:46.510 --> 01:18:47.680
+Fernando Guimarães Ferreira: O que mudou.
+
+587
+01:19:05.120 --> 01:19:07.529
+kevin.rodrigues: Falar para ele, cara. Teu primo quebrou.
+
+588
+01:19:08.090 --> 01:19:08.850
+Fernando Guimarães Ferreira: É isso?
+
+589
+01:19:09.160 --> 01:19:12.460
+Fernando Guimarães Ferreira: Tipo, isso pô, quando eu pagava vexame.
+
+590
+01:19:13.080 --> 01:19:16.930
+Fernando Guimarães Ferreira: Ele indicou esse aqui. Isso aqui não está funcionando.
+
+591
+01:19:17.820 --> 01:19:20.649
+Fernando Guimarães Ferreira: Aí eu vou falar para ele. Ó, isso aqui não está sonando.
+
+592
+01:19:25.640 --> 01:19:26.340
+Fernando Guimarães Ferreira: E aí
+
+593
+01:19:36.740 --> 01:19:47.650
+Fernando Guimarães Ferreira: é porque ele está me indicando é trocar a versão aí é mole pô é
+
+594
+01:19:50.780 --> 01:19:52.730
+Fernando Guimarães Ferreira: reiniciar aqui.
+
+595
+01:20:09.650 --> 01:20:14.499
+Fernando Guimarães Ferreira: Vamos ver aí eu vou só rodar aqui. Restartar, né?
+
+596
+01:20:15.950 --> 01:20:23.810
+Fernando Guimarães Ferreira: Porque, enfim, já tava importado, só para dar certeza
+
+597
+01:20:49.670 --> 01:20:51.039
+Fernando Guimarães Ferreira: é Translation.
+
+598
+01:20:52.650 --> 01:20:56.590
+Fernando Guimarães Ferreira: Aí. O modo que a gente tinha escolhido só para.
+
+599
+01:20:57.430 --> 01:20:58.860
+Fernando Guimarães Ferreira: Era isso aqui, né?
+
+600
+01:21:07.630 --> 01:21:15.740
+Fernando Guimarães Ferreira: E aí? Aqui era Iene F. É, ele rodou.
+
+601
+01:21:17.840 --> 01:21:19.349
+Fernando Guimarães Ferreira: Não me estou ligando ainda,
+
+602
+01:21:48.810 --> 01:21:50.170
+Fernando Guimarães Ferreira: mas tá rodando, velho.
+
+603
+01:22:25.370 --> 01:22:26.719
+Fernando Guimarães Ferreira: Agora está funcionando.
+
+604
+01:22:26.920 --> 01:22:31.509
+Fernando Guimarães Ferreira: Então, mudou alguma coisa no pipeline depois da versão cinco.
+
+605
+01:22:32.850 --> 01:22:37.259
+Fernando Guimarães Ferreira: Enfim, depois eu pesquiso direitinho essa mudança para vocês.
+
+606
+01:22:37.630 --> 01:22:40.729
+Fernando Guimarães Ferreira: Estrago no início da próxima aula, pra gente não perder muito tempo.
+
+607
+01:22:41.520 --> 01:22:46.780
+Fernando Guimarães Ferreira: Ó Le Brasil ganhou a Copa do Mundo Fifa.
+
+608
+01:22:47.480 --> 01:22:50.590
+Fernando Guimarães Ferreira: Então, estamos aqui na.
+
+609
+01:22:51.250 --> 01:22:53.290
+Fernando Guimarães Ferreira: Estamos no francês.
+
+610
+01:22:53.530 --> 01:22:56.420
+Fernando Guimarães Ferreira: A gente poderia botar aqui, por exemplo, o alemão
+
+611
+01:22:57.170 --> 01:23:04.350
+Fernando Guimarães Ferreira: é um modelo de alemão seria, sim. Aí eu não vou ler alemão porque realmente não sei ler alemão, mas
+
+612
+01:23:13.880 --> 01:23:14.640
+Fernando Guimarães Ferreira: aí
+
+613
+01:23:19.180 --> 01:23:22.549
+Fernando Guimarães Ferreira: está mudo para vocês, pessoal. O Pablo está falando que está mudo.
+
+614
+01:23:23.470 --> 01:23:23.860
+pedro.duarte: Para mim.
+
+615
+01:23:23.860 --> 01:23:24.260
+fabricio.gouveia: Bom dia.
+
+616
+01:23:24.260 --> 01:23:25.129
+pedro.duarte: Tá normal.
+
+617
+01:23:29.850 --> 01:23:38.969
+Fernando Guimarães Ferreira: É todo mundo respondendo. Tá normal. E ele tá no mundo. Bom, beleza pipeline de tradução: tá. Aqui
+
+618
+01:23:41.060 --> 01:23:43.160
+Fernando Guimarães Ferreira: é. Vamos lá.
+
+619
+01:23:43.380 --> 01:23:44.850
+Fernando Guimarães Ferreira: Próximo pipeline.
+
+620
+01:23:45.370 --> 01:23:47.300
+Fernando Guimarães Ferreira: Perguntas e respostas.
+
+621
+01:23:48.370 --> 01:23:58.940
+Fernando Guimarães Ferreira: Pipeliner Kiwei Pipeline recebe.
+
+622
+01:24:00.230 --> 01:24:10.720
+Fernando Guimarães Ferreira: É aqui. Eu acho que vale a pena. O que está no slide para a gente aqui, ó
+
+623
+01:24:13.660 --> 01:24:20.229
+Fernando Guimarães Ferreira: Q Ue, por exemplo, Pipeline Question. A gente pode escolher um modelo. Vou escolher exatamente esse modelo
+
+624
+01:24:20.430 --> 01:24:24.000
+Fernando Guimarães Ferreira: e aí fazer exatamente isso. Aqui para a gente
+
+625
+01:24:34.790 --> 01:24:35.810
+Fernando Guimarães Ferreira: vem talento.
+
+626
+01:24:38.680 --> 01:24:40.699
+Fernando Guimarães Ferreira: Então, o que a gente está fazendo aqui?
+
+627
+01:24:45.380 --> 01:24:52.210
+Fernando Guimarães Ferreira: A gente está fazendo um produto de pergunta e resposta. Então, dada a pergunta, dado o contexto,
+
+628
+01:24:53.040 --> 01:24:59.000
+Fernando Guimarães Ferreira: eu tenho a resposta. Então o que é isso aqui na base? O que a gente está fazendo.
+
+629
+01:25:03.070 --> 01:25:05.659
+Fernando Guimarães Ferreira: A gente está codificando esse texto
+
+630
+01:25:05.890 --> 01:25:21.699
+Fernando Guimarães Ferreira: e passando uma pergunta para ele, para dar a resposta. Então, naquelas perguntas, Ah, se eu passar documento. Se eu fizer alguma coisa. Isso aqui é a base do Rag. Por exemplo, se eu tiver vários documentos, vários textos. Qual é a maior probabilidade de alguma coisa
+
+631
+01:25:22.070 --> 01:25:27.390
+Fernando Guimarães Ferreira: é vir nesse contexto, trazendo.
+
+632
+01:25:27.390 --> 01:25:36.410
+pedro.duarte: Aquele outro exemplo lá de um plano, por exemplo, o contexto seria meio que, tipo, uma Skill do qual a informação que eu preciso,
+
+633
+01:25:36.690 --> 01:25:39.999
+pedro.duarte: tipo, o formato e diversas outras informações.
+
+634
+01:25:40.120 --> 01:25:45.700
+pedro.duarte: O que eu vou estar como passando com um parâmetro seria, por exemplo, o
+
+635
+01:25:46.390 --> 01:25:54.380
+pedro.duarte: seria tipo o Pdf ter do contrato. E baseado nisso, ele conseguiria dar o retorno. Daí algo nesse sentido.
+
+636
+01:25:54.820 --> 01:25:58.649
+Fernando Guimarães Ferreira: Eu não entendi a Skill que você falou ali. Você me perdeu.
+
+637
+01:25:58.790 --> 01:25:59.740
+Fernando Guimarães Ferreira: Que que.
+
+638
+01:25:59.740 --> 01:26:14.970
+pedro.duarte: Tipo. Assim como se eu passasse para ele assim. Ó, eu quero buscar essas informações aqui. O retorno tem que ser no retorno. Y tipo, de repente passar alguns exemplos, algum nesse sentido,
+
+639
+01:26:15.260 --> 01:26:16.010
+pedro.duarte: ele usaria.
+
+640
+01:26:16.010 --> 01:26:16.379
+Fernando Guimarães Ferreira: É um.
+
+641
+01:26:16.380 --> 01:26:19.429
+pedro.duarte: Como contexto para formular a resposta.
+
+642
+01:26:19.810 --> 01:26:28.719
+Fernando Guimarães Ferreira: É isso. Mas é a pergunta que você está fazendo, né? Do tipo o contexto. Por exemplo,
+
+643
+01:26:28.940 --> 01:26:34.480
+Fernando Guimarães Ferreira: quanto dinheiro o Rug Face irá investir essa aqui é a minha.
+
+644
+01:26:35.230 --> 01:26:40.430
+Fernando Guimarães Ferreira: O contexto aqui é a minha memória, né? O Samuel Pdf é
+
+645
+01:26:41.020 --> 01:26:57.829
+Fernando Guimarães Ferreira: a pergunta: o que ele está fazendo ele internamente? O que esse pipeline faz? Ele está pegando os tokens, as diferentes sentenças. Está dividindo e tudo mais. Está tokenizando. E aí está tokenizando isso aqui também.
+
+646
+01:26:58.700 --> 01:27:03.429
+Fernando Guimarães Ferreira: E aí está vendo qual desses Tolkins fica mais próximo?
+
+647
+01:27:03.630 --> 01:27:08.169
+Fernando Guimarães Ferreira: Qual dessas divisões que ele fez aqui vai ficar mais próxima para dar uma resposta.
+
+648
+01:27:09.060 --> 01:27:10.030
+Fernando Guimarães Ferreira: Entendeu?
+
+649
+01:27:10.720 --> 01:27:24.180
+Fernando Guimarães Ferreira: Então aqui eu tenho dez milhões. Então ele quebrou o texto e tal. Pô o que está casando mais com isso aqui. Dez milhões? Porque isso aqui é dinheiro. Isso é. Não sei o que. Então a resposta é dez milhões.
+
+650
+01:27:26.050 --> 01:27:27.190
+Fernando Guimarães Ferreira: Fez sentido.
+
+651
+01:27:28.030 --> 01:27:28.880
+pedro.duarte: Sim, sim.
+
+652
+01:27:30.530 --> 01:27:32.380
+Fernando Guimarães Ferreira: É?
+
+653
+01:27:32.600 --> 01:27:34.860
+Fernando Guimarães Ferreira: Pode falar. O Litor News.
+
+654
+01:27:35.510 --> 01:27:48.160
+hildenilson.albano: Professor. Eu acho que eu perdi. Mas o senhor está digitando todo o texto em inglês, porque o modelo que o senhor baixou. Só entende o inglês. Ou é o pipeline.
+
+655
+01:27:48.160 --> 01:27:56.649
+Fernando Guimarães Ferreira: Não é o modelo. A gente sempre está tratando do modelo. Esse modelo aqui específico
+
+656
+01:27:57.100 --> 01:28:06.470
+Fernando Guimarães Ferreira: que a gente está usando é o Roberta base Squad dois. Eu acho que ele é inglês.
+
+657
+01:28:07.550 --> 01:28:15.210
+Fernando Guimarães Ferreira: Aí é sempre olhar aqui. Quais são os idiomas? O que ele está adaptado. Eu acho que isso aqui é só para Inglês.
+
+658
+01:28:16.320 --> 01:28:18.549
+Fernando Guimarães Ferreira: Não, ele é multilingua.
+
+659
+01:28:19.050 --> 01:28:21.749
+Fernando Guimarães Ferreira: Ou pelo menos tem aplicações aqui. Multilinguas.
+
+660
+01:28:22.900 --> 01:28:26.909
+Fernando Guimarães Ferreira: Então vale a pena. Vale a pena a gente testar. Vamos testar.
+
+661
+01:28:27.560 --> 01:28:34.850
+Fernando Guimarães Ferreira: Vamos pegar aqui um texto globo é
+
+662
+01:28:38.550 --> 01:28:40.480
+Fernando Guimarães Ferreira: Tchau, qualquer coisa.
+
+663
+01:28:59.580 --> 01:29:03.270
+Fernando Guimarães Ferreira: Não achou nada, é,
+
+664
+01:29:08.610 --> 01:29:14.789
+Fernando Guimarães Ferreira: votou. Ela não entendeu nada. Mas aprovar. Ela entendeu a regra que impede de ordenar ataque ao Irã.
+
+665
+01:29:15.950 --> 01:29:17.300
+Fernando Guimarães Ferreira: Vamos ver.
+
+666
+01:29:24.650 --> 01:29:28.490
+Fernando Guimarães Ferreira: E Irã, tá?
+
+667
+01:29:29.390 --> 01:29:34.630
+Fernando Guimarães Ferreira: Então não funciona em português. Mas você viu ali que eu usei outro verbo, e ele já não entendeu.
+
+668
+01:29:35.590 --> 01:29:37.020
+hildenilson.albano: Beleza. Entendi.
+
+669
+01:29:42.630 --> 01:29:43.200
+Fernando Guimarães Ferreira: Vamos ver.
+
+670
+01:29:43.820 --> 01:29:56.380
+Fernando Guimarães Ferreira: Não, já não entendeu. O contexto é muito pequeno e o modelo é muito pequeno. Isso aqui num cheque Gpt, por exemplo, faz muito melhor, porque tem um contexto muito maior. Tem um treinamento muito maior, um modelo muito maior.
+
+671
+01:29:56.850 --> 01:30:03.270
+Fernando Guimarães Ferreira: Tá, então isso aqui é. Bem, para a informação que está aqui dentro.
+
+672
+01:30:03.740 --> 01:30:04.879
+hildenilson.albano: Tá, obrigado.
+
+673
+01:30:07.540 --> 01:30:09.860
+Fernando Guimarães Ferreira: Uma samarização.
+
+674
+01:30:10.930 --> 01:30:13.859
+Fernando Guimarães Ferreira: Summary. Acho que. Summer, eu também tenho aqui um exemplo.
+
+675
+01:30:15.330 --> 01:30:16.750
+Fernando Guimarães Ferreira: Sumirization,
+
+676
+01:30:22.370 --> 01:30:30.050
+Fernando Guimarães Ferreira: então, ó Facebook Part, inteligência artificial tem avançado, pegar um texto melhor, maior.
+
+677
+01:30:31.140 --> 01:30:35.540
+Fernando Guimarães Ferreira: Vamos lá. Vou pegar um texto aqui. Iá, não é?
+
+678
+01:30:36.220 --> 01:30:37.250
+Fernando Guimarães Ferreira: E a
+
+679
+01:30:40.510 --> 01:30:46.780
+Fernando Guimarães Ferreira: rede social condenada é Fake Mclaren, com imagem de A.
+
+680
+01:30:47.460 --> 01:30:49.610
+Fernando Guimarães Ferreira: É.
+
+681
+01:30:50.480 --> 01:30:55.290
+Fernando Guimarães Ferreira: Bom dia parar. Tem alguma matéria que respeite de forma? Vamos botar essa aqui.
+
+682
+01:30:57.470 --> 01:31:02.830
+Fernando Guimarães Ferreira: A gente só fala de tragédia. Pronto, é aqui.
+
+683
+01:31:06.210 --> 01:31:06.890
+Fernando Guimarães Ferreira: Tchau.
+
+684
+01:31:13.260 --> 01:31:15.190
+Fernando Guimarães Ferreira: Já é um modelo bem maior.
+
+685
+01:31:16.370 --> 01:31:18.390
+Fernando Guimarães Ferreira: Um,sessenta e três giga.
+
+686
+01:31:23.000 --> 01:31:24.969
+Fernando Guimarães Ferreira: Ainda sem um modelo pequeno, tá
+
+687
+01:31:59.560 --> 01:32:05.719
+Fernando Guimarães Ferreira: resumo ao especialista, gostando em levantar setenta e cinco bilhões em uma oferta pública inicial de Açom,
+
+688
+01:32:06.290 --> 01:32:08.040
+Fernando Guimarães Ferreira: a empresa de foguete.
+
+689
+01:32:08.400 --> 01:32:14.540
+Fernando Guimarães Ferreira: Óbvio que aí a gente podia fazer algumas configurações em relação ao tamanho do documento. Enfim, botamos aqui, né?
+
+690
+01:32:14.720 --> 01:32:18.230
+Fernando Guimarães Ferreira: Max Lent cinquenta podia ser um pouco maior. Enfim,
+
+691
+01:32:18.960 --> 01:32:24.790
+Fernando Guimarães Ferreira: mas é isso, pessoal, essas são todas as tarefas. Todos os pontos tem alguns parâmetros, né?
+
+692
+01:32:25.170 --> 01:32:31.530
+Fernando Guimarães Ferreira: Que são importantes no pipeline, que são sempre importantes a gente falar a temperatura,
+
+693
+01:32:32.380 --> 01:32:39.660
+Fernando Guimarães Ferreira: temperatura. Quanto mais alta, mais criativo é o texto. Quanto mais baixo, menos criativo
+
+694
+01:32:40.850 --> 01:32:56.930
+Fernando Guimarães Ferreira: o top K que a gente já até usou de mostrar quantas respostas possíveis. Limita o número, algumas palavras e o top P soma as probabilidades cortando palavras absurdas. Então, assim, se a gente quiser um gerador de texto
+
+695
+01:32:57.030 --> 01:33:02.140
+Fernando Guimarães Ferreira: no futuro, a inteligência irá, por exemplo, eu posso botar ela para ser muito criativa
+
+696
+01:33:02.390 --> 01:33:12.079
+Fernando Guimarães Ferreira: e para garantir coerência gramatical. E eu quero ver cinquenta opções. Cinquenta opções de melhores respostas para esse modelo aqui, por exemplo,
+
+697
+01:33:14.620 --> 01:33:18.549
+Fernando Guimarães Ferreira: tá, é isso, pessoal.
+
+698
+01:33:21.330 --> 01:33:22.560
+Fernando Guimarães Ferreira: Perguntas.
+
+699
+01:33:23.510 --> 01:33:24.830
+kevin.rodrigues: Isso? Roda na Gveu.
+
+700
+01:33:25.590 --> 01:33:26.340
+Fernando Guimarães Ferreira: Oi.
+
+701
+01:33:27.810 --> 01:33:29.790
+kevin.rodrigues: Esses modelos aí. Roda no Gpu.
+
+702
+01:33:30.730 --> 01:33:33.060
+Fernando Guimarães Ferreira: Em Gpu. É isso que você quer dizer?
+
+703
+01:33:34.260 --> 01:33:34.850
+kevin.rodrigues: Isso.
+
+704
+01:33:35.300 --> 01:33:38.829
+Fernando Guimarães Ferreira: É? É tudo Gpu. Funciona mais rápido em Gpu.
+
+705
+01:33:41.950 --> 01:33:43.819
+Fernando Guimarães Ferreira: Funciona bem mais rápido em Japão,
+
+706
+01:33:45.800 --> 01:33:49.619
+Fernando Guimarães Ferreira: são modelos que se implementada em gpor são na melhores.
+
+707
+01:33:51.920 --> 01:34:04.719
+Fernando Guimarães Ferreira: Bom, uma pergunta que vocês poderiam me fazer. É isso que está escrito aqui embaixo? Pô, professor tem um Pipeline. Mas também tem o modelo. Quando é que a gente usa um? Quando a gente usa o outro, né? Lá no início da aula a gente.
+
+708
+01:34:05.050 --> 01:34:10.919
+Fernando Guimarães Ferreira: No início desse ponto, a gente fez aqui com tocanais auto token.
+
+709
+01:34:11.360 --> 01:34:19.269
+Fernando Guimarães Ferreira: Vocês podem implementar sempre. Assim se vocês querem ter maior controle sobre tudo que o Pipeline está fazendo,
+
+710
+01:34:19.740 --> 01:34:20.520
+Fernando Guimarães Ferreira: não é?
+
+711
+01:34:21.290 --> 01:34:27.410
+Fernando Guimarães Ferreira: Aí não vai ter mudança. Por exemplo, de comportamento do pipeline se mudar a versão.
+
+712
+01:34:27.960 --> 01:34:36.639
+Fernando Guimarães Ferreira: Então são códigos que vocês garantem que vocês estão usando o tokenizador. Certo? Aí vocês podem implementar. E aí a dica que se for para produção,
+
+713
+01:34:36.820 --> 01:34:42.220
+Fernando Guimarães Ferreira: assim, vai ser mais assim. Vai ser mais garantido de funcionar.
+
+714
+01:34:42.510 --> 01:34:44.780
+Fernando Guimarães Ferreira: Vão ser códigos melhores.
+
+715
+01:34:44.920 --> 01:34:50.469
+Fernando Guimarães Ferreira: Agora, se vocês estão prototipando, fazendo testes. Querem só ver como o modelo funciona.
+
+716
+01:34:51.320 --> 01:34:53.250
+Fernando Guimarães Ferreira: Vocês viram que a gente fez uma
+
+717
+01:34:53.640 --> 01:35:02.899
+Fernando Guimarães Ferreira: cambada de testes? Cambada de coisas aqui, muito rápidas. Então a gente não precisa gastar tempo. A prototipação é muito mais rápido
+
+718
+01:35:05.880 --> 01:35:10.960
+Fernando Guimarães Ferreira: salvar tudo bem.
+
+719
+01:35:12.410 --> 01:35:13.550
+gabriel.aquino: Professor.
+
+720
+01:35:13.790 --> 01:35:14.570
+Fernando Guimarães Ferreira: E aí?
+
+721
+01:35:14.720 --> 01:35:18.690
+gabriel.aquino: Você já poderia dar um panorama do trabalho dessa matéria.
+
+722
+01:35:19.340 --> 01:35:23.920
+Fernando Guimarães Ferreira: Podemos, claro.
+
+723
+01:35:29.030 --> 01:35:30.140
+Fernando Guimarães Ferreira: Enfim, né.
+
+724
+01:35:30.140 --> 01:35:32.889
+wallace.pessanha: O pessoal já está ansioso. Já.
+
+725
+01:35:32.890 --> 01:35:40.559
+pedro.duarte: Eu queria pedir um favor, Professor. Eu consegui postar esse clubezinho ali do exemplo ali,
+
+726
+01:35:40.760 --> 01:35:46.980
+pedro.duarte: já. Se não for possível hoje. Mas coisa que eu queria dar um atestado nisso. Daí final de semana.
+
+727
+01:35:47.720 --> 01:35:49.160
+Fernando Guimarães Ferreira: Boa.
+
+728
+01:35:50.140 --> 01:35:52.589
+Fernando Guimarães Ferreira: Tô postando aqui no chat por hora, tá?
+
+729
+01:35:52.810 --> 01:35:57.880
+Fernando Guimarães Ferreira: Depois eu faço o post completo com apresentação, com tudo para vocês. Tá bom?
+
+730
+01:35:58.570 --> 01:35:59.000
+pedro.duarte: Obrigado.
+
+731
+01:35:59.000 --> 01:36:03.979
+Fernando Guimarães Ferreira: Feriado. E talvez eu não faça exatamente amanhã.
+
+732
+01:36:04.420 --> 01:36:05.740
+Fernando Guimarães Ferreira: Fica aqui.
+
+733
+01:36:06.180 --> 01:36:08.369
+Fernando Guimarães Ferreira: Para quem está assistindo a matéria
+
+734
+01:36:08.600 --> 01:36:15.359
+Fernando Guimarães Ferreira: ao vivo já fica aqui o link para vocês antes da apresentação.
+
+735
+01:36:17.050 --> 01:36:20.440
+Fernando Guimarães Ferreira: Só que essa atenção aqui. Eu já vou jogar lá para trás, tá?
+
+736
+01:36:22.290 --> 01:36:23.839
+Fernando Guimarães Ferreira: Isso aqui está no lugar errado
+
+737
+01:36:28.020 --> 01:36:29.310
+Fernando Guimarães Ferreira: por estar aqui.
+
+738
+01:36:35.070 --> 01:36:37.840
+Fernando Guimarães Ferreira: É aqui.
+
+739
+01:36:42.800 --> 01:36:51.700
+Fernando Guimarães Ferreira: Bom, eu acho que para ler tudo que a gente tem para fazer, a gente levaria mais tempo para explicar todos os pontos.
+
+740
+01:36:52.880 --> 01:37:02.069
+Fernando Guimarães Ferreira: Mas o básico que vocês vão fazer. Como pode construir uma aplicação capaz de receber entrada de linguagem, acessar, processar
+
+741
+01:37:02.540 --> 01:37:11.310
+Fernando Guimarães Ferreira: e produzir respostas úteis e estruturadas. Essa que é a ideia que a gente vai fazer, lembrando que a gente tem o processamento de modelos.
+
+742
+01:37:11.460 --> 01:37:18.090
+Fernando Guimarães Ferreira: A gente tem, a partir da próxima aula. Duas aulas de Prompt engineering.
+
+743
+01:37:18.290 --> 01:37:22.380
+Fernando Guimarães Ferreira: Depois a gente entra num bloco sobre hag, não é?
+
+744
+01:37:22.530 --> 01:37:31.010
+Fernando Guimarães Ferreira: Então vocês vão fazer um pipeline no final das contas que usam esses recursos?
+
+745
+01:37:31.330 --> 01:37:35.449
+Fernando Guimarães Ferreira: Basicamente isso. E aí, qual tecnologia vocês vão usar
+
+746
+01:37:35.890 --> 01:37:46.700
+Fernando Guimarães Ferreira: é uma opção que vocês vão falar. Você pode utilizar o Open air ruginface, modelos, pachados, Gpt Forol. Qualquer alternativa,
+
+747
+01:37:47.970 --> 01:37:50.629
+Fernando Guimarães Ferreira: alguma dessas alternativas.
+
+748
+01:37:50.900 --> 01:37:58.909
+Fernando Guimarães Ferreira: Baseado no que vocês vão aprender nas próximas aulas. Nessa aula inclusa
+
+749
+01:37:59.950 --> 01:38:12.600
+Fernando Guimarães Ferreira: então tarefa você deverá desenvolver uma aplicação funcional com Lms em Python. A solução deve representar um sistema aplicado e não apenas uma sequência de testes isolados.
+
+750
+01:38:12.730 --> 01:38:29.750
+Fernando Guimarães Ferreira: Ela deve envolver entrada de linguagem natural, texto, uso de um modelo de linguagem, estratégia de prompt ou geração ou interpretação de saída, recuperação da informação por Embed ou algum mecanismo de resposta fundamentada em documentos.
+
+751
+01:38:29.900 --> 01:38:32.799
+Fernando Guimarães Ferreira: Eu, conhecimento externo.
+
+752
+01:38:33.060 --> 01:38:51.050
+Fernando Guimarães Ferreira: O projeto pode ser aplicado a diferentes contextos. Aí vocês vão escolher o contexto. Basicamente, vocês vão fazer o que vocês acharem interessante. E o cenário escolhido deve permitir avaliar tanto o uso de Llm quanto a arquitetura do sistema construído.
+
+753
+01:38:51.720 --> 01:39:04.339
+Fernando Guimarães Ferreira: O projeto deve utilizar corpos conjuntos de documentos ou base textual que permita testar a funcionalidade de aplicação. A base pode ser composta, basicamente, o que vocês
+
+754
+01:39:04.520 --> 01:39:06.520
+Fernando Guimarães Ferreira: tiverem de contexto,
+
+755
+01:39:06.670 --> 01:39:19.029
+Fernando Guimarães Ferreira: caso utilize documentos próprios ou sensíveis, forneçam a versão anonimizada sintética ou substituta que permita eu avaliar a ausência dos dados não justifica uma entrega.
+
+756
+01:39:20.830 --> 01:39:38.919
+Fernando Guimarães Ferreira: O projeto deve construir cinco pontos elegíveis alinhados às competências da disciplina. Em cada ponto, você deverá fazer escolhas técnicas compatíveis. Você não precisa utilizar todas as ferramentas citadas, mas precisa construir uma solução coerente, funcional e demonstrável.
+
+757
+01:39:39.180 --> 01:39:50.920
+Fernando Guimarães Ferreira: Deu para entender um pouco a lógica do que vocês não conseguiram. Uma solução para o problema que vocês tiverem. E aí só precisam estar alinhados com as competências que a gente vai aprendendo.
+
+758
+01:39:53.930 --> 01:39:54.760
+Fernando Guimarães Ferreira: Tá bom.
+
+759
+01:39:55.410 --> 01:39:55.869
+hildenilson.albano: É o.
+
+760
+01:39:55.870 --> 01:39:57.900
+Fernando Guimarães Ferreira: Certo, é bem aberto.
+
+761
+01:39:58.610 --> 01:40:09.119
+Fernando Guimarães Ferreira: E aqui eu vou explicando cada um dos pontos como que eu vou corrigir o que eu quero. Quais são os requisitos? Tem uma parte aqui embaixo
+
+762
+01:40:09.490 --> 01:40:11.920
+Fernando Guimarães Ferreira: de requisitos. Por exemplo,
+
+763
+01:40:12.320 --> 01:40:22.860
+Fernando Guimarães Ferreira: o que eu vou precisar da entrega. Enfim, está bem escritinho. Aqui. É um projeto mesmo. É uma aplicação para vocês fazerem o sistema.
+
+764
+01:40:25.580 --> 01:40:28.420
+Fernando Guimarães Ferreira: Tá bom, isso aí.
+
+765
+01:40:28.420 --> 01:40:33.540
+hildenilson.albano: Isso aí. Usando o norte também o notebook lá.
+
+766
+01:40:34.090 --> 01:40:42.040
+Fernando Guimarães Ferreira: Pode usar o notebook. Pode usar também sistema se vocês quiserem fazer em Python, rodando localmente. Só me indiquem
+
+767
+01:40:42.420 --> 01:40:47.550
+Fernando Guimarães Ferreira: como que vocês estão rodando. E lembrem se que eu preciso poder rodar.
+
+768
+01:40:47.670 --> 01:40:54.560
+Fernando Guimarães Ferreira: Então, nada de usar aqui um sistema que dependa de nove placas de vídeo.
+
+769
+01:40:55.810 --> 01:41:01.310
+Fernando Guimarães Ferreira: Não tenho esse recurso numa placa de vídeo. A gente garante.
+
+770
+01:41:02.090 --> 01:41:03.440
+Fernando Guimarães Ferreira: Tá bom, pessoal.
+
+771
+01:41:06.030 --> 01:41:07.080
+hildenilson.albano: Lembramos aqui.
+
+772
+01:41:10.160 --> 01:41:12.349
+Fernando Guimarães Ferreira: Ficaram mais calmos ou mais nervosos.
+
+773
+01:41:16.330 --> 01:41:29.589
+pedro.duarte: Agora mais calmo. Na verdade, eu nem tinha olhado direito, né? Eu olhei isso daí só quando tava pro link. Errado. Eu olhei, tá? Esse daqui não é o projeto que eu tinha que fazer. Deixa eu procurar outro. Daí. Eu olhei ali e não entendi nada ali,
+
+774
+01:41:30.060 --> 01:41:31.210
+pedro.duarte: mas
+
+775
+01:41:31.390 --> 01:41:41.780
+pedro.duarte: uma dúvida no colab. Eu não consigo. Não sei, né, se eu consigo montar uma pi pra eu fazer uma requisição para ele testar alguma coisa. Não, né.
+
+776
+01:41:42.590 --> 01:41:43.389
+Fernando Guimarães Ferreira: É o. Segue.
+
+777
+01:41:43.560 --> 01:41:44.410
+pedro.duarte: Consigo.
+
+778
+01:41:44.660 --> 01:41:45.530
+Fernando Guimarães Ferreira: Consegue,
+
+779
+01:41:45.890 --> 01:41:55.310
+Fernando Guimarães Ferreira: consegue. Se não funcionar no Collab, eu posso mostrar para você. Consegue. Número um, dá pra fazer. Dá pra fazer até streamlit no Collab? É possível.
+
+780
+01:41:55.440 --> 01:42:04.910
+Fernando Guimarães Ferreira: Mas se você quiser mais flexibilidade, tem uma outra ferramenta parecida chamada Deep. Note que funciona um pouco melhor. É uma solução um pouco melhor para isso, se vocês quiserem, eu posso mostrar
+
+781
+01:42:06.360 --> 01:42:07.150
+Fernando Guimarães Ferreira: também. Com certeza.
+
+782
+01:42:07.150 --> 01:42:07.660
+pedro.duarte: E aí?
+
+783
+01:42:08.090 --> 01:42:21.419
+hildenilson.albano: Professor rapidinho lá. O senhor colocou o uso de um Gpu. Esse recurso é do próprio Google ali. Ou é da conta da Infinity que a gente está usando.
+
+784
+01:42:22.270 --> 01:42:28.689
+Fernando Guimarães Ferreira: Eu mostrei no início da aula como liberar Gpu aqui no notebook, no próprio Google, notebook.
+
+785
+01:42:29.520 --> 01:42:34.270
+hildenilson.albano: Pronto, não faz parte do plano. Não da Ifint. Beleza.
+
+786
+01:42:42.420 --> 01:42:45.760
+Fernando Guimarães Ferreira: Mais perguntas, mais pontos.
+
+787
+01:42:45.760 --> 01:42:48.329
+wallace.pessanha: A pessoa que ele ali já é para entregar.
+
+788
+01:42:48.450 --> 01:42:49.939
+wallace.pessanha: Quando mais ou menos.
+
+789
+01:42:51.830 --> 01:42:56.750
+Fernando Guimarães Ferreira: Bom, tem esse feriado. Agora que vocês podem adiantar o trabalho. Mas é dia vinte e nove de Junho.
+
+790
+01:42:57.970 --> 01:43:00.800
+wallace.pessanha: Caraca. Tá pertinho já Cristo!
+
+791
+01:43:01.320 --> 01:43:06.980
+wallace.pessanha: E aí? Olha ali tá, Lili, vamos nessa.
+
+792
+01:43:07.870 --> 01:43:14.579
+Fernando Guimarães Ferreira: Vinte e nove de Junho. A gente tem vinte e seis dias ainda pela frente. Pessoal, a gente ainda tem mais aí três semanas de aula, pelo menos.
+
+793
+01:43:14.960 --> 01:43:15.690
+pedro.duarte: E aí?
+
+794
+01:43:16.320 --> 01:43:18.430
+Fernando Guimarães Ferreira: Vai dar bom. Vai dar bom. Sem susto.
+
+795
+01:43:18.430 --> 01:43:26.930
+pedro.duarte: Dá pra ir testando já e pensar qual o problema? Vai resolver. Vê se tem algum modelo ali que já.
+
+796
+01:43:26.930 --> 01:43:37.939
+Fernando Guimarães Ferreira: É uma sugestão que eu posso dar para vocês é pegar, usar essas ferramentas de chat gpt e tudo mais para fazer um brainstorm de soluções possíveis.
+
+797
+01:43:39.050 --> 01:43:46.939
+Fernando Guimarães Ferreira: O que eu posso fazer com esses requisitos que o professor está botando? Pede para dialoga aí com ele
+
+798
+01:43:47.210 --> 01:43:48.870
+Fernando Guimarães Ferreira: é
+
+799
+01:43:49.760 --> 01:44:01.799
+Fernando Guimarães Ferreira: não para gerar o código, mas para estudar, para entender quais são as possibilidades, quais são dados legais dentro de todos os requisitos que eu boto aqui no projeto, por exemplo,
+
+800
+01:44:02.370 --> 01:44:08.379
+Fernando Guimarães Ferreira: isso é um uso bacana do chat Gpt ou do Gemini do Cloud. Enfim,
+
+801
+01:44:08.780 --> 01:44:10.930
+Fernando Guimarães Ferreira: olha o que vocês acharem mais bacana.
+
+802
+01:44:11.170 --> 01:44:20.130
+Fernando Guimarães Ferreira: Próxima aula: Prompt Engineering. Talvez ajude mais vocês a estruturar essa busca, por exemplo. Então já. Fica aqui o gatilho da próxima aula.
+
+803
+01:44:20.740 --> 01:44:24.029
+Fernando Guimarães Ferreira: Tá bom, pessoal. Bom descanso. Bom feriado para todos.
+
+804
+01:44:24.240 --> 01:44:25.780
+Fernando Guimarães Ferreira: Estudem, divirtam se.
+
+805
+01:44:25.780 --> 01:44:26.400
+kevin.rodrigues: Eu não.
+
+806
+01:44:26.530 --> 01:44:27.650
+hildenilson.albano: Valeu, pessoal.
+
+807
+01:44:27.650 --> 01:44:28.260
+gabriel.aquino: Tchau, Tchau.
+
+808
+01:44:28.540 --> 01:44:29.560
+hildenilson.albano: Muito obrigado.
+
+809
+01:44:29.560 --> 01:44:30.220
+Raphael Alves Carneiro: Euronews.
+
