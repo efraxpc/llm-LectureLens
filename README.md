@@ -43,13 +43,13 @@ com prompts ao modelo em inglês.
 
 ## Notebooks
 
-| Notebook | Tema | Modelos / API | Status |
-|---|---|---|---|
-| `c01_modelos_llm.ipynb` | Limpeza de transcrições WEBVTT e tradução PT→ES, comparando três métodos | Locais `nllb-200-distilled-600M` e `opus-mt-tc-big-itc-itc` + API `gemini-3.1-pro` | Criado |
-| `c02_prompting.ipynb` | Cinco técnicas de prompting sobre duas tarefas (QA e sumarização), com saída JSON validada | API `gemini-3.5-flash` | Criado |
-| `c03_embeddings_semanticos_e_recuperacao_de_informacao.ipynb` | Embeddings semânticos, indexação FAISS e análise da qualidade da recuperação | API `gemini-embedding-001` + `gemini-3.5-flash` + FAISS | Criado |
-| `c04_inferencia_local_remota_ou_privada.ipynb` | Comparação local × remota × privada, critério por critério, justificando a API | API `gemini-3.5-flash` (+ torch para a opção local) | Criado |
-| `c05_pipeline_RAG.ipynb` | Pipeline RAG completo: recuperação, prompt aumentado, resposta bilíngue, juiz de fidelidade, análise de riscos e controles, e custos de execução medidos | API `gemini-3.5-flash` + `gemini-embedding-001` + FAISS | Criado |
+| Notebook | Tema | Modelos / API |
+|---|---|---|
+| `c01_modelos_llm.ipynb` | Limpeza de transcrições WEBVTT e tradução PT→ES, comparando três métodos | Locais `nllb-200-distilled-600M` e `opus-mt-tc-big-itc-itc` + API `gemini-3.1-pro` |
+| `c02_prompting.ipynb` | Cinco técnicas de prompting sobre duas tarefas (QA e sumarização), com saída JSON validada | API `gemini-3.5-flash` |
+| `c03_embeddings_semanticos_e_recuperacao_de_informacao.ipynb` | Embeddings semânticos, indexação FAISS e análise da qualidade da recuperação | API `gemini-embedding-001` + `gemini-3.5-flash` + FAISS |
+| `c04_inferencia_local_remota_ou_privada.ipynb` | Comparação local × remota × privada, critério por critério, justificando a API | API `gemini-3.5-flash` (+ torch para a opção local) |
+| `c05_pipeline_RAG.ipynb` | Pipeline RAG completo: recuperação, prompt aumentado, resposta bilíngue, juiz de fidelidade, análise de riscos e controles, e custos de execução medidos | API `gemini-3.5-flash` + `gemini-embedding-001` + FAISS |
 
 ### Ordem de execução e dependência de dados
 
