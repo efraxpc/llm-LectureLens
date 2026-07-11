@@ -20,6 +20,9 @@ com prompts ao modelo em inglês.
 ├── c03_embeddings_semanticos_e_recuperacao_de_informacao.ipynb  # C03 — Embeddings e recuperação
 ├── c04_inferencia_local_remota_ou_privada.ipynb           # C04 — Inferência local, remota ou privada
 ├── c05_pipeline_RAG.ipynb                                 # C05 — Pipeline RAG
+├── bootstrap.sh                                           # Instala e roda tudo com 1 comando
+├── INSTALLATION.md                                        # Guia de instalação completo
+├── .env.example                                           # Modelo do .env (copiar e preencher)
 ├── environment.yml                                        # Ambiente conda (recomendado no Mac)
 ├── requirements.txt                                       # Dependências pip (Linux/Windows)
 ├── CLAUDE.md
@@ -100,91 +103,21 @@ segurança verificados por código, e **custos de execução medidos** chamada a
 custo por pergunta de aluno, projeção para o SaaS e total estimado do projeto (incluindo a
 preparação do corpus no C01). Seções §1–§15.
 
-## Configuração
+## Instalação
 
-### Rodar em Mac (Apple Silicon / chip M) — recomendado (conda)
+**O processo de instalação inteiro está em [INSTALLATION.md](INSTALLATION.md)** — do
+caminho rápido com um único comando (`./bootstrap.sh`) ao passo a passo manual e à
+variante para Mac (Apple Silicon).
 
-No Mac com chip M, a forma mais portável é um ambiente **conda** com o `environment.yml`
-deste repositório, em vez de `pip` solto: `faiss`, `pytorch` e `sentencepiece` têm build
-nativo `osx-arm64` no conda-forge, o que evita wheels que faltam e o problema de instalar
-o torch duas vezes.
-
-```bash
-# 1. Instalar o miniforge (conda nativo arm64), se ainda não tiver
-brew install --cask miniforge      # ou baixe de https://conda-forge.org/download/
-
-# 2. Criar e ativar o ambiente a partir do environment.yml
-conda env create -f environment.yml
-conda activate llm_project
-
-# 3. Registrar o kernel do Jupyter
-python -m ipykernel install --user --name=llm_project --display-name "Python (llm_project)"
-
-# 4. Abrir os notebooks e selecionar o kernel "Python (llm_project)"
-jupyter lab
-```
-
-Crie também o arquivo `.env` na raiz (ver a seção de variáveis de ambiente abaixo). As
-chaves realmente usadas hoje são `GEMINI_API_KEY` (C01–C05) e o token do Hugging Face para
-os modelos locais do C01.
-
-**Notas de portabilidade no Mac:**
-
-- **Dispositivo**: o C01 (modelos locais de tradução) detecta o dispositivo sozinho e roda
-  em **MPS** (a GPU do Apple Silicon) sem nenhuma configuração; nada de CUDA. Os notebooks
-  **C02–C05 são só chamadas de API** (Gemini + FAISS), então rodam em qualquer máquina.
-- **Dados**: a pasta `data/processed/` **não vem versionada** no repositório. Rode o
-  **C01** primeiro para gerá-la a partir de `data/raw/`; os notebooks C02–C05 leem de
-  `data/processed/*_portugues.txt`. Se você quiser só o pipeline de API (C02–C05) sem
-  instalar o torch, a alternativa é versionar `data/processed/` e pular o C01.
-- **Ollama** (opção de inferência local discutida no C04) é **opcional**: instale com
-  `brew install ollama` apenas se for executar essa comparação.
-
-O passo a passo genérico com `venv`/`pip` abaixo continua válido para Linux/Windows.
-
-### 1. Ambiente virtual
+Requisito essencial: quem for rodar o projeto precisa possuir **chaves próprias** de
+`GEMINI_API_KEY` (Google AI Studio) e `HUGGINGFACE_KEY` (Hugging Face Hub) — as chamadas
+à API são cobradas na conta associada à chave. Arranque rápido:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Linux/macOS
-.venv\Scripts\activate           # Windows
-pip install -r requirements.txt
+git clone git@github.com:efraxpc/llm-LectureLens.git && cd llm-LectureLens
+cp .env.example .env      # preencha com as SUAS chaves
+./bootstrap.sh
 ```
-
-### 2. Variáveis de ambiente
-
-Crie um arquivo `.env` na raiz do projeto:
-
-```env
-GEMINI_API_KEY=sua_chave_aqui      # principal — usada em C01–C05 (Google AI Studio)
-HUGGINGFACE_KEY=sua_chave_aqui     # token do HF Hub, lido via huggingface_hub.login() no C01
-ANTHROPIC_API_KEY=sua_chave_aqui   # opcional — nas dependências, mas sem uso nos notebooks atuais
-OPENAI_API_KEY=sua_chave_aqui      # opcional
-```
-
-### 3. Inferência local (opcional — somente C04)
-
-```bash
-# Instalar Ollama: https://ollama.com
-ollama serve
-ollama pull llama3.2
-```
-
-### 4. Registrar o kernel do Jupyter
-
-```bash
-python -m ipykernel install --user --name=llm_project --display-name "Python (llm_project)"
-```
-
-Isso garante que os notebooks rodem com o ambiente do projeto, e não com um Python global.
-
-### 5. Executar os notebooks
-
-```bash
-jupyter lab
-```
-
-Ao abrir cada notebook, selecione o kernel **"Python (llm_project)"**.
 
 ## Dados
 
