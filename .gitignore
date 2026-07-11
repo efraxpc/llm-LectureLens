@@ -4,3 +4,11 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 data/processed/
+
+# Editor / tooling dirs and personal Claude Code config (not part of the project)
+.idea/
+.cursor/
+.windsurf/
+.agents/
+.claude/settings.local.json
+*.code-workspace
