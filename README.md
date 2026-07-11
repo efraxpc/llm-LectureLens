@@ -25,7 +25,6 @@ com prompts ao modelo em inglês.
 ├── .env.example                                           # Modelo do .env (copiar e preencher)
 ├── environment.yml                                        # Ambiente conda (recomendado no Mac)
 ├── requirements.txt                                       # Dependências pip (Linux/Windows)
-├── CLAUDE.md
 ├── README.md
 ├── data/
 │   ├── raw/                                               # Transcrições originais (WEBVTT, .vtt)

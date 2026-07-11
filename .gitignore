@@ -10,5 +10,7 @@ data/processed/
 .cursor/
 .windsurf/
 .agents/
-.claude/settings.local.json
+.claude/
+CLAUDE.md
+CLAUDE_SKILLS.md
 *.code-workspace
