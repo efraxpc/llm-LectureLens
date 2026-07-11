@@ -1,4 +1,4 @@
-# LLM Project — Efrain INFNET
+# LectureLens 
 
 Projeto prático de Large Language Models desenvolvido para o curso INFNET.
 O corpus são **transcrições reais de aulas** (em português), e o projeto percorre um
@@ -46,7 +46,7 @@ com prompts ao modelo em inglês.
 | `c02_prompting.ipynb` | Cinco técnicas de prompting sobre duas tarefas (QA e sumarização), com saída JSON validada | API `gemini-3.5-flash` | Criado |
 | `c03_embeddings_semanticos_e_recuperacao_de_informacao.ipynb` | Embeddings semânticos, indexação FAISS e análise da qualidade da recuperação | API `gemini-embedding-001` + `gemini-3.5-flash` + FAISS | Criado |
 | `c04_inferencia_local_remota_ou_privada.ipynb` | Comparação local × remota × privada, critério por critério, justificando a API | API `gemini-3.5-flash` (+ torch para a opção local) | Criado |
-| `c05_pipeline_RAG.ipynb` | Pipeline RAG completo: recuperação, prompt aumentado, resposta bilíngue, juiz de fidelidade, análise de riscos e controles | API `gemini-3.5-flash` + `gemini-embedding-001` + FAISS | Criado |
+| `c05_pipeline_RAG.ipynb` | Pipeline RAG completo: recuperação, prompt aumentado, resposta bilíngue, juiz de fidelidade, análise de riscos e controles, e custos de execução medidos | API `gemini-3.5-flash` + `gemini-embedding-001` + FAISS | Criado |
 
 ### Ordem de execução e dependência de dados
 
@@ -69,7 +69,8 @@ qualidade e custo: dois modelos locais (`facebook/nllb-200-distilled-600M`,
 `Helsinki-NLP/opus-mt-tc-big-itc-itc`) e a API `gemini-3.1-pro`. Seções §1–§9 (NLLB,
 tokenização, parâmetros de geração, Helsinki, API Gemini, comparação dos três, limitações,
 qual encaixa melhor, conclusão). Roda em GPU (CUDA/MPS) ou CPU — detecta o dispositivo
-sozinho.
+sozinho. A conclusão estima o custo do corpus completo: 8 aulas traduzidas com o Gemini
+Pro por ~US$ 0,25–0,31 cada, ≈ US$ 2,0–2,5 no total — pago uma única vez.
 
 **C02 — Técnicas de Prompting sobre o corpus traduzido.** Aplica cinco técnicas (zero-shot,
 few-shot, Chain-of-Thought, meta-prompting, iteração v1→v2→v3) a duas tarefas de NLP —
@@ -89,10 +90,15 @@ controle, integração, hardware, internet, exposição de dados) e justificando
 Flash. Seções §1–§5.
 
 **C05 — Pipeline RAG.** Monta o RAG completo sobre os artefatos do C03: recupera os trechos
-top-k, monta o prompt aumentado com regras de grounding, gera a resposta nos dois idiomas
-citando as fontes, e avalia a fidelidade com um juiz LLM. Fecha com uma bateria de análise:
-pontos de falha, limites de contexto, guardrails contra prompt injection, risco de vazamento
-e controles de segurança propostos. Seções §1–§14.
+top-k, monta o prompt aumentado com regras de grounding e de segurança, gera a resposta nos
+dois idiomas citando as fontes, e avalia a fidelidade com um juiz LLM (JSON validado, com
+retentativa). Inclui uma sessão de perguntas reproduzível com semente fixa, a comparação
+com × sem contexto recuperado e casos de alucinação provocados de propósito. Fecha com uma
+bateria de análise: pontos de falha com limiar de confiança no score, limites de contexto,
+guardrails contra prompt injection, risco de vazamento com redação de PII, controles de
+segurança verificados por código, e **custos de execução medidos** chamada a chamada — com
+custo por pergunta de aluno, projeção para o SaaS e total estimado do projeto (incluindo a
+preparação do corpus no C01). Seções §1–§15.
 
 ## Configuração
 
