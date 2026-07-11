@@ -9,16 +9,12 @@ variante para Mac estão mais abaixo.
 **Quem for rodar o projeto precisa possuir chaves PRÓPRIAS de `GEMINI_API_KEY` e
 `HUGGINGFACE_KEY`.** Elas não vêm no repositório (o `.env` não é versionado) e não podem
 ser compartilhadas: as chamadas à API do Gemini são **cobradas na conta associada à
-chave** — a primeira execução completa gasta ~US$ 2,0–2,5, quase tudo nas 8 traduções
-com o Gemini Pro do C01.
+chave**.
 
 | Chave | Onde obter | Para quê |
 |---|---|---|
 | `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) | Tradução (C01), geração e embeddings (C02–C05) |
 | `HUGGINGFACE_KEY` | [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) | Download dos modelos locais de tradução (C01) |
-
-As opcionais `ANTHROPIC_API_KEY` e `OPENAI_API_KEY` estão nas dependências, mas nenhum
-notebook atual as usa.
 
 ## Pré-requisitos
 
@@ -29,30 +25,39 @@ notebook atual as usa.
 
 ## Instalação com 1 comando
 
+**Um único comando** clona, instala e roda tudo, do zero:
+
 ```bash
-git clone git@github.com:efraxpc/llm-LectureLens.git
-cd llm-LectureLens
-cp .env.example .env      # e preencha com as SUAS chaves
-./bootstrap.sh
+git clone git@github.com:efraxpc/llm-LectureLens.git && cd llm-LectureLens && ./bootstrap.sh
 ```
+
+Não é preciso criar nem editar o `.env` à mão: na primeira vez, o próprio script cria o
+`.env` a partir do `.env.example` e **pede as SUAS chaves** no terminal, uma de cada vez.
+**Cole cada chave diretamente na linha do terminal quando ela for pedida** e aperte Enter;
+a colagem fica oculta, nada é exibido, e o script grava a chave sozinho no `.env` da raiz
+do projeto:
+
+```text
+[3/5] Preparando o arquivo .env ...
+      Cole a chave do Google AI Studio (https://aistudio.google.com/apikey)
+      e aperte Enter (a colagem não será exibida):
+      ▉                     ← cole aqui a chave do Google e aperte Enter
+      Cole o token do Hugging Face (https://huggingface.co/settings/tokens)
+      e aperte Enter (a colagem não será exibida):
+      ▉                     ← cole aqui o token do Hugging Face e aperte Enter
+```
+
+Depois da primeira vez, as chaves ficam salvas no `.env` e o script não as pede de novo.
 
 O `bootstrap.sh` faz, em ordem:
 
 1. **Cria o `.venv`** e instala `requirements.txt` (reutiliza se já existirem);
 2. **Registra o kernel** do Jupyter `Python (llm_project)`;
-3. **Verifica o `.env`**: aborta com mensagem clara se `GEMINI_API_KEY` ou
-   `HUGGINGFACE_KEY` estiverem ausentes ou vazias;
-4. **Avisa o custo** antes de gastar: ~2,4 GB de download + ~US$ 2,0–2,5 de API +
-   ~20–40 min na primeira corrida;
+3. **Prepara o `.env`**: cria-o a partir do modelo se faltar e pede no terminal cada
+   chave ausente ou vazia (`GEMINI_API_KEY`, `HUGGINGFACE_KEY`), gravando-as no `.env`;
+4. **Avisa** antes de executar: ~2,4 GB de download + ~20–40 min na primeira corrida;
 5. **Executa os 5 notebooks em ordem de dependência** (C01 → C02 → C03 → C04 → C05) com
    `jupyter nbconvert --execute`, forçando o kernel registrado.
-
-**Reanudação inteligente**: se `data/processed/` já tiver as 8 aulas processadas, o C01
-é **pulado** (é a etapa cara — as traduções pagas). Para reexecutá-lo mesmo assim:
-
-```bash
-FORCE_C01=1 ./bootstrap.sh
-```
 
 Para só preparar o ambiente **sem executar nada** (nenhum gasto de API):
 
@@ -103,17 +108,17 @@ jupyter lab
 Ao abrir cada notebook, selecione o kernel **"Python (llm_project)"** e execute na ordem
 de dependências (abaixo).
 
-## Ordem de execução e custos
+## Ordem de execução
 
 O pipeline tem dependências entre etapas — respeite a ordem na primeira corrida:
 
-| Ordem | Notebook | Gera | Custo aproximado |
-|---|---|---|---|
-| 1º | C01 | `data/processed/*_portugues.txt` e `*_espanhol*.txt` | ~US$ 2,0–2,5 (8 traduções Gemini Pro) + ~2,4 GB de download |
-| 2º | C02 | `relatorio_prompts_c02.csv` | centavos |
-| 3º | C03 | `indice_faiss_c03.index` e `chunks_c03.json` (reaproveitados no C05) | centavos |
-| 4º | C04 | — (usa uma aula processada como exemplo) | centavos |
-| 5º | C05 | pipeline RAG completo + custos medidos | centavos |
+| Ordem | Notebook | Gera |
+|---|---|---|
+| 1º | C01 | `data/processed/*_portugues.txt` e `*_espanhol*.txt` (~2,4 GB de download de modelos) |
+| 2º | C02 | `relatorio_prompts_c02.csv` |
+| 3º | C03 | `indice_faiss_c03.index` e `chunks_c03.json` (reaproveitados no C05) |
+| 4º | C04 | — (usa uma aula processada como exemplo) |
+| 5º | C05 | pipeline RAG completo |
 
 Como `data/processed/` **não vem versionado**, o C01 precisa rodar antes de C02/C03, e o
 C03 (ao menos até a indexação) antes do C05.

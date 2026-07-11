@@ -42,23 +42,49 @@ echo "[2/5] Registrando o kernel do Jupyter ($KERNEL) ..."
 "$VENV/bin/python" -m ipykernel install --user --name="$KERNEL" \
   --display-name "Python (llm_project)" >/dev/null
 
-# ── 3. Verificação do .env (as chaves devem ser SUAS — ver INSTALLATION.md) ───
-echo "[3/5] Verificando o arquivo .env ..."
+# ── 3. Arquivo .env com as chaves (devem ser SUAS — ver INSTALLATION.md) ──────
+# Cria o .env sozinho e pede as chaves que faltarem, para bastar UM comando.
+echo "[3/5] Preparando o arquivo .env ..."
 if [ ! -f .env ]; then
-  echo ""
-  echo "ERRO: não existe .env na raiz do projeto."
-  echo "Crie-o a partir do modelo e preencha com as SUAS chaves:"
-  echo "    cp .env.example .env"
-  echo "Cada pessoa que roda o projeto precisa de chaves próprias de"
-  echo "GEMINI_API_KEY e HUGGINGFACE_KEY — instruções em INSTALLATION.md."
-  exit 1
+  echo "      .env não existe — criando a partir de .env.example."
+  cp .env.example .env
 fi
+
+# Rótulo amigável de cada chave: o que colar e onde obter (mostrado no console).
+rotulo_chave() {  # $1 = nome da variável
+  case "$1" in
+    GEMINI_API_KEY)   echo "a chave do Google AI Studio (https://aistudio.google.com/apikey)" ;;
+    HUGGINGFACE_KEY)  echo "o token do Hugging Face (https://huggingface.co/settings/tokens)" ;;
+    *)                echo "a chave $1" ;;
+  esac
+}
+
+definir_chave() {  # $1 = nome da chave; grava/atualiza a linha no .env
+  local nome="$1" valor tmp
+  read -rs valor
+  echo ""
+  if [ -z "$valor" ]; then
+    echo "ERRO: ${nome} não pode ficar vazia — instruções em INSTALLATION.md."
+    exit 1
+  fi
+  tmp="$(mktemp)"
+  grep -v "^${nome}=" .env > "$tmp" || true
+  printf '%s=%s\n' "$nome" "$valor" >> "$tmp"
+  mv "$tmp" .env
+}
+
 for CHAVE in GEMINI_API_KEY HUGGINGFACE_KEY; do
   if ! grep -Eq "^${CHAVE}=.+" .env; then
-    echo ""
-    echo "ERRO: a chave ${CHAVE} está ausente ou vazia no .env."
-    echo "Ela deve ser uma chave PRÓPRIA — instruções em INSTALLATION.md."
-    exit 1
+    if [ -t 0 ]; then
+      echo "      Cole $(rotulo_chave "$CHAVE")"
+      echo "      e aperte Enter (a colagem não será exibida):"
+      definir_chave "$CHAVE"
+    else
+      echo ""
+      echo "ERRO: ${CHAVE} ausente ou vazia no .env, e não há terminal interativo"
+      echo "para pedi-la. Preencha o .env à mão — instruções em INSTALLATION.md."
+      exit 1
+    fi
   fi
 done
 echo "      .env OK (GEMINI_API_KEY e HUGGINGFACE_KEY presentes)."

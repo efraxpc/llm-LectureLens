@@ -115,8 +115,7 @@ Requisito essencial: quem for rodar o projeto precisa possuir **chaves próprias
 
 ```bash
 git clone git@github.com:efraxpc/llm-LectureLens.git && cd llm-LectureLens
-cp .env.example .env      # preencha com as SUAS chaves
-./bootstrap.sh
+./bootstrap.sh            # cria o .env e pede as SUAS chaves na 1ª execução
 ```
 
 ## Dados
