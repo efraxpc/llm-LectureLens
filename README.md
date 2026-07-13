@@ -7,6 +7,11 @@ prompting** (C02), **indexar e recuperar** com embeddings semânticos (C03), **j
 escolha de inferência** local/remota/privada (C04) e montar o **pipeline RAG** de ponta a
 ponta (C05).
 
+**O corpus já vem incluído no repositório e é lido automaticamente pelos notebooks:**
+as 8 transcrições WEBVTT (`.vtt`) estão em `data/raw/`, e o C01 as carrega sem nenhuma
+configuração adicional. Os arquivos derivados são gerados em `data/processed/`
+(não versionado).
+
 A partir do C02, toda a geração usa a **API do Gemini** (`google-genai`); o C01 compara
 modelos locais de tradução com a API. Cada notebook é autocontido, escrito em português,
 com prompts ao modelo em inglês.
