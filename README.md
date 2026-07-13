@@ -1,6 +1,6 @@
 # LectureLens 
 
-Projeto prático de Large Language Models desenvolvido para o curso INFNET.
+Projeto prático de Large Language Models desenvolvido para a disciplina Sistemas Cognitivos e Linguagem Natural  da INFNET.
 O corpus são **transcrições reais de aulas** (em português), e o projeto percorre um
 pipeline completo em cinco etapas: **traduzir** as aulas (C01), aplicar **técnicas de
 prompting** (C02), **indexar e recuperar** com embeddings semânticos (C03), **justificar a
